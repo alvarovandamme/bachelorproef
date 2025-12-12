@@ -1,0 +1,46 @@
+%==============================================================================
+% Sjabloon onderzoeksvoorstel bachproef
+%==============================================================================
+% Gebaseerd op document class `hogent-article'
+% zie <https://github.com/HoGentTIN/latex-hogent-article>
+
+\documentclass{hogent-article}
+
+% Invoegen bibliografiebestand
+\addbibresource{voorstel.bib}
+
+\studyprogramme{Professionele bachelor toegepaste informatica}
+\course{Bachelorproef}
+\assignmenttype{Onderzoeksvoorstel}
+
+
+\academicyear{2025-2026} 
+\title{Hoe kan een Master Data Management-oplossing worden ontworpen en geïmplementeerd die betrouwbare golden records voor productdata oplevert binnen een multi-ERP-omgeving, zodat datakwaliteit, integratie en rapportage verbeterd worden zonder de werking voor lokale entiteiten te verstoren?}
+
+\author{Alvaro Van Damme}
+\email{alvaro.vandamme@student.hogent.be}
+
+\supervisor[Co-promotor]{Gert-Jan Dugardein
+ (IPCOM, \href{mailto:gert-jan.dugardein@ipcom.be}{gert-jan.dugardein@ipcom.be})}
+
+\specialisation{AI \& Data Engineering}
+\keywords{Master Data Management, Data-Warehousing, ERP}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+
+\begin{document}
+
+\begin{abstract}
+Dit onderzoek pakt de dataconsolidatie-uitdagingen aan bij IPCOM, waar een multi-ERP-landschap leidt tot gefragmenteerde productdata en inefficiënte rapportage. Het doel is het ontwerpen en implementeren van een Master Data Management (MDM) proof-of-concept in Microsoft Fabric. Centraal staat het genereren van betrouwbare 'golden records' door middel van data harmonisatie, matching en survivorship rules. De methodologie combineert een literatuurstudie met een case study, waarbij een technisch prototype wordt gebouwd en gevalideerd aan de hand van meetbare kwaliteitsindicatoren zoals duplicatiegraad en volledigheid. Het resultaat biedt IPCOM een schaalbare architectuur voor datakwaliteit en een fundering voor verbeterde besluitvorming.
+\end{abstract}
+
+\tableofcontents
+
+% De hoofdtekst van het voorstel zit in een apart bestand, zodat het makkelijk
+% kan opgenomen worden in de bijlagen van de bachelorproef zelf.
+\input{voorstel-inhoud}
+
+\printbibliography[heading=bibintoc]
+
+\end{document}

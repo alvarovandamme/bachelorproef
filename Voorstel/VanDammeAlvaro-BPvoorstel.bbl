@@ -1,0 +1,493 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{Elahi}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7beb92875f03727750a432349276284b}{%
+           family={Elahi},
+           familyi={E\bibinitperiod},
+           given={Ehsan},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7beb92875f03727750a432349276284b}
+      \strng{fullhash}{7beb92875f03727750a432349276284b}
+      \strng{fullhashraw}{7beb92875f03727750a432349276284b}
+      \strng{bibnamehash}{7beb92875f03727750a432349276284b}
+      \strng{authorbibnamehash}{7beb92875f03727750a432349276284b}
+      \strng{authornamehash}{7beb92875f03727750a432349276284b}
+      \strng{authorfullhash}{7beb92875f03727750a432349276284b}
+      \strng{authorfullhashraw}{7beb92875f03727750a432349276284b}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{Published July 26, 2024; last updated July 29, 2024}
+      \field{title}{Guide to data survivorship: How to build the golden record?}
+      \field{urlday}{12}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://dataladder.com/guide-to-data-survivorship-how-to-build-the-golden-record/
+      \endverb
+      \verb{url}
+      \verb https://dataladder.com/guide-to-data-survivorship-how-to-build-the-golden-record/
+      \endverb
+    \endentry
+    \entry{Hikmawati}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=30ac2cbc0e2c346ab9c7ed2f38715a22}{%
+           family={Hikmawati},
+           familyi={H\bibinitperiod},
+           given={Sanny},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d135ccee88c70cc9f4f71bdcc77bf21}{%
+           family={Santosa},
+           familyi={S\bibinitperiod},
+           given={Paulus\bibnamedelima Insap},
+           giveni={P\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13ec51ece78bee7ca5735b7b17a7cea0}{%
+           family={Hidayah},
+           familyi={H\bibinitperiod},
+           given={Indriana},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4187e768a99b0c13185855f6c425f2d0}
+      \strng{fullhash}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{fullhashraw}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{bibnamehash}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{authorbibnamehash}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{authornamehash}{4187e768a99b0c13185855f6c425f2d0}
+      \strng{authorfullhash}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{authorfullhashraw}{4adfac22e6d4744719b9e4ff762e0f38}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2320-088X}
+      \field{journaltitle}{IJITEE}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{Improving Data Quality and Data Governance Using Master Data Management: A Review}
+      \field{volume}{5}
+      \field{year}{2021}
+      \field{pages}{90\bibrangedash 95}
+      \range{pages}{6}
+    \endentry
+    \entry{Maedche2010}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=49b9d2bfb4f6405fb255c47831e440ec}{%
+           family={Maedche},
+           familyi={M\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{fullhash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{fullhashraw}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{bibnamehash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{authorbibnamehash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{authornamehash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{authorfullhash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{authorfullhashraw}{49b9d2bfb4f6405fb255c47831e440ec}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Americas Conference on Information Systems ({AMCIS})}
+      \field{month}{8}
+      \field{note}{Paper 384}
+      \field{title}{An {ERP}-centric Master Data Management Approach}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb http://aisel.aisnet.org/amcis2010/384
+      \endverb
+      \verb{url}
+      \verb http://aisel.aisnet.org/amcis2010/384
+      \endverb
+    \endentry
+    \entry{Pansara2021}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f060e213358d34d9e5f00821fdfc3670}{%
+           family={Pansara},
+           familyi={P\bibinitperiod},
+           given={Ronak},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{fullhash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{fullhashraw}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{bibnamehash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{authorbibnamehash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{authornamehash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{authorfullhash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{authorfullhashraw}{f060e213358d34d9e5f00821fdfc3670}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2320-088X}
+      \field{journaltitle}{International Journal of Computer Science and Mobile Computing}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Master Data Management Challenges}
+      \field{volume}{10}
+      \field{year}{2021}
+      \field{pages}{47\bibrangedash 49}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.47760/ijcsmc.2021.v10i10.008
+      \endverb
+    \endentry
+    \entry{Rengasamy2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=35cf0459d9809e59dd1ff6ac3c15fd42}{%
+           family={Rengasamy},
+           familyi={R\bibinitperiod},
+           given={Arthi},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{fullhash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{fullhashraw}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{bibnamehash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{authorbibnamehash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{authornamehash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{authorfullhash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{authorfullhashraw}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2582-5208}
+      \field{journaltitle}{International Research Journal of Modernization in Engineering Technology and Science}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{{AI} Accelerator: Federated Master Data Management and Governance}
+      \field{volume}{7}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.56726/IRJMETS67501
+      \endverb
+    \endentry
+    \entry{VilminkoHeikkinenPekkola2019}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=01b818c42102fc5c841989780e528790}{%
+           family={Vilminko-Heikkinen},
+           familyi={V\bibinithyphendelim H\bibinitperiod},
+           given={Riikka},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4311e9f915f0db5a740eafc826693b59}{%
+           family={Pekkola},
+           familyi={P\bibinitperiod},
+           given={Samuli},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{fullhash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{fullhashraw}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{bibnamehash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{authorbibnamehash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{authornamehash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{authorfullhash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{authorfullhashraw}{18167b65d2f682a214b0bdc5777092a5}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Information Management}
+      \field{title}{Changes in roles, responsibilities and ownership in organizing master data management}
+      \field{volume}{47}
+      \field{year}{2019}
+      \field{pages}{76\bibrangedash 87}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ijinfomgt.2018.12.017
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{Elahi}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7beb92875f03727750a432349276284b}{%
+           family={Elahi},
+           familyi={E\bibinitperiod},
+           given={Ehsan},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7beb92875f03727750a432349276284b}
+      \strng{fullhash}{7beb92875f03727750a432349276284b}
+      \strng{fullhashraw}{7beb92875f03727750a432349276284b}
+      \strng{bibnamehash}{7beb92875f03727750a432349276284b}
+      \strng{authorbibnamehash}{7beb92875f03727750a432349276284b}
+      \strng{authornamehash}{7beb92875f03727750a432349276284b}
+      \strng{authorfullhash}{7beb92875f03727750a432349276284b}
+      \strng{authorfullhashraw}{7beb92875f03727750a432349276284b}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{Published July 26, 2024; last updated July 29, 2024}
+      \field{title}{Guide to data survivorship: How to build the golden record?}
+      \field{urlday}{12}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://dataladder.com/guide-to-data-survivorship-how-to-build-the-golden-record/
+      \endverb
+      \verb{url}
+      \verb https://dataladder.com/guide-to-data-survivorship-how-to-build-the-golden-record/
+      \endverb
+    \endentry
+    \entry{Hikmawati}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=30ac2cbc0e2c346ab9c7ed2f38715a22}{%
+           family={Hikmawati},
+           familyi={H\bibinitperiod},
+           given={Sanny},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d135ccee88c70cc9f4f71bdcc77bf21}{%
+           family={Santosa},
+           familyi={S\bibinitperiod},
+           given={Paulus\bibnamedelima Insap},
+           giveni={P\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13ec51ece78bee7ca5735b7b17a7cea0}{%
+           family={Hidayah},
+           familyi={H\bibinitperiod},
+           given={Indriana},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4187e768a99b0c13185855f6c425f2d0}
+      \strng{fullhash}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{fullhashraw}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{bibnamehash}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{authorbibnamehash}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{authornamehash}{4187e768a99b0c13185855f6c425f2d0}
+      \strng{authorfullhash}{4adfac22e6d4744719b9e4ff762e0f38}
+      \strng{authorfullhashraw}{4adfac22e6d4744719b9e4ff762e0f38}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2320-088X}
+      \field{journaltitle}{IJITEE}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{Improving Data Quality and Data Governance Using Master Data Management: A Review}
+      \field{volume}{5}
+      \field{year}{2021}
+      \field{pages}{90\bibrangedash 95}
+      \range{pages}{6}
+    \endentry
+    \entry{Maedche2010}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=49b9d2bfb4f6405fb255c47831e440ec}{%
+           family={Maedche},
+           familyi={M\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{fullhash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{fullhashraw}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{bibnamehash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{authorbibnamehash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{authornamehash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{authorfullhash}{49b9d2bfb4f6405fb255c47831e440ec}
+      \strng{authorfullhashraw}{49b9d2bfb4f6405fb255c47831e440ec}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Americas Conference on Information Systems ({AMCIS})}
+      \field{month}{8}
+      \field{note}{Paper 384}
+      \field{title}{An {ERP}-centric Master Data Management Approach}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb http://aisel.aisnet.org/amcis2010/384
+      \endverb
+      \verb{url}
+      \verb http://aisel.aisnet.org/amcis2010/384
+      \endverb
+    \endentry
+    \entry{Pansara2021}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f060e213358d34d9e5f00821fdfc3670}{%
+           family={Pansara},
+           familyi={P\bibinitperiod},
+           given={Ronak},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{fullhash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{fullhashraw}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{bibnamehash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{authorbibnamehash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{authornamehash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{authorfullhash}{f060e213358d34d9e5f00821fdfc3670}
+      \strng{authorfullhashraw}{f060e213358d34d9e5f00821fdfc3670}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2320-088X}
+      \field{journaltitle}{International Journal of Computer Science and Mobile Computing}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Master Data Management Challenges}
+      \field{volume}{10}
+      \field{year}{2021}
+      \field{pages}{47\bibrangedash 49}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.47760/ijcsmc.2021.v10i10.008
+      \endverb
+    \endentry
+    \entry{Rengasamy2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=35cf0459d9809e59dd1ff6ac3c15fd42}{%
+           family={Rengasamy},
+           familyi={R\bibinitperiod},
+           given={Arthi},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{fullhash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{fullhashraw}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{bibnamehash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{authorbibnamehash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{authornamehash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{authorfullhash}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \strng{authorfullhashraw}{35cf0459d9809e59dd1ff6ac3c15fd42}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2582-5208}
+      \field{journaltitle}{International Research Journal of Modernization in Engineering Technology and Science}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{{AI} Accelerator: Federated Master Data Management and Governance}
+      \field{volume}{7}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.56726/IRJMETS67501
+      \endverb
+    \endentry
+    \entry{VilminkoHeikkinenPekkola2019}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=01b818c42102fc5c841989780e528790}{%
+           family={Vilminko-Heikkinen},
+           familyi={V\bibinithyphendelim H\bibinitperiod},
+           given={Riikka},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4311e9f915f0db5a740eafc826693b59}{%
+           family={Pekkola},
+           familyi={P\bibinitperiod},
+           given={Samuli},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{fullhash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{fullhashraw}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{bibnamehash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{authorbibnamehash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{authornamehash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{authorfullhash}{18167b65d2f682a214b0bdc5777092a5}
+      \strng{authorfullhashraw}{18167b65d2f682a214b0bdc5777092a5}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Information Management}
+      \field{title}{Changes in roles, responsibilities and ownership in organizing master data management}
+      \field{volume}{47}
+      \field{year}{2019}
+      \field{pages}{76\bibrangedash 87}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ijinfomgt.2018.12.017
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

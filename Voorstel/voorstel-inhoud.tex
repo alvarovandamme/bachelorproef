@@ -1,0 +1,246 @@
+%---------- Inleiding ---------------------------------------------------------
+
+\section{Inleiding}
+\label{sec:inleiding}
+Deze bachelorproef onderzoekt Master Data Management (MDM), multi-ERP-omgevingen en het concept van "golden records''. Specifiek richt het onderzoek zich op de casus van IPCOM, een bedrijf in de isolatiesector dat met meerdere ERP-systemen werkt. IPCOM heeft op dit moment het probleem dat verschillende entiteiten binnen de groep dezelfde producten van dezelfde leveranciers kopen, maar dat deze producten, doordat ze uit verschillende ERP-systemen komen, niet eenvoudig te identificeren zijn als hetzelfde product. Hierdoor ontstaan inconsistenties in product- en leveranciersdata, wat een directe impact heeft op rapportering, analyse en besluitvorming.
+
+Een mogelijke oplossing voor dit probleem is een Master Data Management-platform, waaraan voor elk relevant datapunt een golden record wordt gekoppeld. Dit roept verschillende vragen op. Hoe past zo'n MDM-tool in een datawarehouse-architectuur? Hoe kan deze oplossing toegankelijk worden gemaakt voor de lokale gebruikers? Wat zijn de beste benaderingen voor het onderhouden van dergelijke golden records? Zijn er mogelijkheden om onderdelen van de inrichting en mapping te automatiseren? En ten slotte: hoe kan de datakwaliteit over de verschillende systemen heen worden gemeten en welke verbeteringen brengt een dergelijk MDM-platform voor IPCOM?
+
+De belangrijkste doelgroep is gevormd door data-engineers, data stewards en businessgebruikers binnen de organisatie die werken met product- en leveranciersdata in het datawarehouse en rapportageplatform (bijvoorbeeld Power~BI). Zij ondervinden dagelijks hinder van foutieve of inconsistente data en hebben nood aan een gecentraliseerde, betrouwbare bron van waarheid, namelijk een ``golden record'' per product, die de datakwaliteit en besluitvorming structureel verbetert.
+
+De centrale onderzoeksvraag luidt als volgt: Hoe kan een Master Data Management-oplossing worden ontworpen en geïmplementeerd die betrouwbare golden records voor productdata oplevert binnen een multi-ERP-omgeving, zodat datakwaliteit, integratie en rapportage verbeteren zonder de werking van lokale entiteiten te verstoren?
+
+De doelstelling van deze bachelorproef is eenduidig: een proof-of-concept (PoC) bouwen voor een MDM-tool binnen een multi-ERP-omgeving zoals die van IPCOM, waarbij wordt uitgegaan van voldoende gelijkenissen tussen bedrijven die op een vergelijkbare manier werken. Op basis van deze proof-of-concept kunnen aanbevelingen worden geformuleerd voor de verdere uitrol en verankering van MDM binnen de organisatie.
+%---------- Stand van zaken ---------------------------------------------------
+
+\section{Stand van zaken}%
+\label{sec:stand-van-zaken}
+
+\subsection{Master Data Management}
+Master Data Management (MDM) wordt omschreven als een methode om master data te onderhouden, te integreren en te harmoniseren, met als doel consistente informatievoorziening over informatiesystemen heen te ondersteunen \autocite{Hikmawati}. Master data verwijst daarbij naar kerngegevens die organisatiebreed worden hergebruikt en die verschillende processen en afdelingen met elkaar verbinden. Vilminko-Heikkinen en Pekkola positioneren MDM hierbij als een organisatiebrede data-managementpraktijk die expliciet gericht is op het verbeteren van de kwaliteit van deze kerngegevens \autocite{VilminkoHeikkinenPekkola2019}.
+
+De kernfunctie van MDM is het beheersen van master data zodat deze consistent, accuraat, actueel en relevant blijft over applicaties en organisatie-eenheden heen \autocite{Hikmawati}. Wanneer dit beheer tekortschiet, neemt het risico op onnauwkeurige of tegenstrijdige gegevens toe, wat de betrouwbaarheid van rapportering en besluitvorming ondermijnt \autocite{Hikmawati}. Zeker wanneer gegevens verspreid zijn over meerdere systemen, kunnen definities en formaten verschillen, waardoor fragmentatie ontstaat \autocite{VilminkoHeikkinenPekkola2019}. Dit maakt MDM naast een technisch ook een organisatorisch vraagstuk: meerdere teams beheren immers dezelfde kernentiteiten.
+
+Vilminko-Heikkinen en Pekkola benaderen MDM niet als louter softwaretool, maar als een praktijk die aanpassingen in processen en werkwijzen vereist \autocite{VilminkoHeikkinenPekkola2019}. Het omvat beleid en infrastructuur om master data te capteren en te delen, met focus op consistentie en tijdigheid. Dit impliceert dat een MDM-initiatief onlosmakelijk verbonden is met \emph{data governance}: het vastleggen van afspraken en controlemechanismen \autocite{Hikmawati}. Uit onderzoek van Hikmawati blijkt dan ook dat MDM-initiatieven vaak leiden tot een hertekening van rollen om datakwaliteit structureel te borgen.
+
+Governance uit zich concreet in rollen en verantwoordelijkheden. In een MDM-context zijn rollen zoals \emph{data owner} (eindverantwoordelijkheid) en \emph{data steward} (operationele bewaking) essentieel om eigenaarschap te organiseren \autocite{Hikmawati}. Deze verdeling maakt het mogelijk kwaliteitsproblemen toe te wijzen en op te volgen \autocite{VilminkoHeikkinenPekkola2019}. Zonder expliciet eigenaarschap blijft het risico bestaan dat master data opnieuw divergeert, zelfs bij aanwezigheid van een technisch MDM-platform \autocite{VilminkoHeikkinenPekkola2019}.
+
+Voor IPCOM is dit relevant omdat product- en leveranciersgegevens uit meerdere ERP-systemen samenkomen. MDM kan bijdragen aan harmonisatie door definities en kwaliteitsregels vast te leggen \autocite{Hikmawati}. Echter, zoals de literatuur benadrukt, hangt succes af van organisatorische verankering. Binnen deze bachelorproef wordt MDM daarom onderzocht als methode om duplicatie te reduceren, mits de implementatie zowel technisch als organisatorisch wordt gedragen \autocite{Hikmawati}.
+
+\subsection{Golden records en dataconsolidatie}
+De multi-ERP-context van IPCOM impliceert dat master data verspreid is, waardoor informatie over één entiteit gefragmenteerd voorkomt \autocite{Elahi}. Elahi koppelt dit aan een hogere werkdruk, omdat gebruikers meerdere bronnen moeten consolideren. Een manuele aanpak vergroot bovendien het risico op fouten; een risico dat toeneemt naarmate het aantal bronsystemen groeit \autocite{Elahi}.
+
+Een centraal concept om dit op te lossen is het \emph{golden record}: de enkelvoudige weergave die ontstaat nadat duplicaten zijn samengebracht en relevante informatie is behouden \autocite{Elahi}. Bij IPCOM kan dit gaan om een product waarvan attributen (zoals leveranciersnummer, prijs, of omschrijving) in verschillende systemen bestaan. Het golden record brengt per attribuut de geselecteerde waarde samen tot één consistente representatie voor analyse en rapportering \autocite{Elahi}.
+
+
+
+Elahi onderscheidt drie stappen die hieraan voorafgaan. \emph{Data matching} groepeert records op basis van waarschijnlijkheid. Vervolgens kan \emph{deduplicatie} of \emph{data merging} de datasets combineren. De brug naar het golden record wordt gevormd door \emph{data survivorship}: het selecteren van de beste attributen uit duplicaten om één uniforme record te vormen \autocite{Elahi}.
+
+Er zijn meerdere benaderingen voor survivorship mogelijk, afhankelijk van datakwaliteit \autocite{Elahi}:
+\begin{itemize}
+    \item \textbf{Manuele selectie:} Het meest volledige record kiezen (moeilijk schaalbaar).
+    \item \textbf{Bronprioriteit:} Selectie op basis van de betrouwbaarheid van het bronsysteem.
+    \item \textbf{Attribuutlogica:} Per veld de beste waarde kiezen (bijv. meest recente update).
+    \item \textbf{Samengesteld (composite):} Waarden conditioneel overschrijven om informatie uit meerdere bronnen te combineren.
+\end{itemize}
+
+De operationalisering gebeurt via \emph{survivorship rules} (bijv. 'langste waarde wint' of 'laatste update wint'). Elahi benadrukt dat deze regels iteratief moeten worden bijgestuurd op basis van de uitkomst \autocite{Elahi}. In dit onderzoek wordt geëvalueerd welke regels passen bij de datakwaliteit van IPCOM: volstaat bronprioriteit, of is een complexe, attribuutgebaseerde benadering noodzakelijk?
+
+\subsection{Multi-ERP-omgevingen en de rol van Master Data Management}
+In organisaties met een \emph{multi-ERP-landschap} zijn master data en processen verdeeld. Maedche (2010) beschrijft dat integratie in grote ondernemingen lastig blijft wanneer het aantal en de diversiteit van ERP-systemen toeneemt. Hierdoor ontstaat een masterdata-probleem: dezelfde entiteiten bestaan in meerdere systemen met afwijkende definities \autocite{Maedche2010}.
+
+MDM verschilt hierin fundamenteel van ERP. Waar ERP procesgericht is, beoogt MDM een \emph{enterprise-wide single version of the truth} die onafhankelijk is van specifieke applicaties \autocite{Maedche2010}. Omdat ERP en MDM elkaar functioneel kunnen overlappen, verschuift het ontwerpprobleem naar de complementariteit tussen beide in een complex landschap.
+
+De uitdagingen zijn vooral zichtbaar in \emph{operationele} MDM-scenario’s. Standalone MDM-oplossingen kunnen integratieproblemen veroorzaken rond distributie en semantische mapping \autocite{Maedche2010}. Dit wijst erop dat multi-ERP-omgevingen niet alleen consolidatie vereisen, maar ook een integratieaanpak die synchronisatie beheersbaar maakt.
+
+Maedche onderscheidt in deze context twee scenario's:
+\begin{enumerate}
+    \item \emph{Collaboration in corporate groups:} Een stertopologie met centraal beheer en lokale restricties.
+    \item \emph{Heterogeneous system landscapes:} Een mesh-topologie zonder duidelijke 'master', waarbij consolidatie vooral dient voor rapportering \autocite{Maedche2010}.
+\end{enumerate}
+
+Om MDM te laten aansluiten stelt Maedche een ERP-centrische benadering voor via \emph{shared MDM capabilities}. Dit omvat een MDM-hub, integratiemiddleware en een ingebedde MDM-component in de ERP-systemen. Het doel is dat wijzigingen consistent en semantisch correct worden doorgegeven \autocite{Maedche2010}.
+
+Voor IPCOM betekent dit dat de keuze voor een integratiepatroon cruciaal is. Afhankelijk van de behoefte aan lokale autonomie kan een hybride benadering worden onderzocht, waarbij centrale standaarden worden gecombineerd met lokale verrijking \autocite{Maedche2010}.
+
+\subsection{Data quality en data governance binnen MDM}
+Datakwaliteit is zowel een drijfveer als een evaluatiecriterium voor MDM. Kwaliteit wordt hierbij gezien als geschiktheid voor gebruik, gemeten via dimensies zoals accuraatheid, volledigheid, consistentie en tijdigheid \autocite{Hikmawati}. Problemen zoals duplicaten of ontbrekende waarden beïnvloeden direct de besluitvorming \autocite{Hikmawati}.
+
+MDM beoogt deze problemen te reduceren, maar Vilminko-Heikkinen en Pekkola benadrukken dat datakwaliteit geen louter technisch resultaat is; het vereist een combinatie van processen en technologie \autocite{VilminkoHeikkinenPekkola2019}. Dit veronderstelt duidelijke afspraken over datacreatie en validatie, verankerd in \emph{data governance}.
+
+Zonder heldere governance (rollen, eigenaarschap) wordt kwaliteitsborging bemoeilijkt \autocite{VilminkoHeikkinenPekkola2019}. Hikmawati bevestigt dat onduidelijk ownership en gebrek aan procedures de effectiviteit van MDM ondermijnen. Governance concretiseert wie beslissingsrecht heeft (data owner) en wie de kwaliteit bewaakt (data steward), vaak ondersteund door een \emph{data governance council} \autocite{Hikmawati}.
+
+Het proces start doorgaans met \emph{data profiling} om problemen zichtbaar te maken, gevolgd door opschoning (cleaning) en synchronisatie. Deze stappen zijn pas effectief wanneer ze gekoppeld zijn aan meetbare kwaliteitsdoelen, zoals indicatoren voor de duplicatiegraad \autocite{Hikmawati}.
+
+Voor IPCOM betekent dit dat de technische oplossing gepaard moet gaan met governance die lokale verantwoordelijkheid en centrale uniformiteit combineert. Door data ownership toe te wijzen, wordt datakwaliteit een bestuurbaar resultaat in plaats van een toevallige uitkomst \autocite{VilminkoHeikkinenPekkola2019}.
+
+\subsection{Bestaande MDM-oplossingen en implementatiebenaderingen}
+MDM-oplossingen variëren in architectuur, synchronisatiepatronen en governance-ondersteuning \autocite{Rengasamy2025}. Vooral in multi-ERP-omgevingen is de keuze tussen centralisatie en federatie bepalend.
+
+
+
+\begin{itemize}
+    \item \textbf{Gecentraliseerd:} Eén MDM-hub fungeert als de primaire bron.
+    \item \textbf{Federated:} Eigenaarschap blijft bij businessfuncties, terwijl consistentie via afspraken wordt bewaakt. Dit is geschikt wanneer lokale autonomie zwaar weegt \autocite{Rengasamy2025}.
+\end{itemize}
+
+Daarnaast onderscheidt de literatuur drie MDM-patronen \autocite{Rengasamy2025}:
+\begin{enumerate}
+    \item \emph{Registry:} Focus op referenties en identifiers zonder dataverplaatsing.
+    \item \emph{Coexistence:} Lokale opslag met synchronisatie naar een centrale standaard.
+    \item \emph{Transaction Hub:} Real-time verwerking van updates als centrale autoriteit.
+\end{enumerate}
+
+Voor multi-ERP-contexten worden vaak Coexistence of Transaction Hubs aangeraden, omdat bronsystemen operationeel moeten blijven \autocite{Maedche2010}. Rengasamy (2025) adviseert een gefaseerde implementatie: starten met een afgebakend domein en iteratief uitbreiden. Dit sluit aan bij de visie dat datakwaliteit een continu proces is \autocite{Hikmawati}.
+
+Voor IPCOM wordt een federated of coexistence-achtige benadering onderzocht. Dit maakt het mogelijk om centrale definities te combineren met operationele continuïteit in de ERP-systemen \autocite{Rengasamy2025}.
+
+\subsection{Open uitdagingen en positionering van dit onderzoek}
+MDM-initiatieven kennen zowel technische als organisatorische uitdagingen \autocite{Pansara2021}.
+Ten eerste is er \textbf{data governance}: zonder duidelijke rollen en procedures kunnen inconsistenties opnieuw in systemen sluipen \autocite{Pansara2021}. De vraag is hoe governance consistentie kan afdwingen zonder lokale werking te blokkeren \autocite{VilminkoHeikkinenPekkola2019}.
+
+Ten tweede vormt \textbf{data-integratie} een risico. Synchronisatieverschillen en semantische mismatches tussen MDM en ERP kunnen leiden tot fouten \autocite{Maedche2010}. Ook bij het samenvoegen van records (survivorship) kan context verloren gaan \autocite{Pansara2021}.
+
+Ten derde vereisen \textbf{data-standaarden} afstemming tussen afdelingen, wat in gedecentraliseerde contexten moeilijk is.
+
+Deze bachelorproef positioneert zich als toegepast onderzoek. MDM-concepten worden vertaald naar een proof-of-concept voor de multi-ERP-casus van IPCOM. Het doel is een ontwerp dat duplicatie reduceert, integratie beheersbaar houdt en governance operationaliseert via meetbare kwaliteitscriteria.
+
+
+%---------- Methodologie ------------------------------------------------------
+\section{Methodologie}%
+\label{sec:methodologie}
+
+\subsection{Onderzoeksopzet}
+Deze bachelorproef is \textbf{toegepast onderzoek} binnen de bedrijfscontext van IPCOM en wordt uitgevoerd als \textbf{case study} met een \textbf{proof-of-concept (PoC)} als technisch eindresultaat. De centrale onderzoeksvraag uit Sectie~\ref{sec:inleiding} wordt beantwoord door (1) literatuurstudie, (2) requirements- en contextanalyse bij IPCOM, (3) ontwerp en implementatie van een PoC voor golden records in een multi-ERP-context, waarbij de scope voor het prototype beperkt wordt tot een integratie van twee à drie representatieve bronsystemen om de haalbaarheid binnen de tijdspanne te garanderen.(4) evaluatie op basis van meetbare datakwaliteitsindicatoren en technische validatie.
+
+\subsection{Onderzoekstechnieken}
+De gebruikte onderzoekstechnieken zijn:
+\begin{itemize}
+  \item \textbf{Literatuurstudie}: concepten, implementatiebenaderingen en open uitdagingen rond MDM, multi-ERP, golden records, datakwaliteit en governance.
+  \item \textbf{Requirements-analyse}: semi-gestructureerde interviews met stakeholders en documentanalyse (datadictionary, rapportdefinities, procesdocumenten).
+  \item \textbf{Data-analyse en data profiling}: bepalen van een objectieve baseline van datakwaliteit op representatieve datasamples uit meerdere ERP-systemen.
+  \item \textbf{Ontwerp en implementatie PoC}: canonical model, matching-logica, survivorship rules en golden record-opbouw in Microsoft Fabric.
+  \item \textbf{Evaluatie}: vergelijking van baseline met PoC-output via meetbare indicatoren en controle van traceerbaarheid van bronwaarden naar golden records.
+\end{itemize}
+
+\subsection{Dataverzameling en requirements}
+In week 1 t/m 4 worden stakeholders geïdentificeerd en wordt een requirements-analyse uitgevoerd. De interviews focussen op:
+\begin{itemize}
+  \item huidige pijnpunten (duplicatie, inconsistentie, manuele consolidatie);
+  \item scope van masterdata (product- en leveranciersdata) en kritieke attributen;
+  \item governance-rollen (data owner, data steward) en wijzigingsproces;
+  \item acceptatiecriteria voor de PoC (wat moet aantoonbaar beter worden).
+\end{itemize}
+De interviewresultaten worden aangevuld met documentanalyse en een eerste datasample uit de relevante systemen.
+
+\subsection{Technische uitvoering van de PoC}
+De PoC implementeert een reproduceerbare pipeline met de volgende stappen:
+\begin{enumerate}
+  \item \textbf{Landing}: inladen van bronsnapshots uit de betrokken systemen in Fabric.
+  \item \textbf{Harmonisatie}: mapping naar een canonical model met uniforme veldnamen, datatypes en referentiecodes.
+  \item \textbf{Matching}: groeperen van records die dezelfde entiteit representeren. Hierbij wordt gestart met deterministische matching (op basis van unieke sleutels zoals EAN of leverancierscodes), waarna in tweede instantie 'fuzzy matching' op naam en omschrijving wordt verkend indien nodig.
+  \item \textbf{Survivorship}: toepassen van survivorship rules om per attribuut een waarde te selecteren.
+  \item \textbf{Golden record store}: opslaan van golden records met auditvelden voor traceerbaarheid.
+  \item \textbf{Publicatie}: beschikbaar maken van golden records voor downstream consumptie (Power BI en eventuele DWH-laag).
+\end{enumerate}
+De PoC wijzigt geen bronsystemen, maar publiceert output naar een Fabric-laag die downstream kan worden gebruikt.
+Indien toegang tot live productiedata vertraging oploopt, zal er gewerkt worden met een synthetische dataset die de structuur en datakwaliteitsproblemen (zoals duplicaten) van de werkelijke omgeving nabootst, zodat de technische ontwikkeling niet stagneert.
+
+\subsection{Evaluatiecriteria}
+De evaluatie gebeurt door een vergelijking tussen baseline en PoC-output op basis van meetbare indicatoren, zoals:
+\begin{itemize}
+  \item \textbf{Duplicatie}: aantal en aandeel duplicaten binnen en tussen systemen, vóór en na consolidatie.
+  \item \textbf{Volledigheid}: percentage ontbrekende waarden voor vooraf bepaalde kritieke attributen.
+  \item \textbf{Consistentie}: aantal conflicten tussen systemen voor dezelfde entiteit (bijv. verschillende prijzen of statussen).
+  \item \textbf{Traceerbaarheid}: mogelijkheid om per golden record te tonen uit welke bronrecords en welke rules de eindwaarden afkomstig zijn.
+\end{itemize}
+De resultaten worden gevisualiseerd in Power BI om baseline en post-PoC objectief te vergelijken.
+
+\subsection{Tools en technologie (initiële keuze)}
+Op basis van de huidige context bij IPCOM wordt de proof-of-concept uitgewerkt binnen het Microsoft-ecosysteem, met \textbf{Microsoft Fabric} als centrale data- en integratieomgeving en \textbf{Power BI} voor validatie en rapportering. De concrete invulling wordt tijdens de contextanalyse verfijnd (bv. welke Fabric-componenten beschikbaar zijn en welke toegangen mogelijk zijn), maar richtinggevend worden volgende onderdelen voorzien:
+\begin{itemize}
+  \item \textbf{Data landing en opslag}: Fabric Lakehouse (OneLake) volgens de Medallion Architecture (Bronze voor raw data, Silver voor cleansed/harmonized data, Gold voor golden records).
+  \item \textbf{Transformatie en profiling}: Fabric Dataflows Gen2 en/of notebooks (Python/SQL) voor harmonisatie, profiling en het berekenen van datakwaliteitsindicatoren.
+  \item \textbf{Orchestratie}: Fabric pipelines om de PoC reproduceerbaar uit te voeren (extract $\rightarrow$ harmonisatie $\rightarrow$ matching $\rightarrow$ survivorship $\rightarrow$ publicatie).
+  \item \textbf{Rapportering en validatie}: Power BI-dashboards om baseline en post-PoC datakwaliteit te vergelijken, en om traceerbaarheid van golden records inzichtelijk te maken.
+\end{itemize}
+
+\subsection{Planning (14 weken, elke vrijdag)}
+Week 1 t/m 4 focussen op het verkrijgen van toegang, requirements en datasamples. Pas vanaf week 5 start de technische uitwerking van matching en survivorship.
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Planning en deliverables (14 vrijdagen)}
+\label{tab:planning}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.07\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}X
+}
+\toprule
+\textbf{Week} & \textbf{Activiteit} & \textbf{Deliverable} \\
+\midrule
+1  & Kick-off bij IPCOM: scope, stakeholders, toegang tot Fabric
+   & Scope + stakeholderlijst + toegangslijst \\
+2  & Requirements-analyse (interviews) + inventaris databronnen
+   & Interviewnotes + requirements (draft) \\
+3  & Databronnen en exportmogelijkheden bevestigen (ERP $\rightarrow$ Fabric)
+   & Databroninventaris + datadictionary (draft) \\
+4  & Eerste datasample + mapping naar canonical model
+   & Dataset snapshot + mappingdocument \\
+5  & Data profiling + baseline metrieken in Fabric
+   & Baseline DQ-rapport \\
+6  & Ontwerp PoC-architectuur (Fabric Lakehouse/Warehouse)
+   & Architectuurdiagram + ontwerpbeslissingen \\
+7  & Implementatie: harmonisatie + canonical model
+   & Werkende harmonisatielaag \\
+8  & Implementatie: matching (rules/algoritme)
+   & Matching-module + testcases \\
+9  & Implementatie: survivorship rules + golden record build
+   & Golden record generator + rule-set \\
+10 & Traceerbaarheid + logging van bronwaarden per golden record
+   & Traceability-output + auditvelden \\
+11 & Publicatie naar consumptielaag + Power BI validatie
+   & Power BI proof + consumptiemodel \\
+12 & Evaluatie voor/na: vergelijking met baseline
+   & Evaluatierapport met metrieken \\
+13 & Stakeholder review (governance en werkbaarheid)
+   & Reviewverslag + verbeteracties \\
+14 & Finalisatie scriptie + aanbevelingen voor uitrol
+   & Eindrapport + aanbevelingen + PoC-samenvatting \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+%---------- Verwachte resultaten ----------------------------------------------
+\section{Verwacht resultaat, conclusie}%
+\label{sec:verwachte_resultaten}
+
+\subsection{Verwachte resultaten}
+De verwachte uitkomst van deze bachelorproef is een technisch onderbouwde proof-of-concept (PoC) voor Master Data Management (MDM) binnen de multi-ERP-context van IPCOM. Deze PoC levert een reproduceerbare pipeline op in Microsoft Fabric die (i) product- en leveranciersrecords uit meerdere systemen harmoniseert, (ii) records matcht tot entiteitsgroepen, (iii) survivorship rules toepast om per entiteit een golden record samen te stellen, en (iv) de output publiceert voor consumptie in Power BI. Naast de PoC worden ook ontwerpkeuzes, rule-sets en aanbevelingen voor verdere uitrol gedocumenteerd.
+
+Op inhoudelijk niveau wordt verwacht dat de PoC een aantoonbare reductie van duplicatie en inconsistentie in master data oplevert. Dit wordt geoperationaliseerd via een vergelijking tussen een baseline-meting (vóór verwerking) en de PoC-output (na verwerking) op basis van meetbare datakwaliteitsindicatoren, waaronder duplicatiegraad, volledigheid van kritieke attributen en het aantal conflictsituaties tussen systemen voor dezelfde entiteit. Daarnaast wordt verwacht dat de PoC traceerbaarheid ondersteunt, zodat per golden record kan worden weergegeven uit welke bronrecords de gekozen attribuutwaarden afkomstig zijn en welke survivorship rule de keuze heeft bepaald.
+
+\subsection{Verwachte visualisaties en metingen}
+Om de resultaten objectief te evalueren worden in Power BI minstens de volgende grafieken uitgewerkt. De figuren worden opgebouwd op basis van metingen in Fabric en worden gebruikt om baseline en post-PoC resultaten te vergelijken.
+
+\begin{itemize}
+  \item \textbf{Duplicatiegraad per systeem (voor/na)}: staafdiagram met op de x-as de bronsystemen en op de y-as het percentage records dat als duplicaat wordt geïdentificeerd. Verwacht wordt dat de duplicatiegraad daalt na toepassing van matching en survivorship.
+  \item \textbf{Volledigheid per attribuut (voor/na)}: staafdiagram met op de x-as kritieke attributen (bv. productnummer, leveranciersnummer, aankoopprijs, verkoopprijs, status) en op de y-as het percentage niet-lege waarden. Verwacht wordt dat volledigheid stijgt in de golden record output doordat waarden over bronnen heen worden gecombineerd.
+  \item \textbf{Conflicten tussen systemen (voor/na)}: staafdiagram met op de x-as attributen en op de y-as het aantal conflicten (bv. verschillende waarden voor dezelfde entiteit in verschillende systemen). Verwacht wordt dat het aantal conflicten daalt doordat één golden record als uniforme representatie wordt opgebouwd.
+  \item \textbf{Traceerbaarheidsoverzicht}: tabelvisualisatie waarin per golden record wordt getoond welke bronrecords zijn gematcht en welke attribuutwaarden zijn geselecteerd, inclusief bronreferentie en toegepaste survivorship rule. Verwacht wordt dat deze visualisatie uitzonderingen en kwaliteitsproblemen zichtbaar maakt voor review.
+\end{itemize}
+
+Deze visualisaties definiëren expliciet welke data moet worden verzameld: (i) matchgroepen en golden record identifiers, (ii) attribuutwaarden per bronrecord, (iii) gekozen winnende waarden per attribuut, (iv) metadata voor bron en rule, en (v) indicatoren voor volledigheid, duplicatie en conflictcount.
+
+\subsection{Meerwaarde voor de doelgroep}
+De doelgroep (data engineers, data stewards en business users binnen IPCOM) verkrijgt met de resultaten drie concrete voordelen. Ten eerste reduceert de PoC de nood aan manuele consolidatie van product- en leveranciersdata, wat de efficiëntie in rapportering en analyse verhoogt. Ten tweede wordt de betrouwbaarheid van rapporten en dashboards verbeterd doordat master data eenduidiger en consistenter wordt aangeboden. Ten derde vormt de governance- en rule-documentatie een basis om master data structureel te beheren: verantwoordelijkheden, kwaliteitsregels en uitzonderingen kunnen expliciet worden vastgelegd en in een later stadium opgeschaald worden naar een productie-implementatie.
+
+\subsection{Verwachte conclusie}
+Op basis van de literatuur en de probleemsituatie bij IPCOM wordt verwacht dat een MDM-aanpak met golden records, uitgewerkt als PoC in Microsoft Fabric, een meetbare verbetering oplevert in datakwaliteit en rapportageconsistentie binnen een multi-ERP-context. Tegelijk wordt verwacht dat de effectiviteit van de oplossing afhankelijk is van duidelijke keuzes in matching- en survivorship rules en van minimale governance-afspraken rond eigenaarschap en kwaliteitsbewaking. Indien de resultaten afwijken van de verwachtingen, zal worden geanalyseerd welke factoren (bv. onvoldoende onderscheidende attributen, beperkte brondata-kwaliteit, of complexe lokale variaties) de impact van de PoC beperken, en welke aanpassingen nodig zijn voor een schaalbare uitrol.
+
+
