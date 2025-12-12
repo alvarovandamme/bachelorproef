@@ -1,24 +1,26 @@
 \babel@toc {dutch}{}\relax 
 \contentsline {section}{\numberline {1}Inleiding}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Deelvragen m.b.t probleemdomein}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Deelvragen m.b.t oplossingsdomein}{2}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Stand van zaken}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Master Data Management}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Golden records en dataconsolidatie}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Golden records en dataconsolidatie}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Multi-ERP-omgevingen en de rol van Master Data Management}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Data quality en data governance binnen MDM}{3}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Data quality en data governance binnen MDM}{4}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Bestaande MDM-oplossingen en implementatiebenaderingen}{4}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Open uitdagingen en positionering van dit onderzoek}{4}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Methodologie}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Onderzoeksopzet}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Onderzoekstechnieken}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {3}Methodologie}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Onderzoeksopzet}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Onderzoekstechnieken}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Dataverzameling en requirements}{5}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Technische uitvoering van de PoC}{5}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Evaluatiecriteria}{5}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Tools en technologie (initiële keuze)}{5}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Planning (14 weken, elke vrijdag)}{5}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.5}Evaluatiecriteria}{6}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Tools en technologie (initiële keuze)}{6}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Planning (14 weken, elke vrijdag)}{6}{subsection.3.7}%
 \contentsline {section}{\numberline {4}Verwacht resultaat, conclusie}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Verwachte resultaten}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Verwachte visualisaties en metingen}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Meerwaarde voor de doelgroep}{7}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Verwachte conclusie}{7}{subsection.4.4}%
-\contentsline {section}{Referenties}{7}{subsection.4.4}%
 \contentsfinish 
+\contentsline {section}{Referenties}{8}{subsection.4.4}%

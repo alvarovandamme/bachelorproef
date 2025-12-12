@@ -2,15 +2,41 @@
 
 \section{Inleiding}
 \label{sec:inleiding}
-Deze bachelorproef onderzoekt Master Data Management (MDM), multi-ERP-omgevingen en het concept van "golden records''. Specifiek richt het onderzoek zich op de casus van IPCOM, een bedrijf in de isolatiesector dat met meerdere ERP-systemen werkt. IPCOM heeft op dit moment het probleem dat verschillende entiteiten binnen de groep dezelfde producten van dezelfde leveranciers kopen, maar dat deze producten, doordat ze uit verschillende ERP-systemen komen, niet eenvoudig te identificeren zijn als hetzelfde product. Hierdoor ontstaan inconsistenties in product- en leveranciersdata, wat een directe impact heeft op rapportering, analyse en besluitvorming.
+\textcolor{red}{Deze bachelorproef onderzoekt Master Data Management (MDM), multi-ERP-omgevingen en het concept van "golden records''. Specifiek richt het onderzoek zich op de casus van IPCOM, een bedrijf in de isolatiesector dat met meerdere ERP-systemen werkt. IPCOM heeft op dit moment het probleem dat verschillende entiteiten binnen de groep dezelfde producten van dezelfde leveranciers kopen, maar dat deze producten, doordat ze uit verschillende ERP-systemen komen, niet eenvoudig te identificeren zijn als hetzelfde product. Hierdoor ontstaan inconsistenties in product- en leveranciersdata, wat een directe impact heeft op rapportering, analyse en besluitvorming.}
 
 Een mogelijke oplossing voor dit probleem is een Master Data Management-platform, waaraan voor elk relevant datapunt een golden record wordt gekoppeld. Dit roept verschillende vragen op. Hoe past zo'n MDM-tool in een datawarehouse-architectuur? Hoe kan deze oplossing toegankelijk worden gemaakt voor de lokale gebruikers? Wat zijn de beste benaderingen voor het onderhouden van dergelijke golden records? Zijn er mogelijkheden om onderdelen van de inrichting en mapping te automatiseren? En ten slotte: hoe kan de datakwaliteit over de verschillende systemen heen worden gemeten en welke verbeteringen brengt een dergelijk MDM-platform voor IPCOM?
 
-De belangrijkste doelgroep is gevormd door data-engineers, data stewards en businessgebruikers binnen de organisatie die werken met product- en leveranciersdata in het datawarehouse en rapportageplatform (bijvoorbeeld Power~BI). Zij ondervinden dagelijks hinder van foutieve of inconsistente data en hebben nood aan een gecentraliseerde, betrouwbare bron van waarheid, namelijk een ``golden record'' per product, die de datakwaliteit en besluitvorming structureel verbetert.
+De belangrijkste doelgroep is gevormd door data-engineers, data stewards en business-gebruikers binnen de organisatie die werken met product- en leveranciersdata in het datawarehouse en rapportageplatform (bijvoorbeeld Power~BI). Zij ondervinden dagelijks hinder van foutieve of inconsistente data en hebben nood aan een gecentraliseerde, betrouwbare bron van waarheid, namelijk een ``golden record'' per product, die de datakwaliteit en besluitvorming structureel verbetert.
 
-De centrale onderzoeksvraag luidt als volgt: Hoe kan een Master Data Management-oplossing worden ontworpen en geïmplementeerd die betrouwbare golden records voor productdata oplevert binnen een multi-ERP-omgeving, zodat datakwaliteit, integratie en rapportage verbeteren zonder de werking van lokale entiteiten te verstoren?
+\textcolor{red}{De centrale onderzoeksvraag luidt als volgt: Hoe kan een Master Data Management-oplossing worden ontworpen en geïmplementeerd die betrouwbare golden records voor productdata oplevert binnen een multi-ERP-omgeving, zodat datakwaliteit, integratie en rapportage verbeteren zonder de werking van lokale entiteiten te verstoren?}
 
 De doelstelling van deze bachelorproef is eenduidig: een proof-of-concept (PoC) bouwen voor een MDM-tool binnen een multi-ERP-omgeving zoals die van IPCOM, waarbij wordt uitgegaan van voldoende gelijkenissen tussen bedrijven die op een vergelijkbare manier werken. Op basis van deze proof-of-concept kunnen aanbevelingen worden geformuleerd voor de verdere uitrol en verankering van MDM binnen de organisatie.
+
+\subsection{Deelvragen m.b.t probleemdomein}
+\begin{itemize}
+    \item \textcolor{red}{Hoeveel duplicaten en conflicterende productrecords komen voor over de verschillende ERP-systemen heen?}
+    \item \textcolor{red}{Welke datakwaliteitsproblemen treden het meest op bij productdata (bv. ontbrekende waarden, inconsistenties, verouderde informatie)?}
+    \item \textcolor{red}{Welke identificatievelden (zoals merk, omschrijving) zijn aanwezig en bruikbaar in elk ERP-systeem om producten te matchen?}
+    \item \textcolor{red}{Welke impact hebben de dataproblemen op rapportage en bedrijfsprocessen (zoals bestellingen, pricing, BI-analyses)?}
+    \item \textcolor{red}{Welke rollen en verantwoordelijkheden bestaan vandaag rond databeheer (data owners, stewards)?}
+\end{itemize}
+
+\subsection{Deelvragen m.b.t oplossingsdomein}
+\begin{itemize}
+    \item \textcolor{red}{Welke matching-technieken leveren de hoogste nauwkeurigheid bij het koppelen van productrecords uit verschillende ERP-systemen?}
+    \item \textcolor{red}{Welke consolidatieregels (survivorship-logica) zorgen voor de meest consistente en complete “golden records”?}
+    \item \textcolor{red}{Hoeveel verbetering in datakwaliteit wordt gerealiseerd na implementatie van de MDM-oplossing?}
+    \item \textcolor{red}{Hoe kan de publicatie van golden records naar het data warehouse worden ingericht zonder bestaande sleutels of relaties te breken?}
+    \item \textcolor{red}{Hoeveel sneller en consistenter verlopen rapportages wanneer de MDM-data wordt gebruikt als enige bron van waarheid?}
+    \item \textcolor{red}{In welke mate kan de goedkeuringsflow voor wijzigingen aan masterdata worden geautomatiseerd zonder kwaliteitsverlies?}
+    \item \textcolor{red}{Wat is de optimale frequentie voor synchronisatie tussen MDM-hub en ERP-bronsystemen om actuele maar stabiele data te garanderen?}
+    \item \textcolor{red}{Welke datakwaliteits-KPI’s zijn haalbaar als operationele doelstelling voor IPCOM na MDM-implementatie?}
+\end{itemize}
+
+
+
+
+
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Stand van zaken}%

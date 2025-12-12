@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.4)  12 DEC 2025 18:15
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.4)  12 DEC 2025 18:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1226,26 +1226,26 @@ Package csquotes Info: Redefining alias 'default' -> 'dutch'.
 (./VanDammeAlvaro-BPvoorstel.aux)
 \openout1 = `VanDammeAlvaro-BPvoorstel.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 Package biblatex Info: Trying to load language 'dutch' -> 'dutch-apa'...
 Package biblatex Info: ... file 'dutch-apa.lbx' found.
 
@@ -1273,12 +1273,12 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'VanDammeAlvaro-BPvoorstel.bbl' found.
 
 (./VanDammeAlvaro-BPvoorstel.bbl)
-Package biblatex Info: Reference section=0 on input line 32.
-Package biblatex Info: Reference segment=0 on input line 32.
+Package biblatex Info: Reference section=0 on input line 35.
+Package biblatex Info: Reference segment=0 on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 32.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 32.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1314,42 +1314,52 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 32.
+Package hyperref Info: Link coloring ON on input line 35.
 (./VanDammeAlvaro-BPvoorstel.out) (./VanDammeAlvaro-BPvoorstel.out)
 \@outlinefile=\write4
 \openout4 = `VanDammeAlvaro-BPvoorstel.out'.
 
 LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 36.
+(Font)              scaled to size 9.00096pt on input line 39.
 LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 36.
+(Font)              scaled to size 6.00064pt on input line 39.
 LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 36.
+(Font)              scaled to size 5.00053pt on input line 39.
 LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 36.
+(Font)              scaled to size 8.99904pt on input line 39.
 LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 36.
+(Font)              scaled to size 5.99936pt on input line 39.
 LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 36.
+(Font)              scaled to size 4.99947pt on input line 39.
 
 
 LaTeX Font Warning: Font shape `TU/Montserrat(2)/b/n' undefined
-(Font)              using `TU/Montserrat(2)/m/n' instead on input line 36.
+(Font)              using `TU/Montserrat(2)/m/n' instead on input line 39.
 
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 36.
+ mdframed uses option nobreak mdframed on input line 39.
 (./VanDammeAlvaro-BPvoorstel.toc
-Overfull \hbox (8.71574pt too wide) in paragraph at lines 8--8
+Overfull \hbox (3.87575pt too wide) in paragraph at lines 3--3
+ []|| [][][]\TU/Montserrat(2)/m/n/10 Deelvragen m.b.t probleemdomein[][]| 
+ []
+
+
+Overfull \hbox (10.02576pt too wide) in paragraph at lines 4--4
+ []|| [][][]\TU/Montserrat(2)/m/n/10 Deelvragen m.b.t oplossingsdomein[][]| 
+ []
+
+
+Overfull \hbox (8.71574pt too wide) in paragraph at lines 10--10
  []|| [][][]\TU/Montserrat(2)/m/n/10 Bestaande MDM-oplossingen en im- 
  []
 
 
-Overfull \hbox (4.10574pt too wide) in paragraph at lines 9--9
+Overfull \hbox (4.10574pt too wide) in paragraph at lines 11--11
  []|| [][][]\TU/Montserrat(2)/m/n/10 Open uitdagingen en positionering 
  []
 
 
-Overfull \hbox (9.02576pt too wide) in paragraph at lines 16--16
+Overfull \hbox (9.02576pt too wide) in paragraph at lines 18--18
  []|| [][][]\TU/Montserrat(2)/m/n/10 Tools en technologie (initiële keuze)[][]|
  
  []
@@ -1373,52 +1383,77 @@ File: HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 
 
 ]
-Overfull \hbox (1.38701pt too wide) in paragraph at lines 9--10
-\TU/Montserrat(0)/m/n/10 data-engineers, data stewards en businessgebrui-
+Overfull \hbox (22.20702pt too wide) in paragraph at lines 9--10
+\TU/Montserrat(0)/m/n/10 data-engineers, data stewards en business-gebruikers
  []
 
 
-Overfull \hbox (9.50238pt too wide) in paragraph at lines 9--10
-\TU/Montserrat(0)/m/n/10 kers binnen de organisatie die werken met product-
+Overfull \hbox (2.41568pt too wide) in paragraph at lines 15--15
+|[]\TU/Montserrat(2)/b/n/12 Deelvragen m.b.t probleemdomein| 
  []
 
 
-Overfull \hbox (11.40567pt too wide) in paragraph at lines 20--21
+Overfull \hbox (12.55568pt too wide) in paragraph at lines 24--24
+|[]\TU/Montserrat(2)/b/n/12 Deelvragen m.b.t oplossingsdomein| 
+ []
+
+
+Overfull \hbox (6.45236pt too wide) in paragraph at lines 26--27
+[][]\TU/Montserrat(0)/m/n/10 Welke matching-technieken leveren de hoog-
+ []
+
+
+Overfull \hbox (2.44571pt too wide) in paragraph at lines 26--27
+\TU/Montserrat(0)/m/n/10 ste nauwkeurigheid bij het koppelen van pro-
+ []
+
+
+Overfull \hbox (3.56569pt too wide) in paragraph at lines 26--27
+\TU/Montserrat(0)/m/n/10 ductrecords uit verschillende ERP-systemen?[] 
+ []
+
+
+
+
+Overfull \hbox (6.319pt too wide) in paragraph at lines 27--28
+[][]\TU/Montserrat(0)/m/n/10 Welke consolidatieregels (survivorship-logica)
+ []
+
+
+Overfull \hbox (0.24904pt too wide) in paragraph at lines 30--31
+[][]\TU/Montserrat(0)/m/n/10 Hoeveel sneller en consistenter verlopen rap-
+ []
+
+
+Overfull \hbox (14.28236pt too wide) in paragraph at lines 32--33
+\TU/Montserrat(0)/m/n/10 nisatie tussen MDM-hub en ERP-bronsystemen
+ []
+
+
+Overfull \hbox (10.56816pt too wide) in paragraph at lines 33--34
+\TU/Montserrat(0)/m/n/10 operationele doelstelling voor IPCOM na MDM-
+ []
+
+
+Overfull \hbox (11.40567pt too wide) in paragraph at lines 46--47
 \TU/Montserrat(0)/m/n/10 als een organisatiebrede data-managementpraktijk
  []
 
 
-Overfull \hbox (19.56235pt too wide) in paragraph at lines 20--21
+Overfull \hbox (19.56235pt too wide) in paragraph at lines 46--47
 \TU/Montserrat(0)/m/n/10 kwaliteit van deze kerngegevens ([]Vilminko-Heikkinen
  []
 
 
-Overfull \hbox (16.27237pt too wide) in paragraph at lines 22--23
+Overfull \hbox (16.27237pt too wide) in paragraph at lines 48--49
 \TU/Montserrat(0)/m/n/10 tueel en relevant blijft over applicaties en organisat
 ie-
  []
 
 
-Overfull \hbox (24.227pt too wide) in paragraph at lines 22--23
+Overfull \hbox (24.227pt too wide) in paragraph at lines 48--49
 \TU/Montserrat(0)/m/n/10 verschillen, waardoor fragmentatie ontstaat ([]Vilmink
 o-
- []
-
-
-
-
-Overfull \hbox (10.92233pt too wide) in paragraph at lines 24--25
-[]\TU/Montserrat(0)/m/n/10 Vilminko-Heikkinen en Pekkola benaderen MDM
- []
-
-
-Overfull \hbox (12.21904pt too wide) in paragraph at lines 26--27
-\TU/Montserrat(0)/m/n/10 zigheid van een technisch MDM-platform ([]Vilminko-
- []
-
-
-Overfull \hbox (3.91568pt too wide) in paragraph at lines 28--29
-\TU/Montserrat(0)/m/n/10 leveranciersgegevens uit meerdere ERP-systemen
  []
 
 
@@ -1426,72 +1461,48 @@ Overfull \hbox (3.91568pt too wide) in paragraph at lines 28--29
 File: HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <HOGENT_Logo_Pos_rgb.png>
 [2]
-Overfull \hbox (11.47902pt too wide) in paragraph at lines 44--45
+Overfull \hbox (10.92233pt too wide) in paragraph at lines 50--51
+[]\TU/Montserrat(0)/m/n/10 Vilminko-Heikkinen en Pekkola benaderen MDM
+ []
+
+
+Overfull \hbox (12.21904pt too wide) in paragraph at lines 52--53
+\TU/Montserrat(0)/m/n/10 zigheid van een technisch MDM-platform ([]Vilminko-
+ []
+
+
+Overfull \hbox (3.91568pt too wide) in paragraph at lines 54--55
+\TU/Montserrat(0)/m/n/10 leveranciersgegevens uit meerdere ERP-systemen
+ []
+
+
+
+
+Overfull \hbox (11.47902pt too wide) in paragraph at lines 70--71
 \TU/Montserrat(0)/m/n/10 ditioneel overschrijven om informatie uit meer-
  []
 
 
-Overfull \hbox (30.8553pt too wide) in paragraph at lines 52--53
+Overfull \hbox (30.8553pt too wide) in paragraph at lines 78--79
 \TU/Montserrat(0)/m/n/10 Waar ERP procesgericht is, beoogt MDM een \TU/Montserr
 at(0)/m/it/10 enterprise-
  []
 
 
-Overfull \hbox (27.5612pt too wide) in paragraph at lines 54--55
+Overfull \hbox (27.5612pt too wide) in paragraph at lines 80--81
 \TU/Montserrat(0)/m/it/10 tionele \TU/Montserrat(0)/m/n/10 MDM-scenario’s. Stan
 dalone MDM-oplossingen
  []
 
 
-Overfull \hbox (8.15236pt too wide) in paragraph at lines 54--55
+Overfull \hbox (8.15236pt too wide) in paragraph at lines 80--81
 \TU/Montserrat(0)/m/n/10 kunnen integratieproblemen veroorzaken rond dis-
  []
 
 
-Overfull \hbox (3.87367pt too wide) in paragraph at lines 54--55
+Overfull \hbox (3.87367pt too wide) in paragraph at lines 80--81
 \TU/Montserrat(0)/m/n/10 tributie en semantische mapping ([]Maedche, [][]2010[]
 []).
- []
-
-
-
-
-Overfull \hbox (12.91232pt too wide) in paragraph at lines 59--60
-[]\TU/Montserrat(0)/m/it/10 Heterogeneous system landscapes: \TU/Montserrat(0)/
-m/n/10 Een mesh-
- []
-
-
-Overfull \hbox (27.46234pt too wide) in paragraph at lines 62--63
-\TU/Montserrat(0)/m/n/10 gratiemiddleware en een ingebedde MDM-component
- []
-
-
-Overfull \hbox (5.18369pt too wide) in paragraph at lines 64--65
-\TU/Montserrat(0)/m/n/10 bride benadering worden onderzocht, waarbij cen-
- []
-
-
-Overfull \hbox (1.32458pt too wide) in paragraph at lines 67--68
-[][]\TU/Montserrat(0)/m/n/10 2021[][]). Problemen zoals duplicaten of ontbreken
-de
- []
-
-
-Overfull \hbox (19.89233pt too wide) in paragraph at lines 71--72
-\TU/Montserrat(0)/m/n/10 schap) wordt kwaliteitsborging bemoeilijkt ([]Vilminko
--
- []
-
-
-Overfull \hbox (11.98236pt too wide) in paragraph at lines 71--72
-\TU/Montserrat(0)/m/n/10 Governance concretiseert wie beslissingsrecht heeft
- []
-
-
-Overfull \hbox (8.82037pt too wide) in paragraph at lines 73--74
-\TU/Montserrat(0)/m/n/10 toren voor de duplicatiegraad ([]Hikmawati e.a., [][]2
-021[][]). 
  []
 
 
@@ -1499,112 +1510,112 @@ Overfull \hbox (8.82037pt too wide) in paragraph at lines 73--74
 File: HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <HOGENT_Logo_Pos_rgb.png>
 [3]
-Overfull \hbox (13.27568pt too wide) in paragraph at lines 77--77
+Overfull \hbox (12.91232pt too wide) in paragraph at lines 85--86
+[]\TU/Montserrat(0)/m/it/10 Heterogeneous system landscapes: \TU/Montserrat(0)/
+m/n/10 Een mesh-
+ []
+
+
+Overfull \hbox (27.46234pt too wide) in paragraph at lines 88--89
+\TU/Montserrat(0)/m/n/10 gratiemiddleware en een ingebedde MDM-component
+ []
+
+
+Overfull \hbox (5.18369pt too wide) in paragraph at lines 90--91
+\TU/Montserrat(0)/m/n/10 bride benadering worden onderzocht, waarbij cen-
+ []
+
+
+Overfull \hbox (1.32458pt too wide) in paragraph at lines 93--94
+[][]\TU/Montserrat(0)/m/n/10 2021[][]). Problemen zoals duplicaten of ontbreken
+de
+ []
+
+
+Overfull \hbox (19.89233pt too wide) in paragraph at lines 97--98
+\TU/Montserrat(0)/m/n/10 schap) wordt kwaliteitsborging bemoeilijkt ([]Vilminko
+-
+ []
+
+
+Overfull \hbox (11.98236pt too wide) in paragraph at lines 97--98
+\TU/Montserrat(0)/m/n/10 Governance concretiseert wie beslissingsrecht heeft
+ []
+
+
+Overfull \hbox (8.82037pt too wide) in paragraph at lines 99--100
+\TU/Montserrat(0)/m/n/10 toren voor de duplicatiegraad ([]Hikmawati e.a., [][]2
+021[][]). 
+ []
+
+
+
+
+Overfull \hbox (13.27568pt too wide) in paragraph at lines 103--103
 |[]\TU/Montserrat(2)/b/n/12 Bestaande MDM-oplossingen en im-
  []
 
 
-Overfull \hbox (3.68701pt too wide) in paragraph at lines 78--79
+Overfull \hbox (3.68701pt too wide) in paragraph at lines 104--105
 []\TU/Montserrat(0)/m/n/10 MDM-oplossingen variëren in architectuur, syn-
  []
 
 
-Overfull \hbox (10.59898pt too wide) in paragraph at lines 78--79
+Overfull \hbox (10.59898pt too wide) in paragraph at lines 104--105
 \TU/Montserrat(0)/m/n/10 chronisatiepatronen en governance-ondersteuning
  []
 
 
-Overfull \hbox (17.28256pt too wide) in paragraph at lines 78--79
+Overfull \hbox (17.28256pt too wide) in paragraph at lines 104--105
 \TU/Montserrat(0)/m/n/10 ([]Rengasamy, [][]2025[][]). Vooral in multi-ERP-omgev
 ingen
  []
 
 
-Overfull \hbox (1.55234pt too wide) in paragraph at lines 83--84
+Overfull \hbox (1.55234pt too wide) in paragraph at lines 109--110
 []\TU/Montserrat(0)/b/n/10 Gecentraliseerd: \TU/Montserrat(0)/m/n/10 Eén MDM-hu
 b fungeert als
  []
 
 
-Overfull \hbox (23.06235pt too wide) in paragraph at lines 84--85
+Overfull \hbox (23.06235pt too wide) in paragraph at lines 110--111
 []\TU/Montserrat(0)/b/n/10 Federated: \TU/Montserrat(0)/m/n/10 Eigenaarschap bl
 ijft bij businessfunc-
  []
 
 
-Overfull \hbox (6.20903pt too wide) in paragraph at lines 87--88
+Overfull \hbox (6.20903pt too wide) in paragraph at lines 113--114
 []\TU/Montserrat(0)/m/n/10 Daarnaast onderscheidt de literatuur drie MDM-
  []
 
 
-Overfull \hbox (2.89235pt too wide) in paragraph at lines 94--95
+Overfull \hbox (2.89235pt too wide) in paragraph at lines 120--121
 []\TU/Montserrat(0)/m/n/10 Voor multi-ERP-contexten worden vaak Coexis-
  []
 
 
-Overfull \hbox (4.72234pt too wide) in paragraph at lines 94--95
+Overfull \hbox (4.72234pt too wide) in paragraph at lines 120--121
 \TU/Montserrat(0)/m/n/10 bronsystemen operationeel moeten blijven ([]Maed-
  []
 
 
-Overfull \hbox (7.50484pt too wide) in paragraph at lines 96--97
+Overfull \hbox (7.50484pt too wide) in paragraph at lines 122--123
 []\TU/Montserrat(0)/m/n/10 Voor IPCOM wordt een federated of coexistence-
  []
 
 
-Overfull \hbox (0.89905pt too wide) in paragraph at lines 96--97
+Overfull \hbox (0.89905pt too wide) in paragraph at lines 122--123
 \TU/Montserrat(0)/m/n/10 met operationele continuïteit in de ERP-systemen
  []
 
 
-Overfull \hbox (1.81569pt too wide) in paragraph at lines 99--101
+Overfull \hbox (1.81569pt too wide) in paragraph at lines 125--127
 \TU/Montserrat(0)/m/n/10 gen zonder lokale werking te blokkeren ([]Vilminko-
  []
 
 
-Overfull \hbox (6.39568pt too wide) in paragraph at lines 102--103
+Overfull \hbox (6.39568pt too wide) in paragraph at lines 128--129
 \TU/Montserrat(0)/m/n/10 Synchronisatieverschillen en semantische mismat-
- []
-
-
-
-
-Overfull \hbox (4.46371pt too wide) in paragraph at lines 104--105
-\TU/Montserrat(0)/m/n/10 ming tussen afdelingen, wat in gedecentraliseerde
- []
-
-
-Overfull \hbox (14.7857pt too wide) in paragraph at lines 114--115
-\TU/Montserrat(0)/m/n/10 uitgevoerd als \TU/Montserrat(0)/b/n/10 case study \TU
-/Montserrat(0)/m/n/10 met een \TU/Montserrat(0)/b/n/10 proof-of-concept
- []
-
-
-Overfull \hbox (12.6923pt too wide) in paragraph at lines 120--121
-[]\TU/Montserrat(0)/b/n/10 Requirements-analyse\TU/Montserrat(0)/m/n/10 : semi-
-gestructureerde
- []
-
-
-Overfull \hbox (7.20502pt too wide) in paragraph at lines 120--121
-\TU/Montserrat(0)/m/n/10 analyse (datadictionary, rapportdefinities, pro-
- []
-
-
-Overfull \hbox (1.13899pt too wide) in paragraph at lines 121--122
-[]\TU/Montserrat(0)/b/n/10 Data-analyse en data profiling\TU/Montserrat(0)/m/n/
-10 : bepalen van
- []
-
-
-Overfull \hbox (3.40903pt too wide) in paragraph at lines 123--124
-[]\TU/Montserrat(0)/b/n/10 Evaluatie\TU/Montserrat(0)/m/n/10 : vergelijking van
- baseline met PoC-
- []
-
-
-Overfull \hbox (2.9197pt too wide) in paragraph at lines 126--126
-|[]\TU/Montserrat(2)/b/n/12 Dataverzameling en requirements| 
  []
 
 
@@ -1612,106 +1623,80 @@ Overfull \hbox (2.9197pt too wide) in paragraph at lines 126--126
 File: HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <HOGENT_Logo_Pos_rgb.png>
 [4]
-Overfull \hbox (3.77702pt too wide) in paragraph at lines 131--132
+Overfull \hbox (4.46371pt too wide) in paragraph at lines 130--131
+\TU/Montserrat(0)/m/n/10 ming tussen afdelingen, wat in gedecentraliseerde
+ []
+
+
+Overfull \hbox (14.7857pt too wide) in paragraph at lines 140--141
+\TU/Montserrat(0)/m/n/10 uitgevoerd als \TU/Montserrat(0)/b/n/10 case study \TU
+/Montserrat(0)/m/n/10 met een \TU/Montserrat(0)/b/n/10 proof-of-concept
+ []
+
+
+Overfull \hbox (12.6923pt too wide) in paragraph at lines 146--147
+[]\TU/Montserrat(0)/b/n/10 Requirements-analyse\TU/Montserrat(0)/m/n/10 : semi-
+gestructureerde
+ []
+
+
+Overfull \hbox (7.20502pt too wide) in paragraph at lines 146--147
+\TU/Montserrat(0)/m/n/10 analyse (datadictionary, rapportdefinities, pro-
+ []
+
+
+Overfull \hbox (1.13899pt too wide) in paragraph at lines 147--148
+[]\TU/Montserrat(0)/b/n/10 Data-analyse en data profiling\TU/Montserrat(0)/m/n/
+10 : bepalen van
+ []
+
+
+Overfull \hbox (3.40903pt too wide) in paragraph at lines 149--150
+[]\TU/Montserrat(0)/b/n/10 Evaluatie\TU/Montserrat(0)/m/n/10 : vergelijking van
+ baseline met PoC-
+ []
+
+
+Overfull \hbox (2.9197pt too wide) in paragraph at lines 152--152
+|[]\TU/Montserrat(2)/b/n/12 Dataverzameling en requirements| 
+ []
+
+
+
+
+Overfull \hbox (3.77702pt too wide) in paragraph at lines 157--158
 []\TU/Montserrat(0)/m/n/10 governance-rollen (data owner, data steward)
  []
 
 
-Overfull \hbox (3.72484pt too wide) in paragraph at lines 132--133
+Overfull \hbox (3.72484pt too wide) in paragraph at lines 158--159
 []\TU/Montserrat(0)/m/n/10 acceptatiecriteria voor de PoC (wat moet aan-
  []
 
 
-Overfull \hbox (0.29172pt too wide) in paragraph at lines 136--136
+Overfull \hbox (0.29172pt too wide) in paragraph at lines 162--162
 |[]\TU/Montserrat(2)/b/n/12 Technische uitvoering van de PoC| 
  []
 
 
-Overfull \hbox (2.3457pt too wide) in paragraph at lines 146--148
+Overfull \hbox (2.3457pt too wide) in paragraph at lines 172--174
 \TU/Montserrat(0)/m/n/10 ceert output naar een Fabric-laag die downstream
  []
 
 
-Overfull \hbox (3.6624pt too wide) in paragraph at lines 146--148
+Overfull \hbox (3.6624pt too wide) in paragraph at lines 172--174
 \TU/Montserrat(0)/m/n/10 worden met een synthetische dataset die de struc-
  []
 
 
-Overfull \hbox (0.49571pt too wide) in paragraph at lines 150--151
+Overfull \hbox (0.49571pt too wide) in paragraph at lines 176--177
 []\TU/Montserrat(0)/m/n/10 De evaluatie gebeurt door een vergelijking tus-
  []
 
 
-Overfull \hbox (3.66899pt too wide) in paragraph at lines 152--153
+Overfull \hbox (3.66899pt too wide) in paragraph at lines 178--179
 []\TU/Montserrat(0)/b/n/10 Duplicatie\TU/Montserrat(0)/m/n/10 : aantal en aande
 el duplicaten bin-
- []
-
-
-
-
-Overfull \hbox (5.48566pt too wide) in paragraph at lines 153--154
-[]\TU/Montserrat(0)/b/n/10 Volledigheid\TU/Montserrat(0)/m/n/10 : percentage on
-tbrekende waar-
- []
-
-
-Overfull \hbox (14.0437pt too wide) in paragraph at lines 159--159
-|[]\TU/Montserrat(2)/b/n/12 Tools en technologie (initiële keuze)| 
- []
-
-
-Overfull \hbox (1.37236pt too wide) in paragraph at lines 162--163
-\TU/Montserrat(0)/m/n/10 (OneLake) volgens de Medallion Architecture
- []
-
-
-Overfull \hbox (51.10037pt too wide) in paragraph at lines 162--163
-\TU/Montserrat(0)/m/n/10 (Bronze voor raw data, Silver voor cleansed/harmonized
-
- []
-
-
-Overfull \hbox (3.61815pt too wide) in paragraph at lines 163--164
-\TU/Montserrat(0)/m/n/10 lows Gen2 en/of notebooks (Python/SQL) voor
- []
-
-
-Overfull \hbox (0.95369pt too wide) in paragraph at lines 163--164
-\TU/Montserrat(0)/m/n/10 harmonisatie, profiling en het berekenen van
- []
-
-LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 164.
-LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
-(Font)              scaled to size 7.20076pt on input line 164.
-LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
-(Font)              scaled to size 5.80061pt on input line 164.
-LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 164.
-LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
-(Font)              scaled to size 7.19922pt on input line 164.
-LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
-(Font)              scaled to size 5.79938pt on input line 164.
-
-Overfull \hbox (23.43233pt too wide) in paragraph at lines 165--166
-[]\TU/Montserrat(0)/b/n/10 Rapportering en validatie\TU/Montserrat(0)/m/n/10 : 
-Power BI-dashboards
- []
-
-
-Overfull \hbox (1.67482pt too wide) in paragraph at lines 165--166
-\TU/Montserrat(0)/m/n/10 om baseline en post-PoC datakwaliteit te ver-
- []
-
-
-Overfull \hbox (2.48923pt too wide) in paragraph at lines 169--170
-\TU/Montserrat(0)/m/n/10 toegang, requirements en datasamples. Pas vanaf
- []
-
-
-Overfull \hbox (2.00903pt too wide) in paragraph at lines 224--225
-[]\TU/Montserrat(0)/m/n/10 De verwachte uitkomst van deze bachelorproef
  []
 
 
@@ -1719,35 +1704,100 @@ Overfull \hbox (2.00903pt too wide) in paragraph at lines 224--225
 File: HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <HOGENT_Logo_Pos_rgb.png>
 [5]
-Overfull \hbox (1.4357pt too wide) in paragraph at lines 226--227
+Overfull \hbox (5.48566pt too wide) in paragraph at lines 179--180
+[]\TU/Montserrat(0)/b/n/10 Volledigheid\TU/Montserrat(0)/m/n/10 : percentage on
+tbrekende waar-
+ []
+
+
+Overfull \hbox (14.0437pt too wide) in paragraph at lines 185--185
+|[]\TU/Montserrat(2)/b/n/12 Tools en technologie (initiële keuze)| 
+ []
+
+
+Overfull \hbox (1.37236pt too wide) in paragraph at lines 188--189
+\TU/Montserrat(0)/m/n/10 (OneLake) volgens de Medallion Architecture
+ []
+
+
+Overfull \hbox (51.10037pt too wide) in paragraph at lines 188--189
+\TU/Montserrat(0)/m/n/10 (Bronze voor raw data, Silver voor cleansed/harmonized
+
+ []
+
+
+Overfull \hbox (3.61815pt too wide) in paragraph at lines 189--190
+\TU/Montserrat(0)/m/n/10 lows Gen2 en/of notebooks (Python/SQL) voor
+ []
+
+
+Overfull \hbox (0.95369pt too wide) in paragraph at lines 189--190
+\TU/Montserrat(0)/m/n/10 harmonisatie, profiling en het berekenen van
+ []
+
+LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
+(Font)              scaled to size 10.00107pt on input line 190.
+LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
+(Font)              scaled to size 7.20076pt on input line 190.
+LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
+(Font)              scaled to size 5.80061pt on input line 190.
+LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 190.
+LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
+(Font)              scaled to size 7.19922pt on input line 190.
+LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
+(Font)              scaled to size 5.79938pt on input line 190.
+
+Overfull \hbox (23.43233pt too wide) in paragraph at lines 191--192
+[]\TU/Montserrat(0)/b/n/10 Rapportering en validatie\TU/Montserrat(0)/m/n/10 : 
+Power BI-dashboards
+ []
+
+
+Overfull \hbox (1.67482pt too wide) in paragraph at lines 191--192
+\TU/Montserrat(0)/m/n/10 om baseline en post-PoC datakwaliteit te ver-
+ []
+
+
+Overfull \hbox (2.48923pt too wide) in paragraph at lines 195--196
+\TU/Montserrat(0)/m/n/10 toegang, requirements en datasamples. Pas vanaf
+ []
+
+
+Overfull \hbox (2.00903pt too wide) in paragraph at lines 250--251
+[]\TU/Montserrat(0)/m/n/10 De verwachte uitkomst van deze bachelorproef
+ []
+
+
+
+
+Overfull \hbox (1.4357pt too wide) in paragraph at lines 252--253
 \TU/Montserrat(0)/m/n/10 een baseline-meting (vóór verwerking) en de PoC-
  []
 
 
-Overfull \hbox (2.50237pt too wide) in paragraph at lines 226--227
+Overfull \hbox (2.50237pt too wide) in paragraph at lines 252--253
 \TU/Montserrat(0)/m/n/10 bronrecords de gekozen attribuutwaarden afkom-
  []
 
 
-
-
-Overfull \hbox (1.35968pt too wide) in paragraph at lines 228--228
+Overfull \hbox (1.35968pt too wide) in paragraph at lines 254--254
 |[]\TU/Montserrat(2)/b/n/12 Verwachte visualisaties en metin-
  []
 
 
-Overfull \hbox (9.91234pt too wide) in paragraph at lines 232--233
+Overfull \hbox (9.91234pt too wide) in paragraph at lines 258--259
 []\TU/Montserrat(0)/b/n/10 Duplicatiegraad per systeem (voor/na)\TU/Montserrat(
 0)/m/n/10 : staaf-
  []
 
 
-Overfull \hbox (9.5057pt too wide) in paragraph at lines 233--234
+Overfull \hbox (9.5057pt too wide) in paragraph at lines 259--260
 \TU/Montserrat(0)/m/n/10 den record output doordat waarden over bron-
  []
 
 
-Overfull \hbox (4.35233pt too wide) in paragraph at lines 234--235
+Overfull \hbox (4.35233pt too wide) in paragraph at lines 260--261
 []\TU/Montserrat(0)/b/n/10 Conflicten tussen systemen (voor/na)\TU/Montserrat(0
 )/m/n/10 : staaf-
  []
@@ -1757,37 +1807,45 @@ Overfull \hbox (4.35233pt too wide) in paragraph at lines 234--235
 File: HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <HOGENT_Logo_Pos_rgb.png>
 [6]
-Overfull \hbox (10.52234pt too wide) in paragraph at lines 235--236
+Overfull \hbox (10.52234pt too wide) in paragraph at lines 261--262
 \TU/Montserrat(0)/m/n/10 bronreferentie en toegepaste survivorship rule.
  []
 
 
-Overfull \hbox (7.809pt too wide) in paragraph at lines 238--239
+Overfull \hbox (7.809pt too wide) in paragraph at lines 264--265
 []\TU/Montserrat(0)/m/n/10 Deze visualisaties definiëren expliciet welke data
  []
 
 
-Overfull \hbox (0.86371pt too wide) in paragraph at lines 238--239
+Overfull \hbox (0.86371pt too wide) in paragraph at lines 264--265
 \TU/Montserrat(0)/m/n/10 golden record identifiers, (ii) attribuutwaarden per
  []
 
 
-Overfull \hbox (9.83235pt too wide) in paragraph at lines 241--242
+Overfull \hbox (9.83235pt too wide) in paragraph at lines 267--268
 \TU/Montserrat(0)/m/n/10 schaald worden naar een productie-implementatie. 
  []
 
+
+
 )
 
-
-Overfull \hbox (6.29732pt too wide) in paragraph at lines 44--44
+File: HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
+<HOGENT_Logo_Pos_rgb.png>
+[7]
+Overfull \hbox (6.29732pt too wide) in paragraph at lines 47--47
 \TU/Montserrat(0)/m/n/10 Master Data Management and Governance.
  []
 
 
 
+
+
 File: HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <HOGENT_Logo_Pos_rgb.png>
-[7] 
+[8
+
+] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./VanDammeAlvaro-BPvoorstel.aux)
  ***********
@@ -1800,18 +1858,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `VanDammeAlvaro-BPvoorstel.out' has not chang
 ed.
-(rerunfilecheck)             Checksum: C64937845DE117D24455AE5DD63FE710;4491.
+(rerunfilecheck)             Checksum: E87A60B7948EB0B94390AFA7180D9D32;4939.
 Package logreq Info: Writing requests to 'VanDammeAlvaro-BPvoorstel.run.xml'.
 \openout1 = `VanDammeAlvaro-BPvoorstel.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28025 strings out of 473832
- 532401 string characters out of 5729481
- 1618167 words of memory out of 5000000
- 50722 multiletter control sequences out of 15000+600000
+ 28026 strings out of 473832
+ 532412 string characters out of 5729481
+ 1619328 words of memory out of 5000000
+ 50723 multiletter control sequences out of 15000+600000
  562463 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,12n,121p,1202b,5622s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,13n,121p,1202b,5622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on VanDammeAlvaro-BPvoorstel.pdf (7 pages).
+Output written on VanDammeAlvaro-BPvoorstel.pdf (8 pages).
