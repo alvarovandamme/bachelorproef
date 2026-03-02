@@ -2,35 +2,31 @@
 
 \section{Inleiding}
 \label{sec:inleiding}
-\textcolor{red}{Deze bachelorproef onderzoekt Master Data Management (MDM), multi-ERP-omgevingen en het concept van "golden records''. Specifiek richt het onderzoek zich op de casus van IPCOM, een bedrijf in de isolatiesector dat met meerdere ERP-systemen werkt. IPCOM heeft op dit moment het probleem dat verschillende entiteiten binnen de groep dezelfde producten van dezelfde leveranciers kopen, maar dat deze producten, doordat ze uit verschillende ERP-systemen komen, niet eenvoudig te identificeren zijn als hetzelfde product. Hierdoor ontstaan inconsistenties in product- en leveranciersdata, wat een directe impact heeft op rapportering, analyse en besluitvorming.}
+Deze bachelorproef onderzoekt Master Data Management (MDM), multi-ERP-omgevingen en het concept van "golden records''. Specifiek richt het onderzoek zich op de casus van IPCOM, een bedrijf in de isolatiesector dat met meerdere ERP-systemen werkt. IPCOM heeft op dit moment het probleem dat verschillende entiteiten binnen de groep (zoals in Oostenrijk, Zwitserland en Noorwegen) dezelfde artikelen van dezelfde leveranciers kopen, maar dat deze door de verschillende bronsystemen niet eenvoudig te identificeren zijn als hetzelfde product. Hierdoor ontstaan inconsistenties in artikel- en leveranciersdata, wat een directe impact heeft op rapportering en besluitvorming.
 
-Een mogelijke oplossing voor dit probleem is een Master Data Management-platform, waaraan voor elk relevant datapunt een golden record wordt gekoppeld. Dit roept verschillende vragen op. Hoe past zo'n MDM-tool in een datawarehouse-architectuur? Hoe kan deze oplossing toegankelijk worden gemaakt voor de lokale gebruikers? Wat zijn de beste benaderingen voor het onderhouden van dergelijke golden records? Zijn er mogelijkheden om onderdelen van de inrichting en mapping te automatiseren? En ten slotte: hoe kan de datakwaliteit over de verschillende systemen heen worden gemeten en welke verbeteringen brengt een dergelijk MDM-platform voor IPCOM?
+Om dit probleem aan te pakken is IPCOM momenteel een pilot gestart met de commerciële MDM-tool Profisee. Dit roept een interessante nieuwe vraag op voor deze bachelorproef. In plaats van een theoretische oplossing te bedenken, wordt er een proof-of-concept (PoC) gebouwd in Microsoft Fabric die als objectieve benchmark dient. Hoe presteert een eigen, in-house gebouwde oplossing op basis van deterministische regels en machine learning in vergelijking met de Profisee-setup, wanneer exact dezelfde inputdata en mappings worden gebruikt? Hoe past zo'n MDM-tool in een datawarehouse-architectuur en hoe kan de datakwaliteit over de verschillende systemen heen worden gemeten?
 
-De belangrijkste doelgroep is gevormd door data-engineers, data stewards en business-gebruikers binnen de organisatie die werken met product- en leveranciersdata in het datawarehouse en rapportageplatform (bijvoorbeeld Power~BI). Zij ondervinden dagelijks hinder van foutieve of inconsistente data en hebben nood aan een gecentraliseerde, betrouwbare bron van waarheid, namelijk een ``golden record'' per product, die de datakwaliteit en besluitvorming structureel verbetert.
+De belangrijkste doelgroep wordt gevormd door data-engineers en business-gebruikers binnen de organisatie die werken met deze data in het datawarehouse en het rapportageplatform (bijvoorbeeld Power BI). Zij ondervinden dagelijks hinder van gefragmenteerde data en hebben nood aan een gecentraliseerde, betrouwbare bron van waarheid, namelijk een "golden record" per artikel en leverancier, die de datakwaliteit structureel verbetert.
 
-\textcolor{red}{De centrale onderzoeksvraag luidt als volgt: Hoe kan een Master Data Management-oplossing worden ontworpen en geïmplementeerd die betrouwbare golden records voor productdata oplevert binnen een multi-ERP-omgeving, zodat datakwaliteit, integratie en rapportage verbeteren zonder de werking van lokale entiteiten te verstoren?}
+De centrale onderzoeksvraag luidt als volgt: Hoe kan een in-house Master Data Management-oplossing in Microsoft Fabric worden ontworpen en geïmplementeerd voor artikel- en leveranciersdata, zodat deze kan dienen als objectieve benchmark tegenover een commerciële MDM-tool (Profisee) binnen een multi-ERP-omgeving?
 
-De doelstelling van deze bachelorproef is eenduidig: een proof-of-concept (PoC) bouwen voor een MDM-tool binnen een multi-ERP-omgeving zoals die van IPCOM, waarbij wordt uitgegaan van voldoende gelijkenissen tussen bedrijven die op een vergelijkbare manier werken. Op basis van deze proof-of-concept kunnen aanbevelingen worden geformuleerd voor de verdere uitrol en verankering van MDM binnen de organisatie.
+De doelstelling van deze bachelorproef is eenduidig: een proof-of-concept (PoC) bouwen voor een MDM-tool in Microsoft Fabric, specifiek gericht op de ERP-data van Oostenrijk, Zwitserland en Noorwegen. Op basis van de vergelijking tussen deze PoC en de Profisee-pilot kunnen concrete aanbevelingen worden geformuleerd over de toegevoegde waarde van commerciële pakketten versus in-house oplossingen voor data harmonisatie en matching.
 
 \subsection{Deelvragen m.b.t probleemdomein}
 \begin{itemize}
-    \item \textcolor{red}{Hoeveel duplicaten en conflicterende productrecords komen voor over de verschillende ERP-systemen heen?}
-    \item \textcolor{red}{Welke datakwaliteitsproblemen treden het meest op bij productdata (bv. ontbrekende waarden, inconsistenties, verouderde informatie)?}
-    \item \textcolor{red}{Welke identificatievelden (zoals merk, omschrijving) zijn aanwezig en bruikbaar in elk ERP-systeem om producten te matchen?}
-    \item \textcolor{red}{Welke impact hebben de dataproblemen op rapportage en bedrijfsprocessen (zoals bestellingen, pricing, BI-analyses)?}
-    \item \textcolor{red}{Welke rollen en verantwoordelijkheden bestaan vandaag rond databeheer (data owners, stewards)?}
+    \item Hoeveel duplicaten en conflicterende records komen voor over de geselecteerde ERP-systemen heen?
+    \item Welke datakwaliteitsproblemen treden het meest op bij de geselecteerde artikel- en leveranciersdata (bijvoorbeeld het hoge percentage ontbrekende waarden)?
+    \item Welke identificatievelden (zoals EAN en artikelnaam) zijn bruikbaar in de systemen om een correcte mapping op te zetten?
+    \item Hoe vaak verandert een golden record de oorspronkelijke data bij welk specifiek bronsysteem?
 \end{itemize}
 
 \subsection{Deelvragen m.b.t oplossingsdomein}
 \begin{itemize}
-    \item \textcolor{red}{Welke matching-technieken leveren de hoogste nauwkeurigheid bij het koppelen van productrecords uit verschillende ERP-systemen?}
-    \item \textcolor{red}{Welke consolidatieregels (survivorship-logica) zorgen voor de meest consistente en complete “golden records”?}
-    \item \textcolor{red}{Hoeveel verbetering in datakwaliteit wordt gerealiseerd na implementatie van de MDM-oplossing?}
-    \item \textcolor{red}{Hoe kan de publicatie van golden records naar het data warehouse worden ingericht zonder bestaande sleutels of relaties te breken?}
-    \item \textcolor{red}{Hoeveel sneller en consistenter verlopen rapportages wanneer de MDM-data wordt gebruikt als enige bron van waarheid?}
-    \item \textcolor{red}{In welke mate kan de goedkeuringsflow voor wijzigingen aan masterdata worden geautomatiseerd zonder kwaliteitsverlies?}
-    \item \textcolor{red}{Wat is de optimale frequentie voor synchronisatie tussen MDM-hub en ERP-bronsystemen om actuele maar stabiele data te garanderen?}
-    \item \textcolor{red}{Welke datakwaliteits-KPI’s zijn haalbaar als operationele doelstelling voor IPCOM na MDM-implementatie?}
+    \item Hoe presteert de in-house Fabric PoC ten opzichte van de commerciële Profisee-setup wanneer dezelfde mappings en rulesets worden gebruikt?
+    \item Welke matching-technieken (deterministisch op basis van EAN versus fuzzy matching of AI op artikelnaam) leveren de hoogste nauwkeurigheid?
+    \item Welke consolidatieregels (survivorship-logica) zorgen voor de meest consistente "golden records"?
+    \item Hoe kan de publicatie van golden records worden ingericht zodat lokale id's correct verwijzen naar de golden records en alle entiteiten hiervan profiteren?
+    \item Hoeveel verbetering in datakwaliteit wordt gerealiseerd en visueel meetbaar gemaakt na implementatie van de MDM-oplossing?
 \end{itemize}
 
 
@@ -129,7 +125,7 @@ Ten tweede vormt \textbf{data-integratie} een risico. Synchronisatieverschillen 
 
 Ten derde vereisen \textbf{data-standaarden} afstemming tussen afdelingen, wat in gedecentraliseerde contexten moeilijk is.
 
-Deze bachelorproef positioneert zich als toegepast onderzoek. MDM-concepten worden vertaald naar een proof-of-concept voor de multi-ERP-casus van IPCOM. Het doel is een ontwerp dat duplicatie reduceert, integratie beheersbaar houdt en governance operationaliseert via meetbare kwaliteitscriteria.
+Deze bachelorproef positioneert zich als toegepast onderzoek. MDM-concepten, matching-technieken en survivorship-strategieën worden vertaald naar een proof-of-concept voor de multi-ERP-casus van IPCOM. Het doel is om deze in-house oplossing in te zetten als een objectieve benchmark tegenover een commerciële MDM-pilot (Profisee). Hierbij wordt geëvalueerd hoe duplicatie effectief kan worden gereduceerd via deterministische en AI-gebaseerde matching, en of een in-house setup kwalitatief kan concurreren met een kant-en-klaar platform.
 
 
 %---------- Methodologie ------------------------------------------------------
@@ -137,62 +133,51 @@ Deze bachelorproef positioneert zich als toegepast onderzoek. MDM-concepten word
 \label{sec:methodologie}
 
 \subsection{Onderzoeksopzet}
-Deze bachelorproef is \textbf{toegepast onderzoek} binnen de bedrijfscontext van IPCOM en wordt uitgevoerd als \textbf{case study} met een \textbf{proof-of-concept (PoC)} als technisch eindresultaat. De centrale onderzoeksvraag uit Sectie~\ref{sec:inleiding} wordt beantwoord door (1) literatuurstudie, (2) requirements- en contextanalyse bij IPCOM, (3) ontwerp en implementatie van een PoC voor golden records in een multi-ERP-context, waarbij de scope voor het prototype beperkt wordt tot een integratie van twee à drie representatieve bronsystemen om de haalbaarheid binnen de tijdspanne te garanderen.(4) evaluatie op basis van meetbare datakwaliteitsindicatoren en technische validatie.
+Deze bachelorproef is \textbf{toegepast onderzoek} binnen de bedrijfscontext van IPCOM en wordt uitgevoerd als \textbf{case study} met een \textbf{proof-of-concept (PoC)} als technisch eindresultaat. De centrale onderzoeksvraag uit Sectie~\ref{sec:inleiding} wordt beantwoord door (1) literatuurstudie, (2) requirements- en contextanalyse via directe afstemming met de interne data engineer, (3) ontwerp en implementatie van een PoC in Microsoft Fabric, waarbij de scope bewust beperkt wordt tot artikel- en leveranciersdata uit drie specifieke ERP-systemen (Oostenrijk, Zwitserland en Noorwegen). Tot slot volgt (4) een evaluatie waarbij deze in-house PoC fungeert als objectieve benchmark tegenover een lopende pilot met het commerciële MDM-platform Profisee.
 
 \subsection{Onderzoekstechnieken}
 De gebruikte onderzoekstechnieken zijn:
 \begin{itemize}
-  \item \textbf{Literatuurstudie}: concepten, implementatiebenaderingen en open uitdagingen rond MDM, multi-ERP, golden records, datakwaliteit en governance.
-  \item \textbf{Requirements-analyse}: semi-gestructureerde interviews met stakeholders en documentanalyse (datadictionary, rapportdefinities, procesdocumenten).
-  \item \textbf{Data-analyse en data profiling}: bepalen van een objectieve baseline van datakwaliteit op representatieve datasamples uit meerdere ERP-systemen.
-  \item \textbf{Ontwerp en implementatie PoC}: canonical model, matching-logica, survivorship rules en golden record-opbouw in Microsoft Fabric.
-  \item \textbf{Evaluatie}: vergelijking van baseline met PoC-output via meetbare indicatoren en controle van traceerbaarheid van bronwaarden naar golden records.
+  \item \textbf{Literatuurstudie}: concepten, implementatiebenaderingen en open uitdagingen rond MDM, multi-ERP, golden records en datakwaliteit.
+  \item \textbf{Expert-consultatie en documentanalyse}: directe afstemming met de co-promotor (data engineer) als hoofd-stakeholder en het hergebruiken van reeds intern opgestelde rule-sets en datamappings.
+  \item \textbf{Data-analyse en data profiling}: bepalen van een objectieve baseline (zoals het huidige percentage ontbrekende velden) op representatieve datasets uit de geselecteerde bronsystemen.
+  \item \textbf{Ontwerp en implementatie PoC}: data harmonisatie, deterministische en AI-gestuurde matching, survivorship rules en golden record-opbouw in Microsoft Fabric.
+  \item \textbf{Evaluatie (Benchmark)}: kwantitatieve en kwalitatieve vergelijking van de Fabric PoC-output met zowel de originele baseline als de resultaten van de Profisee-oplossing.
 \end{itemize}
 
 \subsection{Dataverzameling en requirements}
-In week 1 t/m 4 worden stakeholders geïdentificeerd en wordt een requirements-analyse uitgevoerd. De interviews focussen op:
-\begin{itemize}
-  \item huidige pijnpunten (duplicatie, inconsistentie, manuele consolidatie);
-  \item scope van masterdata (product- en leveranciersdata) en kritieke attributen;
-  \item governance-rollen (data owner, data steward) en wijzigingsproces;
-  \item acceptatiecriteria voor de PoC (wat moet aantoonbaar beter worden).
-\end{itemize}
-De interviewresultaten worden aangevuld met documentanalyse en een eerste datasample uit de relevante systemen.
+ Er is directe toegang verleend tot de benodigde databases. Dit versnelt de dataverzameling aanzienlijk. De scope is afgebakend tot entiteiten van het type \emph{Article} en \emph{Supplier}, aangezien deze de grootste kans op overlap vertonen over de verschillende entiteiten heen. Klantendata wordt buiten beschouwing gelaten vanwege het sterk lokale karakter. 
+
+Er worden geen brede stakeholder-interviews gehouden; de requirements, pijnpunten en reeds bestaande mappings (bijvoorbeeld vertalingen van landcodes en lokale veldnamen) worden rechtstreeks gecapteerd via de interne data engineer. Dit vormt de fundering voor het canonical model.
 
 \subsection{Technische uitvoering van de PoC}
-De PoC implementeert een reproduceerbare pipeline met de volgende stappen:
+De PoC implementeert een reproduceerbare pipeline in Microsoft Fabric met de volgende stappen:
 \begin{enumerate}
-  \item \textbf{Landing}: inladen van bronsnapshots uit de betrokken systemen in Fabric.
-  \item \textbf{Harmonisatie}: mapping naar een canonical model met uniforme veldnamen, datatypes en referentiecodes.
-  \item \textbf{Matching}: groeperen van records die dezelfde entiteit representeren. Hierbij wordt gestart met deterministische matching (op basis van unieke sleutels zoals EAN of leverancierscodes), waarna in tweede instantie 'fuzzy matching' op naam en omschrijving wordt verkend indien nodig.
-  \item \textbf{Survivorship}: toepassen van survivorship rules om per attribuut een waarde te selecteren.
-  \item \textbf{Golden record store}: opslaan van golden records met auditvelden voor traceerbaarheid.
-  \item \textbf{Publicatie}: beschikbaar maken van golden records voor downstream consumptie (Power BI en eventuele DWH-laag).
+  \item \textbf{Landing}: inladen van datasnapshots uit de ERP-systemen van Zwitserland, Oostenrijk en Noorwegen.
+  \item \textbf{Harmonisatie}: toepassen van de bestaande mappings om data te vertalen naar één uniform canonical model.
+  \item \textbf{Matching}: groeperen van records. Dit verloopt in twee fasen om de benchmark te voeden:
+  \begin{itemize}
+      \item \emph{Deterministisch}: harde regels, zoals een match op basis van identieke EAN-codes in combinatie met hetzelfde leveranciers-ID.
+      \item \emph{Fuzzy/AI-gebaseerd}: experimenteel matchen op artikelnamen als aanvulling, om te evalueren of dit superieure resultaten oplevert ten opzichte van de standaard logica.
+  \end{itemize}
+  \item \textbf{Survivorship}: toepassen van regels om het ultieme golden record te genereren, waarbij ook lokale referentie-ID's worden bijgehouden zodat bronsystemen via "foreign keys" kunnen terugverwijzen.
+  \item \textbf{Golden record store \& Publicatie}: opslaan van de resultaten met uitgebreide auditvelden voor downstream consumptie in Power BI.
 \end{enumerate}
-De PoC wijzigt geen bronsystemen, maar publiceert output naar een Fabric-laag die downstream kan worden gebruikt.
-Indien toegang tot live productiedata vertraging oploopt, zal er gewerkt worden met een synthetische dataset die de structuur en datakwaliteitsproblemen (zoals duplicaten) van de werkelijke omgeving nabootst, zodat de technische ontwikkeling niet stagneert.
 
 \subsection{Evaluatiecriteria}
-De evaluatie gebeurt door een vergelijking tussen baseline en PoC-output op basis van meetbare indicatoren, zoals:
+De evaluatie gebeurt door een vergelijking op basis van meetbare indicatoren:
 \begin{itemize}
-  \item \textbf{Duplicatie}: aantal en aandeel duplicaten binnen en tussen systemen, vóór en na consolidatie.
-  \item \textbf{Volledigheid}: percentage ontbrekende waarden voor vooraf bepaalde kritieke attributen.
-  \item \textbf{Consistentie}: aantal conflicten tussen systemen voor dezelfde entiteit (bijv. verschillende prijzen of statussen).
-  \item \textbf{Traceerbaarheid}: mogelijkheid om per golden record te tonen uit welke bronrecords en welke rules de eindwaarden afkomstig zijn.
+  \item \textbf{Benchmark Profisee}: presteert de opgezette logica in Fabric vergelijkbaar, beter of slechter dan de commerciële opzet wanneer dezelfde inputdata wordt gebruikt?
+  \item \textbf{Impact op brondata}: hoe vaak en in welke mate wijzigt het gegenereerde golden record de originele data in een specifiek bronsysteem?
+  \item \textbf{Volledigheid en Consistentie}: afname van het aantal ontbrekende waarden en conflicten tussen systemen voor dezelfde entiteit.
+  \item \textbf{Traceerbaarheid}: transparantie in welke bronrecords en rules hebben geleid tot een specifieke golden record-waarde.
 \end{itemize}
-De resultaten worden gevisualiseerd in Power BI om baseline en post-PoC objectief te vergelijken.
 
 \subsection{Tools en technologie (initiële keuze)}
-Op basis van de huidige context bij IPCOM wordt de proof-of-concept uitgewerkt binnen het Microsoft-ecosysteem, met \textbf{Microsoft Fabric} als centrale data- en integratieomgeving en \textbf{Power BI} voor validatie en rapportering. De concrete invulling wordt tijdens de contextanalyse verfijnd (bv. welke Fabric-componenten beschikbaar zijn en welke toegangen mogelijk zijn), maar richtinggevend worden volgende onderdelen voorzien:
-\begin{itemize}
-  \item \textbf{Data landing en opslag}: Fabric Lakehouse (OneLake) volgens de Medallion Architecture (Bronze voor raw data, Silver voor cleansed/harmonized data, Gold voor golden records).
-  \item \textbf{Transformatie en profiling}: Fabric Dataflows Gen2 en/of notebooks (Python/SQL) voor harmonisatie, profiling en het berekenen van datakwaliteitsindicatoren.
-  \item \textbf{Orchestratie}: Fabric pipelines om de PoC reproduceerbaar uit te voeren (extract $\rightarrow$ harmonisatie $\rightarrow$ matching $\rightarrow$ survivorship $\rightarrow$ publicatie).
-  \item \textbf{Rapportering en validatie}: Power BI-dashboards om baseline en post-PoC datakwaliteit te vergelijken, en om traceerbaarheid van golden records inzichtelijk te maken.
-\end{itemize}
+De architectuur leunt op het Microsoft-ecosysteem, met \textbf{Microsoft Fabric} (Lakehouse, Dataflows Gen2, Notebooks in Python/SQL) als integratieomgeving. \textbf{Power BI} wordt ingezet voor visuele validatie en het presenteren van de datakwaliteit en benchmark-metrieken.
 
-\subsection{Planning (14 weken, elke vrijdag)}
-Week 1 t/m 4 focussen op het verkrijgen van toegang, requirements en datasamples. Pas vanaf week 5 start de technische uitwerking van matching en survivorship.
+\subsection{Planning (14 weken, wekelijkse cyclus)}
+Door de interne toegang tot data en bestaande mappings kan de technische opstart versneld worden uitgevoerd.
 
 \begin{table*}[t]
 \centering
@@ -209,34 +194,34 @@ Week 1 t/m 4 focussen op het verkrijgen van toegang, requirements en datasamples
 \toprule
 \textbf{Week} & \textbf{Activiteit} & \textbf{Deliverable} \\
 \midrule
-1  & Kick-off bij IPCOM: scope, stakeholders, toegang tot Fabric
-   & Scope + stakeholderlijst + toegangslijst \\
-2  & Requirements-analyse (interviews) + inventaris databronnen
-   & Interviewnotes + requirements (draft) \\
-3  & Databronnen en exportmogelijkheden bevestigen (ERP $\rightarrow$ Fabric)
-   & Databroninventaris + datadictionary (draft) \\
-4  & Eerste datasample + mapping naar canonical model
+1  & Kick-off: scope-afbakening (Profisee benchmark) \& ERP-selectie (CH, AT, NO)
+   & Scope + afspraken gedocumenteerd \\
+2  & Data-extractie (Article/Supplier) + verzamelen bestaande mappings
    & Dataset snapshot + mappingdocument \\
-5  & Data profiling + baseline metrieken in Fabric
+3  & Data landing in Fabric + eerste harmonisatie o.b.v. mapping
+   & Werkende landing \& harmonisatielaag \\
+4  & Data profiling + meten van baseline metrieken (bijv. $\%$ lege velden)
    & Baseline DQ-rapport \\
-6  & Ontwerp PoC-architectuur (Fabric Lakehouse/Warehouse)
-   & Architectuurdiagram + ontwerpbeslissingen \\
-7  & Implementatie: harmonisatie + canonical model
-   & Werkende harmonisatielaag \\
-8  & Implementatie: matching (rules/algoritme)
-   & Matching-module + testcases \\
-9  & Implementatie: survivorship rules + golden record build
-   & Golden record generator + rule-set \\
-10 & Traceerbaarheid + logging van bronwaarden per golden record
+5  & Ontwerp PoC-architectuur \& voorbereiding rule-engine
+   & Architectuurdiagram \\
+6  & Implementatie matching fase 1: deterministische rules (EAN/Supplier)
+   & Werkende hard-rule set \\
+7  & Implementatie matching fase 2: Fuzzy matching / AI op Artikelnaam
+   & AI-matching testresultaten \\
+8  & Implementatie survivorship rules \& opbouw golden records
+   & Golden record generator \\
+9  & Traceerbaarheid inbouwen (logging van gekozen bronwaarden)
    & Traceability-output + auditvelden \\
-11 & Publicatie naar consumptielaag + Power BI validatie
-   & Power BI proof + consumptiemodel \\
-12 & Evaluatie voor/na: vergelijking met baseline
-   & Evaluatierapport met metrieken \\
-13 & Stakeholder review (governance en werkbaarheid)
-   & Reviewverslag + verbeteracties \\
-14 & Finalisatie scriptie + aanbevelingen voor uitrol
-   & Eindrapport + aanbevelingen + PoC-samenvatting \\
+10 & Evaluatie: analyse "Impact op brondata" (wijzigingsfrequentie)
+   & Data-impact analyse \\
+11 & Vergelijking en benchmark resultaten tegenover de Profisee-oplossing
+   & Benchmark-rapportage \\
+12 & Publicatie consumptielaag + Power BI validatie dashboards
+   & Power BI proof + visualisaties \\
+13 & Stakeholder review met co-promotor (inzichten en werkbaarheid)
+   & Reviewverslag \\
+14 & Finalisatie scriptie + formuleren advies (Fabric vs. Profisee)
+   & Eindrapport + aanbevelingen \\
 \bottomrule
 \end{tabularx}
 \end{table*}
@@ -247,26 +232,23 @@ Week 1 t/m 4 focussen op het verkrijgen van toegang, requirements en datasamples
 \label{sec:verwachte_resultaten}
 
 \subsection{Verwachte resultaten}
-De verwachte uitkomst van deze bachelorproef is een technisch onderbouwde proof-of-concept (PoC) voor Master Data Management (MDM) binnen de multi-ERP-context van IPCOM. Deze PoC levert een reproduceerbare pipeline op in Microsoft Fabric die (i) product- en leveranciersrecords uit meerdere systemen harmoniseert, (ii) records matcht tot entiteitsgroepen, (iii) survivorship rules toepast om per entiteit een golden record samen te stellen, en (iv) de output publiceert voor consumptie in Power BI. Naast de PoC worden ook ontwerpkeuzes, rule-sets en aanbevelingen voor verdere uitrol gedocumenteerd.
+De verwachte uitkomst van deze bachelorproef is een technisch onderbouwde proof-of-concept (PoC) voor Master Data Management (MDM) binnen Microsoft Fabric, die fungeert als objectieve benchmark tegenover de lopende Profisee-pilot bij IPCOM. Deze PoC levert een reproduceerbare pipeline op die (1) artikel- en leveranciersrecords uit Zwitserland, Oostenrijk en Noorwegen harmoniseert op basis van bestaande mappings, (2) records matcht via zowel deterministische regels als AI/fuzzy matching, (3) survivorship rules toepast om een golden record samen te stellen, en (4) de output publiceert voor consumptie en validatie in Power BI. 
 
-Op inhoudelijk niveau wordt verwacht dat de PoC een aantoonbare reductie van duplicatie en inconsistentie in master data oplevert. Dit wordt geoperationaliseerd via een vergelijking tussen een baseline-meting (vóór verwerking) en de PoC-output (na verwerking) op basis van meetbare datakwaliteitsindicatoren, waaronder duplicatiegraad, volledigheid van kritieke attributen en het aantal conflictsituaties tussen systemen voor dezelfde entiteit. Daarnaast wordt verwacht dat de PoC traceerbaarheid ondersteunt, zodat per golden record kan worden weergegeven uit welke bronrecords de gekozen attribuutwaarden afkomstig zijn en welke survivorship rule de keuze heeft bepaald.
+Op inhoudelijk niveau wordt verwacht dat de PoC een aantoonbare reductie van duplicatie en inconsistentie oplevert. Dit wordt geoperationaliseerd via een vergelijking tussen een baseline-meting en de PoC-output, maar bovenal door een vergelijking met de resultaten van de Profisee-setup op dezelfde dataset. Daarnaast wordt inzichtelijk gemaakt hoe vaak en in welke mate een golden record de originele waarden van een specifiek bronsysteem wijzigt.
 
 \subsection{Verwachte visualisaties en metingen}
-Om de resultaten objectief te evalueren worden in Power BI minstens de volgende grafieken uitgewerkt. De figuren worden opgebouwd op basis van metingen in Fabric en worden gebruikt om baseline en post-PoC resultaten te vergelijken.
+Om de resultaten objectief te evalueren en de benchmark visueel te ondersteunen, worden in Power BI minstens de volgende grafieken uitgewerkt:
 
 \begin{itemize}
-  \item \textbf{Duplicatiegraad per systeem (voor/na)}: staafdiagram met op de x-as de bronsystemen en op de y-as het percentage records dat als duplicaat wordt geïdentificeerd. Verwacht wordt dat de duplicatiegraad daalt na toepassing van matching en survivorship.
-  \item \textbf{Volledigheid per attribuut (voor/na)}: staafdiagram met op de x-as kritieke attributen (bv. productnummer, leveranciersnummer, aankoopprijs, verkoopprijs, status) en op de y-as het percentage niet-lege waarden. Verwacht wordt dat volledigheid stijgt in de golden record output doordat waarden over bronnen heen worden gecombineerd.
-  \item \textbf{Conflicten tussen systemen (voor/na)}: staafdiagram met op de x-as attributen en op de y-as het aantal conflicten (bv. verschillende waarden voor dezelfde entiteit in verschillende systemen). Verwacht wordt dat het aantal conflicten daalt doordat één golden record als uniforme representatie wordt opgebouwd.
-  \item \textbf{Traceerbaarheidsoverzicht}: tabelvisualisatie waarin per golden record wordt getoond welke bronrecords zijn gematcht en welke attribuutwaarden zijn geselecteerd, inclusief bronreferentie en toegepaste survivorship rule. Verwacht wordt dat deze visualisatie uitzonderingen en kwaliteitsproblemen zichtbaar maakt voor review.
+  \item \textbf{Benchmark succesratio (Fabric vs. Profisee)}: Een vergelijkende visualisatie die toont hoeveel unieke golden records (en correcte matches) beide systemen genereren op basis van dezelfde inputdata.
+  \item \textbf{Impact op bronsystemen}: Een visualisatie die per bronsysteem (Zwitserland, Oostenrijk, Noorwegen) het percentage toont waarbij de uiteindelijke golden record-waarde afwijkt van de originele, lokale data. Dit beantwoordt direct de nieuwe onderzoeksvraag.
+  \item \textbf{Duplicatiegraad per systeem (voor/na)}: Staafdiagram met op de x-as de bronsystemen en op de y-as het percentage records dat als duplicaat wordt geïdentificeerd en geconsolideerd.
+  \item \textbf{Volledigheid per attribuut (voor/na)}: Staafdiagram met op de x-as kritieke attributen (bv. EAN, artikelnaam) en op de y-as het percentage ingevulde waarden. Verwacht wordt dat dit percentage stijgt doordat waarden over bronnen heen worden gecombineerd.
+  \item \textbf{Traceerbaarheidsoverzicht}: Tabelvisualisatie waarin per golden record wordt getoond welke bronrecords zijn gematcht, inclusief referentie naar de lokale ID's, zodat bronsystemen deze "foreign keys" kunnen overnemen.
 \end{itemize}
 
-Deze visualisaties definiëren expliciet welke data moet worden verzameld: (i) matchgroepen en golden record identifiers, (ii) attribuutwaarden per bronrecord, (iii) gekozen winnende waarden per attribuut, (iv) metadata voor bron en rule, en (v) indicatoren voor volledigheid, duplicatie en conflictcount.
-
 \subsection{Meerwaarde voor de doelgroep}
-De doelgroep (data engineers, data stewards en business users binnen IPCOM) verkrijgt met de resultaten drie concrete voordelen. Ten eerste reduceert de PoC de nood aan manuele consolidatie van product- en leveranciersdata, wat de efficiëntie in rapportering en analyse verhoogt. Ten tweede wordt de betrouwbaarheid van rapporten en dashboards verbeterd doordat master data eenduidiger en consistenter wordt aangeboden. Ten derde vormt de governance- en rule-documentatie een basis om master data structureel te beheren: verantwoordelijkheden, kwaliteitsregels en uitzonderingen kunnen expliciet worden vastgelegd en in een later stadium opgeschaald worden naar een productie-implementatie.
+De doelgroep (met name de data engineers binnen IPCOM) verkrijgt met deze resultaten drie concrete voordelen. Ten eerste biedt de PoC een objectieve "Build vs. Buy" business case: het toont aan of een in-house oplossing in Fabric kan concurreren met de licentiekosten en complexiteit van Profisee. Ten tweede fungeren de doorontwikkelde mappings, rule-sets en analyses (zoals de AI-matching op artikelnaam) als direct bruikbare input, ongeacht welk platform uiteindelijk in productie gaat. Ten derde profiteren alle aangesloten entiteiten van de gerealiseerde golden records doordat lokale systemen eenduidig kunnen verwijzen naar verrijkte master data.
 
 \subsection{Verwachte conclusie}
-Op basis van de literatuur en de probleemsituatie bij IPCOM wordt verwacht dat een MDM-aanpak met golden records, uitgewerkt als PoC in Microsoft Fabric, een meetbare verbetering oplevert in datakwaliteit en rapportageconsistentie binnen een multi-ERP-context. Tegelijk wordt verwacht dat de effectiviteit van de oplossing afhankelijk is van duidelijke keuzes in matching- en survivorship rules en van minimale governance-afspraken rond eigenaarschap en kwaliteitsbewaking. Indien de resultaten afwijken van de verwachtingen, zal worden geanalyseerd welke factoren (bv. onvoldoende onderscheidende attributen, beperkte brondata-kwaliteit, of complexe lokale variaties) de impact van de PoC beperken, en welke aanpassingen nodig zijn voor een schaalbare uitrol.
-
-
+Op basis van de probleemsituatie bij IPCOM wordt verwacht dat de Fabric-PoC een aanzienlijke, meetbare verbetering oplevert in datakwaliteit binnen de multi-ERP-context. Specifiek wordt verwacht dat de toevoeging van AI of fuzzy matching op artikelnamen een significante meerwaarde biedt bovenop louter deterministische regels (zoals EAN-matches). De uiteindelijke conclusie zal uitwijzen of de in-house ontwikkelde logica in Microsoft Fabric kwalitatief evenwaardig is aan de commerciële Profisee-pilot, en welke architectuur de meest schaalbare en kostenefficiënte route biedt voor de verdere uitrol binnen de IPCOM-groep.

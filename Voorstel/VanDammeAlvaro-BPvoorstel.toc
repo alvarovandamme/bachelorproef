@@ -14,13 +14,13 @@
 \contentsline {subsection}{\numberline {3.2}Onderzoekstechnieken}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Dataverzameling en requirements}{5}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Technische uitvoering van de PoC}{5}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Evaluatiecriteria}{6}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.5}Evaluatiecriteria}{5}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Tools en technologie (initiële keuze)}{6}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Planning (14 weken, elke vrijdag)}{6}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.7}Planning (14 weken, wekelijkse cyclus)}{6}{subsection.3.7}%
 \contentsline {section}{\numberline {4}Verwacht resultaat, conclusie}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Verwachte resultaten}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Verwachte visualisaties en metingen}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Meerwaarde voor de doelgroep}{7}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Verwachte conclusie}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.3}Meerwaarde voor de doelgroep}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Verwachte conclusie}{6}{subsection.4.4}%
+\contentsline {section}{Referenties}{7}{subsection.4.4}%
 \contentsfinish 
-\contentsline {section}{Referenties}{8}{subsection.4.4}%
