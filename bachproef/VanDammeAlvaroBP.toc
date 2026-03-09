@@ -1,0 +1,53 @@
+\babel@toc {dutch}{}\relax 
+\contentsline {chapter}{L\ij st van tabellen}{vii}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Inleiding}{1}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}Deelvragen m.b.t probleemdomein}{2}{subsection.1.0.1}%
+\contentsline {subsection}{\numberline {1.0.2}Deelvragen m.b.t oplossingsdomein}{2}{subsection.1.0.2}%
+\contentsline {section}{\numberline {1.1}Opzet van deze bachelorproef}{2}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Stand van zaken}{4}{chapter.2}%
+\contentsline {subsection}{\numberline {2.0.1}Master Data Management}{4}{subsection.2.0.1}%
+\contentsline {subsection}{\numberline {2.0.2}Golden records en dataconsolidatie}{5}{subsection.2.0.2}%
+\contentsline {subsection}{\numberline {2.0.3}Multi-ERP-omgevingen en de rol van Master Data Management}{6}{subsection.2.0.3}%
+\contentsline {subsection}{\numberline {2.0.4}Data quality en data governance binnen MDM}{7}{subsection.2.0.4}%
+\contentsline {subsection}{\numberline {2.0.5}Bestaande MDM-oplossingen en implementatiebenaderingen}{7}{subsection.2.0.5}%
+\contentsline {subsection}{\numberline {2.0.6}Open uitdagingen en positionering van dit onderzoek}{8}{subsection.2.0.6}%
+\contentsline {chapter}{\numberline {3}Methodologie}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Methodologie}{9}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Onderzoeksopzet}{9}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Onderzoekstechnieken}{9}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Dataverzameling en requirements}{10}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Technische uitvoering van de PoC}{10}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Evaluatiecriteria}{11}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Tools en technologie (initiële keuze)}{11}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}Planning (14 weken, wekelijkse cyclus)}{11}{subsection.3.1.7}%
+\contentsline {chapter}{\numberline {4}Conclusie}{14}{chapter.4}%
+\contentsline {subsection}{\numberline {4.0.1}Verwachte resultaten}{14}{subsection.4.0.1}%
+\contentsline {subsection}{\numberline {4.0.2}Verwachte visualisaties en metingen}{14}{subsection.4.0.2}%
+\contentsline {subsection}{\numberline {4.0.3}Meerwaarde voor de doelgroep}{15}{subsection.4.0.3}%
+\contentsline {subsection}{\numberline {4.0.4}Verwachte conclusie}{15}{subsection.4.0.4}%
+\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{18}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Inleiding}{18}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Deelvragen m.b.t probleemdomein}{19}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Deelvragen m.b.t oplossingsdomein}{19}{subsection.A.1.2}%
+\contentsline {section}{\numberline {A.2}Stand van zaken}{20}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Master Data Management}{20}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Golden records en dataconsolidatie}{21}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}Multi-ERP-omgevingen en de rol van Master Data Management}{21}{subsection.A.2.3}%
+\contentsline {subsection}{\numberline {A.2.4}Data quality en data governance binnen MDM}{22}{subsection.A.2.4}%
+\contentsline {subsection}{\numberline {A.2.5}Bestaande MDM-oplossingen en implementatiebenaderingen}{23}{subsection.A.2.5}%
+\contentsline {subsection}{\numberline {A.2.6}Open uitdagingen en positionering van dit onderzoek}{23}{subsection.A.2.6}%
+\contentsline {section}{\numberline {A.3}Methodologie}{24}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Onderzoeksopzet}{24}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Onderzoekstechnieken}{24}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Dataverzameling en requirements}{25}{subsection.A.3.3}%
+\contentsline {subsection}{\numberline {A.3.4}Technische uitvoering van de PoC}{25}{subsection.A.3.4}%
+\contentsline {subsection}{\numberline {A.3.5}Evaluatiecriteria}{25}{subsection.A.3.5}%
+\contentsline {subsection}{\numberline {A.3.6}Tools en technologie (initiële keuze)}{26}{subsection.A.3.6}%
+\contentsline {subsection}{\numberline {A.3.7}Planning (14 weken, wekelijkse cyclus)}{26}{subsection.A.3.7}%
+\contentsline {section}{\numberline {A.4}Verwacht resultaat, conclusie}{26}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Verwachte resultaten}{26}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Verwachte visualisaties en metingen}{26}{subsection.A.4.2}%
+\contentsline {subsection}{\numberline {A.4.3}Meerwaarde voor de doelgroep}{27}{subsection.A.4.3}%
+\contentsline {subsection}{\numberline {A.4.4}Verwachte conclusie}{27}{subsection.A.4.4}%
+\contentsline {chapter}{Bibliografie}{29}{appendix*.7}%
+\contentsfinish 

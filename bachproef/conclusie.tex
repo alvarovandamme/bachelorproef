@@ -1,0 +1,41 @@
+%%=============================================================================
+%% Conclusie
+%%=============================================================================
+
+\chapter{Conclusie}%
+\label{ch:conclusie}
+
+% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
+% onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
+% hoe biedt dit meerwaarde aan het vakgebied/doelgroep? 
+% Reflecteer kritisch over het resultaat. In Engelse teksten wordt deze sectie
+% ``Discussion'' genoemd. Had je deze uitkomst verwacht? Zijn er zaken die nog
+% niet duidelijk zijn?
+% Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
+%onderzoek?
+Waar de voorgaande secties het theoretische kader en de methodologische aanpak schetsten, definieert dit onderdeel wat het onderzoek daadwerkelijk zal opleveren voor IPCOM. Hierbij wordt de verwachte impact van de PoC besproken, evenals de beoogde meetmethoden, de directe bedrijfswaarde voor de doelgroep en de te verwachten eindconclusie omtrent het 'build vs. buy'-vraagstuk.
+
+\subsection{Verwachte resultaten}
+De verwachte uitkomst van deze bachelorproef is een technisch onderbouwde PoC voor Master Data Management (MDM) binnen Microsoft Fabric, die fungeert als objectieve benchmark tegenover de lopende Profisee-pilot bij IPCOM. Deze PoC levert een reproduceerbare pipeline op die (1) artikel- en leveranciersrecords uit Zwitserland, Oostenrijk en Noorwegen harmoniseert op basis van bestaande mappings, (2) records matcht via zowel deterministische regels als AI/fuzzy matching, (3) survivorship rules toepast om een golden record samen te stellen, en (4) de output publiceert voor consumptie en validatie in Power BI. 
+
+Op inhoudelijk niveau wordt verwacht dat de PoC een aantoonbare reductie van duplicatie en inconsistentie oplevert. Dit wordt geoperationaliseerd via een vergelijking tussen een baseline-meting en de PoC-output, maar bovenal door een vergelijking met de resultaten van de Profisee-setup op dezelfde dataset. Daarnaast wordt inzichtelijk gemaakt hoe vaak en in welke mate een golden record de originele waarden van een specifiek bronsysteem wijzigt.
+
+\subsection{Verwachte visualisaties en metingen}
+Om de resultaten objectief te evalueren en de benchmark visueel te ondersteunen, worden in Power BI minstens de volgende grafieken uitgewerkt:
+
+\begin{itemize}
+  \item \textbf{Benchmark succesratio (Fabric vs. Profisee)}: Een vergelijkende visualisatie die toont hoeveel unieke golden records (en correcte matches) beide systemen genereren op basis van dezelfde inputdata.
+  \item \textbf{Impact op bronsystemen}: Een visualisatie die per bronsysteem (Zwitserland, Oostenrijk, Noorwegen) het percentage toont waarbij de uiteindelijke golden record-waarde afwijkt van de originele, lokale data. Dit beantwoordt direct de nieuwe onderzoeksvraag.
+  \item \textbf{Duplicatiegraad per systeem (voor/na)}: Staafdiagram met op de x-as de bronsystemen en op de y-as het percentage records dat als duplicaat wordt geïdentificeerd en geconsolideerd.
+  \item \textbf{Volledigheid per attribuut (voor/na)}: Staafdiagram met op de x-as kritieke attributen (bv. EAN, artikelnaam) en op de y-as het percentage ingevulde waarden. Verwacht wordt dat dit percentage stijgt doordat waarden over bronnen heen worden gecombineerd.
+  \item \textbf{Traceerbaarheidsoverzicht}: Tabelvisualisatie waarin per golden record wordt getoond welke bronrecords zijn gematcht, inclusief referentie naar de lokale ID's, zodat bronsystemen deze "foreign keys" kunnen overnemen.
+\end{itemize}
+
+\subsection{Meerwaarde voor de doelgroep}
+De doelgroep (met name de data engineers binnen IPCOM) verkrijgt met deze resultaten drie concrete voordelen. Ten eerste biedt de PoC een objectieve "Build vs. Buy" business case: het toont aan of een in-house oplossing in Fabric kan concurreren met de licentiekosten en complexiteit van Profisee. Ten tweede fungeren de doorontwikkelde mappings, rule-sets en analyses (zoals de AI-matching op artikelnaam) als direct bruikbare input, ongeacht welk platform uiteindelijk in productie gaat. Ten derde profiteren alle aangesloten entiteiten van de gerealiseerde golden records doordat lokale systemen eenduidig kunnen verwijzen naar verrijkte master data.
+
+\subsection{Verwachte conclusie}
+Op basis van de probleemsituatie bij IPCOM wordt verwacht dat de Fabric-PoC een aanzienlijke, meetbare verbetering oplevert in datakwaliteit binnen de multi-ERP-context. Specifiek wordt verwacht dat de toevoeging van AI of fuzzy matching op artikelnamen een significante meerwaarde biedt bovenop louter deterministische regels (zoals EAN-matches). De uiteindelijke conclusie zal uitwijzen of de in-house ontwikkelde logica in Microsoft Fabric kwalitatief evenwaardig is aan de commerciële Profisee-pilot, en welke architectuur de meest schaalbare en kostenefficiënte route biedt voor de verdere uitrol binnen de IPCOM-groep.
+
+\lipsum[76-80]
+

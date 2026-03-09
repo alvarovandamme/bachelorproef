@@ -10,7 +10,7 @@ De belangrijkste doelgroep wordt gevormd door data-engineers en business-gebruik
 
 De centrale onderzoeksvraag luidt als volgt: Hoe kan een in-house Master Data Management-oplossing in Microsoft Fabric worden ontworpen en geïmplementeerd voor artikel- en leveranciersdata, zodat deze kan dienen als objectieve benchmark tegenover een commerciële MDM-tool (Profisee) binnen een multi-ERP-omgeving?
 
-De doelstelling van deze bachelorproef is eenduidig: een proof-of-concept (PoC) bouwen voor een MDM-tool in Microsoft Fabric, specifiek gericht op de ERP-data van Oostenrijk, Zwitserland en Noorwegen. Op basis van de vergelijking tussen deze PoC en de Profisee-pilot kunnen concrete aanbevelingen worden geformuleerd over de toegevoegde waarde van commerciële pakketten versus in-house oplossingen voor data harmonisatie en matching.
+De doelstelling van deze bachelorproef is eenduidig: een PoC bouwen voor een MDM-tool in Microsoft Fabric, specifiek gericht op de ERP-data van Oostenrijk, Zwitserland en Noorwegen. Op basis van de vergelijking tussen deze PoC en de Profisee-pilot kunnen concrete aanbevelingen worden geformuleerd over de toegevoegde waarde van commerciële pakketten versus in-house oplossingen voor data harmonisatie en matching.
 
 \subsection{Deelvragen m.b.t probleemdomein}
 \begin{itemize}
@@ -133,7 +133,7 @@ Deze bachelorproef positioneert zich als toegepast onderzoek. MDM-concepten, mat
 \label{sec:methodologie}
 
 \subsection{Onderzoeksopzet}
-Deze bachelorproef is \textbf{toegepast onderzoek} binnen de bedrijfscontext van IPCOM en wordt uitgevoerd als \textbf{case study} met een \textbf{proof-of-concept (PoC)} als technisch eindresultaat. De centrale onderzoeksvraag uit Sectie~\ref{sec:inleiding} wordt beantwoord door (1) literatuurstudie, (2) requirements- en contextanalyse via directe afstemming met de interne data engineer, (3) ontwerp en implementatie van een PoC in Microsoft Fabric, waarbij de scope bewust beperkt wordt tot artikel- en leveranciersdata uit drie specifieke ERP-systemen (Oostenrijk, Zwitserland en Noorwegen). Tot slot volgt (4) een evaluatie waarbij deze in-house PoC fungeert als objectieve benchmark tegenover een lopende pilot met het commerciële MDM-platform Profisee.
+Deze bachelorproef is \textbf{toegepast onderzoek} binnen de bedrijfscontext van IPCOM en wordt uitgevoerd als \textbf{case study} met een \textbf{PoC} als technisch eindresultaat. De centrale onderzoeksvraag uit Sectie~\ref{sec:inleiding} wordt beantwoord door (1) literatuurstudie, (2) requirements- en contextanalyse via directe afstemming met de interne data engineer, (3) ontwerp en implementatie van een PoC in Microsoft Fabric, waarbij de scope bewust beperkt wordt tot artikel- en leveranciersdata uit drie specifieke ERP-systemen (Oostenrijk, Zwitserland en Noorwegen). Tot slot volgt (4) een evaluatie waarbij deze in-house PoC fungeert als objectieve benchmark tegenover een lopende pilot met het commerciële MDM-platform Profisee.
 
 \subsection{Onderzoekstechnieken}
 De gebruikte onderzoekstechnieken zijn:
@@ -232,7 +232,7 @@ Door de interne toegang tot data en bestaande mappings kan de technische opstart
 \label{sec:verwachte_resultaten}
 
 \subsection{Verwachte resultaten}
-De verwachte uitkomst van deze bachelorproef is een technisch onderbouwde proof-of-concept (PoC) voor Master Data Management (MDM) binnen Microsoft Fabric, die fungeert als objectieve benchmark tegenover de lopende Profisee-pilot bij IPCOM. Deze PoC levert een reproduceerbare pipeline op die (1) artikel- en leveranciersrecords uit Zwitserland, Oostenrijk en Noorwegen harmoniseert op basis van bestaande mappings, (2) records matcht via zowel deterministische regels als AI/fuzzy matching, (3) survivorship rules toepast om een golden record samen te stellen, en (4) de output publiceert voor consumptie en validatie in Power BI. 
+De verwachte uitkomst van deze bachelorproef is een technisch onderbouwde PoC voor Master Data Management (MDM) binnen Microsoft Fabric, die fungeert als objectieve benchmark tegenover de lopende Profisee-pilot bij IPCOM. Deze PoC levert een reproduceerbare pipeline op die (1) artikel- en leveranciersrecords uit Zwitserland, Oostenrijk en Noorwegen harmoniseert op basis van bestaande mappings, (2) records matcht via zowel deterministische regels als AI/fuzzy matching, (3) survivorship rules toepast om een golden record samen te stellen, en (4) de output publiceert voor consumptie en validatie in Power BI. 
 
 Op inhoudelijk niveau wordt verwacht dat de PoC een aantoonbare reductie van duplicatie en inconsistentie oplevert. Dit wordt geoperationaliseerd via een vergelijking tussen een baseline-meting en de PoC-output, maar bovenal door een vergelijking met de resultaten van de Profisee-setup op dezelfde dataset. Daarnaast wordt inzichtelijk gemaakt hoe vaak en in welke mate een golden record de originele waarden van een specifiek bronsysteem wijzigt.
 

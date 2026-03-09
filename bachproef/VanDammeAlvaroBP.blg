@@ -1,0 +1,19 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'VanDammeAlvaroBP.blg'
+[31] biber-darwin:340> INFO - === Mon Mar  9, 2026, 21:38:43
+[39] Biber.pm:420> INFO - Reading 'VanDammeAlvaroBP.bcf'
+[84] Biber.pm:994> INFO - Found 6 citekeys in bib section 0
+[93] Biber.pm:4463> INFO - Processing section 0
+[100] Biber.pm:4654> INFO - Looking for bibtex file 'bachproef.bib' for section 0
+[100] bibtex.pm:1713> INFO - LaTeX decoding ...
+[104] bibtex.pm:1519> INFO - Found BibTeX data source 'bachproef.bib'
+[131] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[131] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[131] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'nl-NL'
+[131] Biber.pm:4289> INFO - No sort tailoring available for locale 'nl-NL'
+[139] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[139] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[139] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'nl-NL'
+[139] Biber.pm:4289> INFO - No sort tailoring available for locale 'nl-NL'
+[145] bbl.pm:676> INFO - Writing 'VanDammeAlvaroBP.bbl' with encoding 'UTF-8'
+[147] bbl.pm:779> INFO - Output to VanDammeAlvaroBP.bbl

@@ -1,0 +1,94 @@
+\chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
+\label{ch:stand-van-zaken}
+
+Dit hoofdstuk vormt het theoretische fundament van deze bachelorproef door de kernconcepten van Master Data Management en datakwaliteit te kaderen binnen een multi-ERP-omgeving. Voortbouwend op de probleemstelling uit de inleiding schetst deze literatuurstudie de noodzakelijke kaders voor de methodologische keuzes en de technische uitvoering van de proof-of-concept in het volgende hoofdstuk.
+
+
+\subsection{Master Data Management}
+Master Data Management (MDM) wordt omschreven als een methode om master data te onderhouden, te integreren en te harmoniseren, met als doel consistente informatievoorziening over informatiesystemen heen te ondersteunen \autocite{Hikmawati}. Master data verwijst daarbij naar kerngegevens die organisatiebreed worden hergebruikt en die verschillende processen en afdelingen met elkaar verbinden. Vilminko-Heikkinen en Pekkola positioneren MDM hierbij als een organisatiebrede data-managementpraktijk die expliciet gericht is op het verbeteren van de kwaliteit van deze kerngegevens \autocite{VilminkoHeikkinenPekkola2019}.
+
+De kernfunctie van MDM is het beheersen van master data zodat deze consistent, accuraat, actueel en relevant blijft over applicaties en organisatie-eenheden heen \autocite{Hikmawati}. Wanneer dit beheer tekortschiet, neemt het risico op onnauwkeurige of tegenstrijdige gegevens toe, wat de betrouwbaarheid van rapportering en besluitvorming ondermijnt \autocite{Hikmawati}. Zeker wanneer gegevens verspreid zijn over meerdere systemen, kunnen definities en formaten verschillen, waardoor fragmentatie ontstaat \autocite{VilminkoHeikkinenPekkola2019}. Dit maakt MDM naast een technisch ook een organisatorisch vraagstuk: meerdere teams beheren immers dezelfde kernentiteiten.
+
+Vilminko-Heikkinen en Pekkola benaderen MDM niet als louter softwaretool, maar als een praktijk die aanpassingen in processen en werkwijzen vereist \autocite{VilminkoHeikkinenPekkola2019}. Het omvat beleid en infrastructuur om master data te capteren en te delen, met focus op consistentie en tijdigheid. Dit impliceert dat een MDM-initiatief onlosmakelijk verbonden is met \emph{data governance}: het vastleggen van afspraken en controlemechanismen \autocite{Hikmawati}. Uit onderzoek van Hikmawati blijkt dan ook dat MDM-initiatieven vaak leiden tot een hertekening van rollen om datakwaliteit structureel te borgen.
+
+Governance uit zich concreet in rollen en verantwoordelijkheden. In een MDM-context zijn rollen zoals \emph{data owner} (eindverantwoordelijkheid) en \emph{data steward} (operationele bewaking) essentieel om eigenaarschap te organiseren \autocite{Hikmawati}. Deze verdeling maakt het mogelijk kwaliteitsproblemen toe te wijzen en op te volgen \autocite{VilminkoHeikkinenPekkola2019}. Zonder expliciet eigenaarschap blijft het risico bestaan dat master data opnieuw divergeert, zelfs bij aanwezigheid van een technisch MDM-platform \autocite{VilminkoHeikkinenPekkola2019}.
+
+Voor IPCOM is dit relevant omdat product- en leveranciersgegevens uit meerdere ERP-systemen samenkomen. MDM kan bijdragen aan harmonisatie door definities en kwaliteitsregels vast te leggen \autocite{Hikmawati}. Echter, zoals de literatuur benadrukt, hangt succes af van organisatorische verankering. Binnen deze bachelorproef wordt MDM daarom onderzocht als methode om duplicatie te reduceren, mits de implementatie zowel technisch als organisatorisch wordt gedragen \autocite{Hikmawati}.
+
+\subsection{Golden records en dataconsolidatie}
+De multi-ERP-context van IPCOM impliceert dat master data verspreid is, waardoor informatie over één entiteit gefragmenteerd voorkomt \autocite{Elahi}. Elahi koppelt dit aan een hogere werkdruk, omdat gebruikers meerdere bronnen moeten consolideren. Een manuele aanpak vergroot bovendien het risico op fouten; een risico dat toeneemt naarmate het aantal bronsystemen groeit \autocite{Elahi}.
+
+Een centraal concept om dit op te lossen is het \emph{golden record}: de enkelvoudige weergave die ontstaat nadat duplicaten zijn samengebracht en relevante informatie is behouden \autocite{Elahi}. Bij IPCOM kan dit gaan om een product waarvan attributen (zoals leveranciersnummer, prijs, of omschrijving) in verschillende systemen bestaan. Het golden record brengt per attribuut de geselecteerde waarde samen tot één consistente representatie voor analyse en rapportering \autocite{Elahi}.
+
+
+
+Elahi onderscheidt drie stappen die hieraan voorafgaan. \emph{Data matching} groepeert records op basis van waarschijnlijkheid. Vervolgens kan \emph{deduplicatie} of \emph{data merging} de datasets combineren. De brug naar het golden record wordt gevormd door \emph{data survivorship}: het selecteren van de beste attributen uit duplicaten om één uniforme record te vormen \autocite{Elahi}.
+
+Er zijn meerdere benaderingen voor survivorship mogelijk, afhankelijk van datakwaliteit \autocite{Elahi}:
+\begin{itemize}
+    \item \textbf{Manuele selectie:} Het meest volledige record kiezen (moeilijk schaalbaar).
+    \item \textbf{Bronprioriteit:} Selectie op basis van de betrouwbaarheid van het bronsysteem.
+    \item \textbf{Attribuutlogica:} Per veld de beste waarde kiezen (bijv. meest recente update).
+    \item \textbf{Samengesteld (composite):} Waarden conditioneel overschrijven om informatie uit meerdere bronnen te combineren.
+\end{itemize}
+
+De operationalisering gebeurt via \emph{survivorship rules} (bijv. 'langste waarde wint' of 'laatste update wint'). Elahi benadrukt dat deze regels iteratief moeten worden bijgestuurd op basis van de uitkomst \autocite{Elahi}. In dit onderzoek wordt geëvalueerd welke regels passen bij de datakwaliteit van IPCOM: volstaat bronprioriteit, of is een complexe, attribuutgebaseerde benadering noodzakelijk?
+
+\subsection{Multi-ERP-omgevingen en de rol van Master Data Management}
+In organisaties met een \emph{multi-ERP-landschap} zijn master data en processen verdeeld. Maedche (2010) beschrijft dat integratie in grote ondernemingen lastig blijft wanneer het aantal en de diversiteit van ERP-systemen toeneemt. Hierdoor ontstaat een masterdata-probleem: dezelfde entiteiten bestaan in meerdere systemen met afwijkende definities \autocite{Maedche2010}.
+
+MDM verschilt hierin fundamenteel van ERP. Waar ERP procesgericht is, beoogt MDM een \emph{enterprise-wide single version of the truth} die onafhankelijk is van specifieke applicaties \autocite{Maedche2010}. Omdat ERP en MDM elkaar functioneel kunnen overlappen, verschuift het ontwerpprobleem naar de complementariteit tussen beide in een complex landschap.
+
+De uitdagingen zijn vooral zichtbaar in \emph{operationele} MDM-scenario’s. Standalone MDM-oplossingen kunnen integratieproblemen veroorzaken rond distributie en semantische mapping \autocite{Maedche2010}. Dit wijst erop dat multi-ERP-omgevingen niet alleen consolidatie vereisen, maar ook een integratieaanpak die synchronisatie beheersbaar maakt.
+
+Maedche onderscheidt in deze context twee scenario's:
+\begin{enumerate}
+    \item \emph{Collaboration in corporate groups:} Een stertopologie met centraal beheer en lokale restricties.
+    \item \emph{Heterogeneous system landscapes:} Een mesh-topologie zonder duidelijke 'master', waarbij consolidatie vooral dient voor rapportering \autocite{Maedche2010}.
+\end{enumerate}
+
+Om MDM te laten aansluiten stelt Maedche een ERP-centrische benadering voor via \emph{shared MDM capabilities}. Dit omvat een MDM-hub, integratiemiddleware en een ingebedde MDM-component in de ERP-systemen. Het doel is dat wijzigingen consistent en semantisch correct worden doorgegeven \autocite{Maedche2010}.
+
+Voor IPCOM betekent dit dat de keuze voor een integratiepatroon cruciaal is. Afhankelijk van de behoefte aan lokale autonomie kan een hybride benadering worden onderzocht, waarbij centrale standaarden worden gecombineerd met lokale verrijking \autocite{Maedche2010}.
+
+\subsection{Data quality en data governance binnen MDM}
+Datakwaliteit is zowel een drijfveer als een evaluatiecriterium voor MDM. Kwaliteit wordt hierbij gezien als geschiktheid voor gebruik, gemeten via dimensies zoals accuraatheid, volledigheid, consistentie en tijdigheid \autocite{Hikmawati}. Problemen zoals duplicaten of ontbrekende waarden beïnvloeden direct de besluitvorming \autocite{Hikmawati}.
+
+MDM beoogt deze problemen te reduceren, maar Vilminko-Heikkinen en Pekkola benadrukken dat datakwaliteit geen louter technisch resultaat is; het vereist een combinatie van processen en technologie \autocite{VilminkoHeikkinenPekkola2019}. Dit veronderstelt duidelijke afspraken over datacreatie en validatie, verankerd in \emph{data governance}.
+
+Zonder heldere governance (rollen, eigenaarschap) wordt kwaliteitsborging bemoeilijkt \autocite{VilminkoHeikkinenPekkola2019}. Hikmawati bevestigt dat onduidelijk ownership en gebrek aan procedures de effectiviteit van MDM ondermijnen. Governance concretiseert wie beslissingsrecht heeft (data owner) en wie de kwaliteit bewaakt (data steward), vaak ondersteund door een \emph{data governance council} \autocite{Hikmawati}.
+
+Het proces start doorgaans met \emph{data profiling} om problemen zichtbaar te maken, gevolgd door opschoning (cleaning) en synchronisatie. Deze stappen zijn pas effectief wanneer ze gekoppeld zijn aan meetbare kwaliteitsdoelen, zoals indicatoren voor de duplicatiegraad \autocite{Hikmawati}.
+
+Voor IPCOM betekent dit dat de technische oplossing gepaard moet gaan met governance die lokale verantwoordelijkheid en centrale uniformiteit combineert. Door data ownership toe te wijzen, wordt datakwaliteit een bestuurbaar resultaat in plaats van een toevallige uitkomst \autocite{VilminkoHeikkinenPekkola2019}.
+
+\subsection{Bestaande MDM-oplossingen en implementatiebenaderingen}
+MDM-oplossingen variëren in architectuur, synchronisatiepatronen en governance-ondersteuning \autocite{Rengasamy2025}. Vooral in multi-ERP-omgevingen is de keuze tussen centralisatie en federatie bepalend.
+
+
+
+\begin{itemize}
+    \item \textbf{Gecentraliseerd:} Eén MDM-hub fungeert als de primaire bron.
+    \item \textbf{Federated:} Eigenaarschap blijft bij businessfuncties, terwijl consistentie via afspraken wordt bewaakt. Dit is geschikt wanneer lokale autonomie zwaar weegt \autocite{Rengasamy2025}.
+\end{itemize}
+
+Daarnaast onderscheidt de literatuur drie MDM-patronen \autocite{Rengasamy2025}:
+\begin{enumerate}
+    \item \emph{Registry:} Focus op referenties en identifiers zonder dataverplaatsing.
+    \item \emph{Coexistence:} Lokale opslag met synchronisatie naar een centrale standaard.
+    \item \emph{Transaction Hub:} Real-time verwerking van updates als centrale autoriteit.
+\end{enumerate}
+
+Voor multi-ERP-contexten worden vaak Coexistence of Transaction Hubs aangeraden, omdat bronsystemen operationeel moeten blijven \autocite{Maedche2010}. Rengasamy (2025) adviseert een gefaseerde implementatie: starten met een afgebakend domein en iteratief uitbreiden. Dit sluit aan bij de visie dat datakwaliteit een continu proces is \autocite{Hikmawati}.
+
+Voor IPCOM wordt een federated of coexistence-achtige benadering onderzocht. Dit maakt het mogelijk om centrale definities te combineren met operationele continuïteit in de ERP-systemen \autocite{Rengasamy2025}.
+
+\subsection{Open uitdagingen en positionering van dit onderzoek}
+MDM-initiatieven kennen zowel technische als organisatorische uitdagingen \autocite{Pansara2021}.
+Ten eerste is er \textbf{data governance}: zonder duidelijke rollen en procedures kunnen inconsistenties opnieuw in systemen sluipen \autocite{Pansara2021}. De vraag is hoe governance consistentie kan afdwingen zonder lokale werking te blokkeren \autocite{VilminkoHeikkinenPekkola2019}.
+
+Ten tweede vormt \textbf{data-integratie} een risico. Synchronisatieverschillen en semantische mismatches tussen MDM en ERP kunnen leiden tot fouten \autocite{Maedche2010}. Ook bij het samenvoegen van records (survivorship) kan context verloren gaan \autocite{Pansara2021}.
+
+Ten derde vereisen \textbf{data-standaarden} afstemming tussen afdelingen, wat in gedecentraliseerde contexten moeilijk is.
+
+Deze bachelorproef positioneert zich als toegepast onderzoek. MDM-concepten, matching-technieken en survivorship-strategieën worden vertaald naar een proof-of-concept voor de multi-ERP-casus van IPCOM. Het doel is om deze in-house oplossing in te zetten als een objectieve benchmark tegenover een commerciële MDM-pilot (Profisee). Hierbij wordt geëvalueerd hoe duplicatie effectief kan worden gereduceerd via deterministische en AI-gebaseerde matching, en of een in-house setup kwalitatief kan concurreren met een kant-en-klaar platform.

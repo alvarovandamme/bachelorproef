@@ -1,0 +1,131 @@
+%%=============================================================================
+%% Methodologie
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}%
+\label{ch:methodologie}
+
+%% TODO: In dit hoofstuk geef je een korte toelichting over hoe je te werk bent
+%% gegaan. Verdeel je onderzoek in grote fasen, en licht in elke fase toe wat
+%% de doelstelling was, welke deliverables daar uit gekomen zijn, en welke
+%% onderzoeksmethoden je daarbij toegepast hebt. Verantwoord waarom je
+%% op deze manier te werk gegaan bent.
+%% 
+%% Voorbeelden van zulke fasen zijn: literatuurstudie, opstellen van een
+%% requirements-analyse, opstellen long-list (bij vergelijkende studie),
+%% selectie van geschikte tools (bij vergelijkende studie, "short-list"),
+%% opzetten testopstelling/PoC, uitvoeren testen en verzamelen
+%% van resultaten, analyse van resultaten, ...
+%%
+%% !!!!! LET OP !!!!!
+%%
+%% Het is uitdrukkelijk NIET de bedoeling dat je het grootste deel van de corpus
+%% van je bachelorproef in dit hoofstuk verwerkt! Dit hoofdstuk is eerder een
+%% kort overzicht van je plan van aanpak.
+%%
+%% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
+%% en geef het een gepaste titel.
+
+%---------- Methodologie ------------------------------------------------------
+\section{Methodologie}%
+\label{sec:methodologie}
+
+Dit hoofdstuk beschrijft de methodologische aanpak van dit toegepaste onderzoek. Er is gekozen voor een case study met als einddoel een technische PoC in Microsoft Fabric. In de volgende paragrafen worden achtereenvolgens de onderzoeksstrategie, de dataverzameling en de technische stappen van de pipeline toegelicht. Tot slot volgt een overzicht van de meetbare evaluatiecriteria voor de benchmark tegen de commerciële Profisee-pilot, afgesloten met de gekozen tools en de projectplanning.
+
+\subsection{Onderzoeksopzet}
+Deze bachelorproef is \textbf{toegepast onderzoek} binnen de bedrijfscontext van IPCOM en wordt uitgevoerd als \textbf{case study} met een \textbf{PoC} als technisch eindresultaat. De centrale onderzoeksvraag uit Sectie~\ref{sec:inleiding} wordt beantwoord door (1) literatuurstudie, (2) requirements- en contextanalyse via directe afstemming met de interne data engineer, (3) ontwerp en implementatie van een PoC in Microsoft Fabric, waarbij de scope bewust beperkt wordt tot artikel- en leveranciersdata uit drie specifieke ERP-systemen (Oostenrijk, Zwitserland en Noorwegen). Tot slot volgt (4) een evaluatie waarbij deze in-house PoC fungeert als objectieve benchmark tegenover een lopende pilot met het commerciële MDM-platform Profisee.
+
+\subsection{Onderzoekstechnieken}
+De gebruikte onderzoekstechnieken zijn:
+\begin{itemize}
+  \item \textbf{Literatuurstudie}: concepten, implementatiebenaderingen en open uitdagingen rond MDM, multi-ERP, golden records en datakwaliteit.
+  \item \textbf{Expert-consultatie en documentanalyse}: directe afstemming met de co-promotor (data engineer) als hoofd-stakeholder en het hergebruiken van reeds intern opgestelde rule-sets en datamappings.
+  \item \textbf{Data-analyse en data profiling}: bepalen van een objectieve baseline (zoals het huidige percentage ontbrekende velden) op representatieve datasets uit de geselecteerde bronsystemen.
+  \item \textbf{Ontwerp en implementatie PoC}: data harmonisatie, deterministische en AI-gestuurde matching, survivorship rules en golden record-opbouw in Microsoft Fabric.
+  \item \textbf{Evaluatie (Benchmark)}: kwantitatieve en kwalitatieve vergelijking van de Fabric PoC-output met zowel de originele baseline als de resultaten van de Profisee-oplossing.
+\end{itemize}
+
+\subsection{Dataverzameling en requirements}
+ Er is directe toegang verleend tot de benodigde databases. Dit versnelt de dataverzameling aanzienlijk. De scope is afgebakend tot entiteiten van het type \emph{Article} en \emph{Supplier}, aangezien deze de grootste kans op overlap vertonen over de verschillende entiteiten heen. Klantendata wordt buiten beschouwing gelaten vanwege het sterk lokale karakter. 
+
+Er worden geen brede stakeholder-interviews gehouden; de requirements, pijnpunten en reeds bestaande mappings (bijvoorbeeld vertalingen van landcodes en lokale veldnamen) worden rechtstreeks gecapteerd via de interne data engineer. Dit vormt de fundering voor het canonical model.
+
+\subsection{Technische uitvoering van de PoC}
+De PoC implementeert een reproduceerbare pipeline in Microsoft Fabric met de volgende stappen:
+\begin{enumerate}
+  \item \textbf{Landing}: inladen van datasnapshots uit de ERP-systemen van Zwitserland, Oostenrijk en Noorwegen.
+  \item \textbf{Harmonisatie}: toepassen van de bestaande mappings om data te vertalen naar één uniform canonical model.
+  \item \textbf{Matching}: groeperen van records. Dit verloopt in twee fasen om de benchmark te voeden:
+  \begin{itemize}
+      \item \emph{Deterministisch}: harde regels, zoals een match op basis van identieke EAN-codes in combinatie met hetzelfde leveranciers-ID.
+      \item \emph{Fuzzy/AI-gebaseerd}: experimenteel matchen op artikelnamen als aanvulling, om te evalueren of dit superieure resultaten oplevert ten opzichte van de standaard logica.
+  \end{itemize}
+  \item \textbf{Survivorship}: toepassen van regels om het ultieme golden record te genereren, waarbij ook lokale referentie-ID's worden bijgehouden zodat bronsystemen via "foreign keys" kunnen terugverwijzen.
+  \item \textbf{Golden record store \& Publicatie}: opslaan van de resultaten met uitgebreide auditvelden voor downstream consumptie in Power BI.
+\end{enumerate}
+
+\subsection{Evaluatiecriteria}
+De evaluatie gebeurt door een vergelijking op basis van meetbare indicatoren:
+\begin{itemize}
+  \item \textbf{Benchmark Profisee}: presteert de opgezette logica in Fabric vergelijkbaar, beter of slechter dan de commerciële opzet wanneer dezelfde inputdata wordt gebruikt?
+  \item \textbf{Impact op brondata}: hoe vaak en in welke mate wijzigt het gegenereerde golden record de originele data in een specifiek bronsysteem?
+  \item \textbf{Volledigheid en Consistentie}: afname van het aantal ontbrekende waarden en conflicten tussen systemen voor dezelfde entiteit.
+  \item \textbf{Traceerbaarheid}: transparantie in welke bronrecords en rules hebben geleid tot een specifieke golden record-waarde.
+\end{itemize}
+
+\subsection{Tools en technologie (initiële keuze)}
+De architectuur leunt op het Microsoft-ecosysteem, met \textbf{Microsoft Fabric} (Lakehouse, Dataflows Gen2, Notebooks in Python/SQL) als integratieomgeving. \textbf{Power BI} wordt ingezet voor visuele validatie en het presenteren van de datakwaliteit en benchmark-metrieken.
+
+\subsection{Planning (14 weken, wekelijkse cyclus)}
+Door de interne toegang tot data en bestaande mappings kan de technische opstart versneld worden uitgevoerd.
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Planning en deliverables (14 vrijdagen)}
+\label{tab:planning}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.07\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}X
+}
+\toprule
+\textbf{Week} & \textbf{Activiteit} & \textbf{Deliverable} \\
+\midrule
+1  & Kick-off: scope-afbakening (Profisee benchmark) \& ERP-selectie (CH, AT, NO)
+   & Scope + afspraken gedocumenteerd \\
+2  & Data-extractie (Article/Supplier) + verzamelen bestaande mappings
+   & Dataset snapshot + mappingdocument \\
+3  & Data landing in Fabric + eerste harmonisatie o.b.v. mapping
+   & Werkende landing \& harmonisatielaag \\
+4  & Data profiling + meten van baseline metrieken (bijv. $\%$ lege velden)
+   & Baseline DQ-rapport \\
+5  & Ontwerp PoC-architectuur \& voorbereiding rule-engine
+   & Architectuurdiagram \\
+6  & Implementatie matching fase 1: deterministische rules (EAN/Supplier)
+   & Werkende hard-rule set \\
+7  & Implementatie matching fase 2: Fuzzy matching / AI op Artikelnaam
+   & AI-matching testresultaten \\
+8  & Implementatie survivorship rules \& opbouw golden records
+   & Golden record generator \\
+9  & Traceerbaarheid inbouwen (logging van gekozen bronwaarden)
+   & Traceability-output + auditvelden \\
+10 & Evaluatie: analyse "Impact op brondata" (wijzigingsfrequentie)
+   & Data-impact analyse \\
+11 & Vergelijking en benchmark resultaten tegenover de Profisee-oplossing
+   & Benchmark-rapportage \\
+12 & Publicatie consumptielaag + Power BI validatie dashboards
+   & Power BI proof + visualisaties \\
+13 & Stakeholder review met co-promotor (inzichten en werkbaarheid)
+   & Reviewverslag \\
+14 & Finalisatie scriptie + formuleren advies (Fabric vs. Profisee)
+   & Eindrapport + aanbevelingen \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\lipsum[21-25]
+
