@@ -2,7 +2,7 @@
 %% Conclusie
 %%=============================================================================
 
-\chapter{Conclusie}%
+\chapter{\IfLanguageName{dutch}{Conclusie}{Conclusion}}%
 \label{ch:conclusie}
 
 % TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
@@ -12,30 +12,26 @@
 % ``Discussion'' genoemd. Had je deze uitkomst verwacht? Zijn er zaken die nog
 % niet duidelijk zijn?
 % Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
-%onderzoek?
-Waar de voorgaande secties het theoretische kader en de methodologische aanpak schetsten, definieert dit onderdeel wat het onderzoek daadwerkelijk zal opleveren voor IPCOM. Hierbij wordt de verwachte impact van de PoC besproken, evenals de beoogde meetmethoden, de directe bedrijfswaarde voor de doelgroep en de te verwachten eindconclusie omtrent het 'build vs. buy'-vraagstuk.
+% onderzoek?
 
-\subsection{Verwachte resultaten}
-De verwachte uitkomst van deze bachelorproef is een technisch onderbouwde PoC voor Master Data Management (MDM) binnen Microsoft Fabric, die fungeert als objectieve benchmark tegenover de lopende Profisee-pilot bij IPCOM. Deze PoC levert een reproduceerbare pipeline op die (1) artikel- en leveranciersrecords uit Zwitserland, Oostenrijk en Noorwegen harmoniseert op basis van bestaande mappings, (2) records matcht via zowel deterministische regels als AI/fuzzy matching, (3) survivorship rules toepast om een golden record samen te stellen, en (4) de output publiceert voor consumptie en validatie in Power BI. 
+Dit onderzoek had als hoofddoel te evalueren of een in-house Master Data Management (MDM)-oplossing, gebouwd binnen het Microsoft Fabric-ecosysteem, een haalbaar en schaalbaar alternatief biedt voor gespecialiseerde commerciële pakketten zoals Profisee. Aan de hand van een Proof of Concept (PoC) is de gefragmenteerde artikel- en leveranciersdata van drie IPCOM-entiteiten (Oostenrijk, Zwitserland en Noorwegen) geëxtraheerd, geharmoniseerd en succesvol ontdubbeld. 
 
-Op inhoudelijk niveau wordt verwacht dat de PoC een aantoonbare reductie van duplicatie en inconsistentie oplevert. Dit wordt geoperationaliseerd via een vergelijking tussen een baseline-meting en de PoC-output, maar bovenal door een vergelijking met de resultaten van de Profisee-setup op dezelfde dataset. Daarnaast wordt inzichtelijk gemaakt hoe vaak en in welke mate een golden record de originele waarden van een specifiek bronsysteem wijzigt.
+Uit de resultaten blijkt eenduidig dat de in-house ontwikkelde pijplijn uiterst effectief is. De combinatie van een deterministische waterval-logica en probabilistische fuzzy matching (via de Levenshtein-afstand) resulteerde in een deduplicatiegraad van 33,4\%. Hiermee benadert de Fabric-oplossing het niveau van het Profisee-platform (35,1\%) verrassend dicht. De meerwaarde van dit onderzoek voor IPCOM is dan ook aanzienlijk: het toont aan dat datakwaliteit en consolidatie fundamenteel verbeterd kunnen worden zonder de data buiten de eigen vertrouwde cloud-omgeving te verplaatsen en zonder bijkomende licentiekosten voor externe platformen.
 
-\subsection{Verwachte visualisaties en metingen}
-Om de resultaten objectief te evalueren en de benchmark visueel te ondersteunen, worden in Power BI minstens de volgende grafieken uitgewerkt:
+\section*{Kritische Reflectie (Discussie)}
 
-\begin{itemize}
-  \item \textbf{Benchmark succesratio (Fabric vs. Profisee)}: Een vergelijkende visualisatie die toont hoeveel unieke golden records (en correcte matches) beide systemen genereren op basis van dezelfde inputdata.
-  \item \textbf{Impact op bronsystemen}: Een visualisatie die per bronsysteem (Zwitserland, Oostenrijk, Noorwegen) het percentage toont waarbij de uiteindelijke golden record-waarde afwijkt van de originele, lokale data. Dit beantwoordt direct de nieuwe onderzoeksvraag.
-  \item \textbf{Duplicatiegraad per systeem (voor/na)}: Staafdiagram met op de x-as de bronsystemen en op de y-as het percentage records dat als duplicaat wordt geïdentificeerd en geconsolideerd.
-  \item \textbf{Volledigheid per attribuut (voor/na)}: Staafdiagram met op de x-as kritieke attributen (bv. EAN, artikelnaam) en op de y-as het percentage ingevulde waarden. Verwacht wordt dat dit percentage stijgt doordat waarden over bronnen heen worden gecombineerd.
-  \item \textbf{Traceerbaarheidsoverzicht}: Tabelvisualisatie waarin per golden record wordt getoond welke bronrecords zijn gematcht, inclusief referentie naar de lokale ID's, zodat bronsystemen deze "foreign keys" kunnen overnemen.
-\end{itemize}
+Wanneer we kritisch reflecteren op deze uitkomst, overtreft de PoC de initiële verwachtingen op technisch vlak. Vooraf werd aangenomen dat een gespecialiseerde tool als Profisee, met zijn geavanceerde ingebouwde algoritmen, een veel grotere voorsprong zou hebben in het identificeren van complexe, contextuele matches. Dat het verschil slechts marginaal was, bewijst de kracht van PySpark in combinatie met een goed doordacht canonical model en zorgvuldige data cleansing. 
 
-\subsection{Meerwaarde voor de doelgroep}
-De doelgroep (met name de data engineers binnen IPCOM) verkrijgt met deze resultaten drie concrete voordelen. Ten eerste biedt de PoC een objectieve "Build vs. Buy" business case: het toont aan of een in-house oplossing in Fabric kan concurreren met de licentiekosten en complexiteit van Profisee. Ten tweede fungeren de doorontwikkelde mappings, rule-sets en analyses (zoals de AI-matching op artikelnaam) als direct bruikbare input, ongeacht welk platform uiteindelijk in productie gaat. Ten derde profiteren alle aangesloten entiteiten van de gerealiseerde golden records doordat lokale systemen eenduidig kunnen verwijzen naar verrijkte master data.
+Toch moeten er een aantal belangrijke kanttekeningen worden geplaatst. De grootste beperking van de opgezette Fabric-architectuur is de toegankelijkheid voor niet-technische gebruikers. Waar Profisee beschikt over een intuïtieve, \textit{low-code} interface waarin \textit{data stewards} handmatig randgevallen kunnen beoordelen en corrigeren, vereist de huidige PoC kennis van Python en data engineering. Voor elke wijziging in de matching- of survivorship-regels moet de onderliggende code worden aangepast. Het platform functioneert dus uitstekend als dataverwerkingsmotor, maar mist momenteel een gebruiksvriendelijke beheerlaag.
 
-\subsection{Verwachte conclusie}
-Op basis van de probleemsituatie bij IPCOM wordt verwacht dat de Fabric-PoC een aanzienlijke, meetbare verbetering oplevert in datakwaliteit binnen de multi-ERP-context. Specifiek wordt verwacht dat de toevoeging van AI of fuzzy matching op artikelnamen een significante meerwaarde biedt bovenop louter deterministische regels (zoals EAN-matches). De uiteindelijke conclusie zal uitwijzen of de in-house ontwikkelde logica in Microsoft Fabric kwalitatief evenwaardig is aan de commerciële Profisee-pilot, en welke architectuur de meest schaalbare en kostenefficiënte route biedt voor de verdere uitrol binnen de IPCOM-groep.
+Daarnaast bleek het bepalen van de drempelwaarde (threshold) voor de fuzzy matching een delicaat proces. Een te lage waarde leidde snel tot \textit{false positives}, terwijl een te hoge waarde de effectiviteit van het algoritme tenietdeed. Het balanceren van deze logica vergt continue monitoring naarmate de dataset groeit.
 
-\lipsum[76-80]
+\section*{Aanbevelingen en Toekomstig Onderzoek}
 
+Dit onderzoek legt een solide technische basis voor MDM binnen Microsoft Fabric, maar opent tegelijkertijd de deur naar nieuwe vraagstukken die verder onderzoek vereisen. 
+
+Ten eerste wordt aanbevolen om te onderzoeken hoe de ontbrekende beheerlaag (de \textit{data steward interface}) binnen het Microsoft-ecosysteem kan worden opgevangen. Een mogelijke piste is de integratie van Power Apps bovenop de Delta Tables in de gold-laag van het Fabric datawarehouse. Hiermee zou een interface op maat gebouwd kunnen worden, zodat domeinexperts datakwaliteitsproblemen kunnen oplossen zonder in de code te hoeven ingrijpen.
+
+Ten tweede nodigt de complexiteit van internationale data uit tot verder onderzoek op het gebied van taalbarrières. Aangezien de entiteiten binnen IPCOM verschillende talen hanteren (zoals Duits, Noors en Nederlands), was het matchen van artikelnamen nu nog deels beperkt door taalkundige verschillen. Het integreren van een vertaalservice (bijvoorbeeld Azure AI Translator) in de harmonisatiefase, om alle omschrijvingen eerst naar het Engels te vertalen alvorens de fuzzy matching toe te passen, zou de deduplicatiegraad potentieel nog verder kunnen verhogen.
+
+Tot slot adviseert dit onderzoek IPCOM om de PoC op termijn stapsgewijs te schalen naar de overige Europese entiteiten. Door de robuustheid van de Lakehouse-architectuur en de rekenkracht van PySpark is de technische fundering daarvoor ruimschoots aanwezig.

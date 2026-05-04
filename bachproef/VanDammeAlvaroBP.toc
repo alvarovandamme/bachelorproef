@@ -20,34 +20,48 @@
 \contentsline {subsection}{\numberline {3.1.5}Evaluatiecriteria}{11}{subsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.1.6}Tools en technologie (initiële keuze)}{11}{subsection.3.1.6}%
 \contentsline {subsection}{\numberline {3.1.7}Planning (14 weken, wekelijkse cyclus)}{11}{subsection.3.1.7}%
-\contentsline {chapter}{\numberline {4}Conclusie}{14}{chapter.4}%
-\contentsline {subsection}{\numberline {4.0.1}Verwachte resultaten}{14}{subsection.4.0.1}%
-\contentsline {subsection}{\numberline {4.0.2}Verwachte visualisaties en metingen}{14}{subsection.4.0.2}%
-\contentsline {subsection}{\numberline {4.0.3}Meerwaarde voor de doelgroep}{15}{subsection.4.0.3}%
-\contentsline {subsection}{\numberline {4.0.4}Verwachte conclusie}{15}{subsection.4.0.4}%
-\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{18}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Inleiding}{18}{section.A.1}%
-\contentsline {subsection}{\numberline {A.1.1}Deelvragen m.b.t probleemdomein}{19}{subsection.A.1.1}%
-\contentsline {subsection}{\numberline {A.1.2}Deelvragen m.b.t oplossingsdomein}{19}{subsection.A.1.2}%
-\contentsline {section}{\numberline {A.2}Stand van zaken}{20}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Master Data Management}{20}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Golden records en dataconsolidatie}{21}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}Multi-ERP-omgevingen en de rol van Master Data Management}{21}{subsection.A.2.3}%
-\contentsline {subsection}{\numberline {A.2.4}Data quality en data governance binnen MDM}{22}{subsection.A.2.4}%
-\contentsline {subsection}{\numberline {A.2.5}Bestaande MDM-oplossingen en implementatiebenaderingen}{23}{subsection.A.2.5}%
-\contentsline {subsection}{\numberline {A.2.6}Open uitdagingen en positionering van dit onderzoek}{23}{subsection.A.2.6}%
-\contentsline {section}{\numberline {A.3}Methodologie}{24}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Onderzoeksopzet}{24}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Onderzoekstechnieken}{24}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Dataverzameling en requirements}{25}{subsection.A.3.3}%
-\contentsline {subsection}{\numberline {A.3.4}Technische uitvoering van de PoC}{25}{subsection.A.3.4}%
-\contentsline {subsection}{\numberline {A.3.5}Evaluatiecriteria}{25}{subsection.A.3.5}%
-\contentsline {subsection}{\numberline {A.3.6}Tools en technologie (initiële keuze)}{26}{subsection.A.3.6}%
-\contentsline {subsection}{\numberline {A.3.7}Planning (14 weken, wekelijkse cyclus)}{26}{subsection.A.3.7}%
-\contentsline {section}{\numberline {A.4}Verwacht resultaat, conclusie}{26}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}Verwachte resultaten}{26}{subsection.A.4.1}%
-\contentsline {subsection}{\numberline {A.4.2}Verwachte visualisaties en metingen}{26}{subsection.A.4.2}%
-\contentsline {subsection}{\numberline {A.4.3}Meerwaarde voor de doelgroep}{27}{subsection.A.4.3}%
-\contentsline {subsection}{\numberline {A.4.4}Verwachte conclusie}{27}{subsection.A.4.4}%
-\contentsline {chapter}{Bibliografie}{29}{appendix*.7}%
+\contentsline {chapter}{\numberline {4}Ontwerp en Implementatie PoC}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Systeemarchitectuur in Microsoft Fabric}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Fase 1: Data Ingestion en Landing}{14}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Fase 2: Harmonisatie en Canonical Model}{14}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fase 3: Data Matching Strategieën}{15}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Deterministische Matching (Hard Rules)}{15}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Fuzzy/AI-gebaseerde Matching (Experimenteel)}{15}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Fase 4: Survivorship Rules en Golden Record Creatie}{16}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Fase 5: Opslag en Publicatie}{17}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Resultaten en Evaluatie}{18}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Datakwaliteit en Harmonisatie}{18}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Evaluatie van de Matching Strategieën}{19}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Resultaten Deterministische Matching}{19}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Resultaten Fuzzy Matching}{19}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Validatie van de Golden Records}{19}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Systeemprestaties en Performantie}{20}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Benchmark: Microsoft Fabric versus Profisee}{20}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Conclusie van de Resultaten}{20}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Conclusie}{22}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{24}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Inleiding}{24}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Deelvragen m.b.t probleemdomein}{25}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Deelvragen m.b.t oplossingsdomein}{25}{subsection.A.1.2}%
+\contentsline {section}{\numberline {A.2}Stand van zaken}{26}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Master Data Management}{26}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Golden records en dataconsolidatie}{27}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}Multi-ERP-omgevingen en de rol van Master Data Management}{27}{subsection.A.2.3}%
+\contentsline {subsection}{\numberline {A.2.4}Data quality en data governance binnen MDM}{28}{subsection.A.2.4}%
+\contentsline {subsection}{\numberline {A.2.5}Bestaande MDM-oplossingen en implementatiebenaderingen}{29}{subsection.A.2.5}%
+\contentsline {subsection}{\numberline {A.2.6}Open uitdagingen en positionering van dit onderzoek}{29}{subsection.A.2.6}%
+\contentsline {section}{\numberline {A.3}Methodologie}{30}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Onderzoeksopzet}{30}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Onderzoekstechnieken}{30}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Dataverzameling en requirements}{31}{subsection.A.3.3}%
+\contentsline {subsection}{\numberline {A.3.4}Technische uitvoering van de PoC}{31}{subsection.A.3.4}%
+\contentsline {subsection}{\numberline {A.3.5}Evaluatiecriteria}{31}{subsection.A.3.5}%
+\contentsline {subsection}{\numberline {A.3.6}Tools en technologie (initiële keuze)}{32}{subsection.A.3.6}%
+\contentsline {subsection}{\numberline {A.3.7}Planning (14 weken, wekelijkse cyclus)}{32}{subsection.A.3.7}%
+\contentsline {section}{\numberline {A.4}Verwacht resultaat, conclusie}{32}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Verwachte resultaten}{32}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Verwachte visualisaties en metingen}{33}{subsection.A.4.2}%
+\contentsline {subsection}{\numberline {A.4.3}Meerwaarde voor de doelgroep}{33}{subsection.A.4.3}%
+\contentsline {subsection}{\numberline {A.4.4}Verwachte conclusie}{33}{subsection.A.4.4}%
+\contentsline {chapter}{Bibliografie}{36}{appendix*.8}%
 \contentsfinish 

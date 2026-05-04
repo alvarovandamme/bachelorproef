@@ -1,0 +1,144 @@
+%%=============================================================================
+%% Ontwerp en Implementatie PoC
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Ontwerp en Implementatie PoC}{Design and Implementation of PoC}}%
+\label{ch:poc}
+
+% TODO: Korte inleiding van dit hoofdstuk. 
+% Vertel de lezer dat we in dit hoofdstuk de theorie en methodologie omzetten in 
+% de praktijk. Geef kort aan dat de scope beperkt is tot Artikel- en Leveranciersdata 
+% uit Oostenrijk, Zwitserland en Noorwegen, gebouwd in Microsoft Fabric.
+
+Dit hoofdstuk behandelt de technische implementatie van de PoC, waarbij de eerder besproken theorie en methodologie worden omgezet in de praktijk. De scope van deze PoC is beperkt tot artikel- en leveranciersdata, specifiek gericht op de entiteiten van IPCOM in Oostenrijk, Zwitserland en Noorwegen. De PoC is volledig uitgebouwd in de Microsoft Fabric-omgeving, een datawarehousing PaaS (Platform as a Service) die een all-in-one oplossing biedt. Hierdoor kan de volledige extractie-, transformatie-, laad- en visualisatie-pipeline end-to-end worden uitgewerkt in een geïntegreerde omgeving.
+
+\section{Systeemarchitectuur in Microsoft Fabric}%
+\label{sec:poc-architectuur}
+
+% TODO: Beschrijf hier de high-level architectuur van je oplossing.
+% Welke componenten van Fabric gebruik je? (bijv. Lakehouse, Data Factory pipelines, 
+% Dataflows Gen2, Notebooks).
+% Leg uit WAAROM je voor deze specifieke componenten hebt gekozen binnen de context van IPCOM.
+
+De basis van de oplossing is de high-level architectuur. Binnen Microsoft Fabric is gekozen voor een klassieke medallion-architectuur (bronze, silver, gold) voor het datawarehousing-aspect. Concreet houdt dit in dat de bronze-laag fungeert als landingszone voor de ruwe data-ingestie, waarna deze ongewijzigd naar de silver-laag kan worden doorgezet. De bronze-laag is technisch gezien een Fabric Lakehouse, een opslagplaats voor zowel ongestructureerde als gestructureerde data. Dit maakt het mogelijk om documenten in formaten zoals CSV en Parquet op te slaan, evenals klassieke SQL-tabellen, zonder strikte schema-vereisten vooraf.
+
+Een Fabric Lakehouse kan worden aangesproken via een SQL-endpoint, maar ook via een notebook met Python, in het bijzonder PySpark. PySpark is een big-data-processing bibliotheek die het efficiënt verwerken van diverse datastructuren vanuit een lakehouse mogelijk maakt. Vanwege de omvang van de data en de technische vereisten van deze PoC, is het gebruik van Python en PySpark geschikter dan enkel SQL, mede door de ingebouwde algoritmen voor bijvoorbeeld fuzzy matching.
+
+Vervolgens wordt de data getransformeerd en naar de silver-laag gestuurd, die eveneens op een Fabric Lakehouse draait. In deze laag worden alle transformaties, matching en survivorship-logica toegepast. Voor de gold-laag is gekozen voor een klassiek datawarehouse, dat geoptimaliseerd is voor analytisch gebruik in combinatie met onder andere Power BI.
+
+Voor IPCOM is de keuze voor Microsoft Fabric strategisch logisch, aangezien deze technologie reeds binnen de organisatie wordt gebruikt. De PoC sluit hierdoor naadloos aan op de bestaande infrastructuur, wat een eventuele verdere uitwerking en adoptie van de oplossing in de toekomst sterk kan bevorderen.
+
+% TIP: Voeg hier een architectuurdiagram toe!
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{jouw-architectuur-diagram.png}
+%   \caption{High-level architectuur van de MDM PoC in Microsoft Fabric.}
+%   \label{fig:architectuur}
+% \end{figure}
+
+\section{Fase 1: Data Ingestion en Landing}%
+\label{sec:poc-landing}
+
+% TODO: Beschrijf hoe je de data uit de ERP's (CH, AT, NO) binnenhaalt in Fabric.
+% - Hoe zien de ruwe snapshots eruit?
+% - Welke formaten worden gebruikt (Parquet, Delta tables, CSV)?
+% - Zitten er hier al specifieke uitdagingen (bijv. karaktercoderingen of sterk 
+%   verschillende datastructuren)?
+
+De data van de verschillende IPCOM-entiteiten wordt momenteel via twee methoden geïngesteerd in Fabric. Omdat veel entiteiten momenteel migreren naar Microsoft Dynamics (de ERP-omgeving van Microsoft), bestaat de dataset uit zowel historische data uit de oude ERP-systemen als nieuwe data uit Dynamics.
+
+De historische data wordt geëxtraheerd met behulp van Dataflows. Dit is een low-code technologie binnen Microsoft Fabric die datatransformatie en -ingestie vereenvoudigt, wat het ook voor minder technische profielen toegankelijk maakt. Deze Dataflows maken rechtstreeks verbinding met een SQL-server, transformeren de data en persisteren deze, zodat de verouderde ERP-systemen nadien uitgefaseerd kunnen worden. De data wordt via deze flows rechtstreeks in het Fabric Lakehouse geladen.
+
+De data uit Microsoft Dynamics wordt daarentegen via Microsoft Dataverse naar Microsoft Fabric geëxporteerd. Dataverse fungeert hierbij als de integratielaag tussen de twee omgevingen. In het Fabric Lakehouse volstaat het vervolgens om een snelkoppeling (shortcut) naar deze Dataverse-tabellen te maken.
+
+In de volgende stap wordt al deze data met een PySpark-notebook uit het Lakehouse geëxtraheerd en opgeslagen in Delta Tables. Delta Tables combineren de prestaties van Parquet-bestanden met een transactionele laag (ACID-transacties). Dit zorgt ervoor dat niet alleen de meest recente versie van de data beschikbaar is, maar er ook een changelog (\textit{time travel}) wordt bijgehouden, wat betrouwbare data-updates mogelijk maakt.
+
+Tijdens deze fase komen de eerste datakwaliteitsuitdagingen naar voren. Voorbeelden hiervan zijn ontbrekende waarden en inconsistenties in notatie (zoals het plaatsen van een landcode vóór een postcode of het gebruik van lokale talen). Deze problemen worden in de latere fasen met PySpark aangepakt.
+
+\section{Fase 2: Harmonisatie en Canonical Model}%
+\label{sec:poc-harmonisatie}
+
+% TODO: Voordat je kunt matchen, moet de data in hetzelfde formaat staan.
+% Bespreek hier hoe je de data hebt getransformeerd naar jouw "Canonical Model" 
+% (het gestandaardiseerde datamodel).
+% - Hoe heb je de bestaande mappings van de data engineer toegepast?
+% - Geef een voorbeeld van hoe een lokaal artikel wordt omgezet naar het standaardformaat.
+
+% TIP: Je kunt hier een tabel toevoegen die toont hoe velden uit 3 systemen 
+% mappen naar 1 canonical model (bijv. Artikelnr, EAN, Naam, Prijs).
+
+Omdat de verschillende ERP-systemen uiteenlopende, vaak lokaal gedefinieerde tabel- en kolomnamen gebruiken, is harmonisatie noodzakelijk om matching mogelijk te maken. De data moet worden omgezet naar één gestandaardiseerd formaat, het \textit{canonical model}. Dit model wordt opgebouwd aan de hand van bestaande mappings uit Excel-bestanden van IPCOM. Via Python-dictionaries worden de originele namen gemapt naar de gestandaardiseerde namen, wat resulteert in een uniform datamodel voor alle entiteiten.
+
+Een volgende essentiële stap is data cleansing (datareiniging) en standaardisatie, wat de eerder genoemde datakwaliteitsproblemen aanpakt. Dit omvat onder meer het verwijderen van landcode-prefixes bij postcodes en een meer generieke opschoning waarbij copyright-iconen, maateenheden en entiteitspecifieke termen worden weggefilterd. Deze termen zijn vaak woorden in de lokale taal die als prefix worden gebruikt om bijvoorbeeld aan te geven dat een artikel verouderd is. Het niet verwijderen van dergelijke termen zou een succesvolle matching op basis van de artikelnaam in de weg staan.
+
+\section{Fase 3: Data Matching Strategieën}%
+\label{sec:poc-matching}
+
+% TODO: Korte inleiding over het matchen van de records in jouw PoC.
+
+Een cruciaal onderdeel van deze PoC is de data matching. In de kern is data matching een techniek om meerdere records, in dit geval artikelen of leveranciers, automatisch aan elkaar te koppelen. In de praktijk vereist dit een combinatie van meerdere strategieën. Er kan gekozen worden voor deterministische matching (op basis van exacte regels) of niet-deterministische matching (op basis van probabiliteit en algoritmen, zoals fuzzy matching).
+
+\subsection{Deterministische Matching (Hard Rules)}
+% TODO: Beschrijf de harde regels die je hebt geprogrammeerd.
+% Bijvoorbeeld: "Als EAN én Leveranciers-ID exact overeenkomen, is het 100% een match."
+% Toon hier eventueel een kort stukje code (SQL of Python/PySpark) van hoe je dit 
+% in een Fabric Notebook hebt geschreven.
+
+De deterministische matching maakt gebruik van harde regels in een watervalstructuur. Indien de eerste, meest strikte regel geen match oplevert, wordt de volgende regel geëvalueerd, telkens met een afnemende zekerheidsgraad (\textit{confidence score}).
+
+In Listing~\ref{lst:hard-matching} wordt weergegeven hoe deze logica is geïmplementeerd in PySpark. Een artikel van een bepaalde entiteit wordt vergeleken met een artikel van een andere entiteit, waarna de regels worden toegepast. De regels met 100\% zekerheid worden als eerste geëvalueerd. Zo levert een gelijktijdige overeenkomst op zowel het EAN-nummer als de \textit{supplier product code} (SPC) binnen de context van IPCOM een gegarandeerde match op.
+
+\begin{listing}[h]
+\begin{minted}{python}
+df_scored_articles = df_potential_matches.withColumn(
+    "Match_Confidence",
+    F.when(match_ean & match_spc, F.lit(1.00))               # Rule 3: EAN & SPC = 100%
+     .when(match_ean & match_mfg, F.lit(1.00))               # Rule 4: EAN & Mfg = 100%
+     .when(match_spc & match_mfg, F.lit(1.00))               # Rule 5: SPC & Mfg = 100%
+     .when(match_name, F.lit(1.00))                          # Rule 6: Exact Name match = 100%
+     .when(match_ean, F.lit(0.90))                           # Rule 1: EAN only = 90%
+     .when(match_spc, F.lit(0.90))                           # Rule 2: SPC only = 90%
+     .otherwise(F.lit(0.00))
+)
+ \end{minted}
+\caption{Deterministische matching logica in PySpark.}
+\label{lst:hard-matching}
+\end{listing}
+
+\subsection{Fuzzy/AI-gebaseerde Matching (Experimenteel)}
+% TODO: Beschrijf hoe je de moeilijkere gevallen aanpakt (wanneer EAN ontbreekt of verschilt).
+% - Welke techniek gebruik je om op artikelnaam te zoeken (bijv. Levenshtein distance, 
+%   Jaccard similarity, of een specifiek AI-model)?
+% - Wat was de ingestelde drempelwaarde (threshold) voor een "waarschijnlijke match"?
+
+Wanneer kritieke velden zoals het EAN-nummer ontbreken, is een meer probabilistische benadering vereist. Hiervoor is gekozen voor fuzzy matching, specifiek op basis van de Levenshtein-afstand. Dit algoritme berekent de afstand tussen twee strings door te tellen hoeveel minimale operaties (toevoegingen, verwijderingen of vervangingen van karakters) er nodig zijn om het ene woord in het andere te transformeren.
+
+Er is specifiek voor de Levenshtein-afstand gekozen omdat artikelnamen in deze dataset vaak afmetingen en materialen bevatten, en de variaties daarin veelal het gevolg zijn van kleine typefouten. In dergelijke gevallen levert een vergelijking op karakterniveau betrouwbaardere resultaten op dan andere woordgebaseerde modellen.
+
+\section{Fase 4: Survivorship Rules en Golden Record Creatie}%
+\label{sec:poc-survivorship}
+
+% TODO: Nu je weet welke records bij elkaar horen (uit fase 3), hoe bepaal je 
+% welke data "wint" en in het Golden Record belandt?
+% - Beschrijf je survivorship regels (bijv. "Zwitserland is de master voor prijs", 
+%   of "Het veld dat het meest recent is geüpdatet, wint", of "Bronprioriteit").
+% - Hoe bewaar je de lokale ID's (foreign keys) zodat de ERP's later nog 
+%   kunnen terugverwijzen naar dit Golden Record?
+% - Leg uit hoe je traceability (auditvelden) hebt ingebouwd.
+
+Na het identificeren van de matches moet worden bepaald welke data 'overleeft' en in het \textit{golden record} wordt opgenomen. Hiervoor worden survivorship-regels gedefinieerd, die per tabel of kolom bepalen welke bron de meest accurate informatie bevat. 
+
+Binnen de context van IPCOM is het toewijzen van een absolute prioriteit aan een specifieke entiteit complex, aangezien lokale vestigingen vaak de voorkeur geven aan hun eigen taal en naamgevingsconventies. Daarom is een fallback-strategie toegepast op basis van volledigheid (\textit{completeness}) en standaardisatie. Velden met ontbrekende waarden worden automatisch uitgesloten voor het golden record. Om neutraliteit te waarborgen krijgt data die zo min mogelijk lokaal getint is de voorkeur: dit betekent data zonder lokale prefixes, bij voorkeur Engelstalig en zo compleet mogelijk.
+
+De creatie van het golden record verloopt als volgt: de originele bronrecords blijven behouden, maar er wordt een foreign key toegevoegd die naar een cluster-ID en het uiteindelijke golden record verwijst. Elk geïdentificeerd uniek artikel of unieke leverancier krijgt een eigen cluster-ID. Doordat de originele bronrecords behouden blijven, wordt volledige traceerbaarheid (\textit{data lineage}) gegarandeerd. Lokale entiteiten kunnen hierdoor hun originele data blijven raadplegen en het is op elk moment inzichtelijk uit welk bronsysteem een specifieke waarde in het golden record afkomstig is.
+
+\section{Fase 5: Opslag en Publicatie}%
+\label{sec:poc-publicatie}
+
+% TODO: Waar en hoe schrijf je het uiteindelijke Golden Record weg?
+% - Welk formaat/database (bijv. een Delta Table in Fabric)?
+% - Hoe is deze data klaargezet voor consumptie door bijvoorbeeld Power BI?
+% - Hoe is de data gestructureerd zodat het als benchmark tegenover Profisee 
+%   kan worden gelegd?
+
+De resulterende golden records worden weggeschreven naar de gold-laag van het datawarehouse, specifiek opgeslagen als Delta Tables binnen een Fabric Warehouse. Bovenop dit warehouse wordt vervolgens een semantisch model gebouwd om de data eenvoudig te ontsluiten voor consumptie en visualisatie in Power BI. Daarnaast worden statistieken geëxporteerd over onder andere de algehele datakwaliteit en de matching-percentages tussen de verschillende entiteiten, zodat de resultaten van de PoC objectief gebenchmarkt kunnen worden tegen het Profisee-platform.

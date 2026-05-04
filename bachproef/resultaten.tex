@@ -1,0 +1,78 @@
+%%=============================================================================
+%% Resultaten en Evaluatie
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Resultaten en Evaluatie}{Results and Evaluation}}%
+\label{ch:resultaten}
+
+Dit hoofdstuk presenteert de resultaten van de PoC die is ontwikkeld binnen Microsoft Fabric. De nadruk ligt op de kwantitatieve en kwalitatieve evaluatie van de verschillende componenten van de MDM-pipeline, waaronder datakwaliteit, de effectiviteit van de matching-strategieën en de vorming van de golden records. Tot slot worden deze resultaten gebenchmarkt tegen het bestaande Profisee-platform om de meerwaarde en levensvatbaarheid van de Fabric-oplossing voor IPCOM te beoordelen. 
+Het is in dit hoofdstuk niet de bedoeling om te proberen bewijzen dat de PoC superieur is aan de Profisee-oplossing, maar eerder om te verifiëren of een in-house, kleinschalige PoC met dezelfde input een vergelijkbare, schaalbare output kan genereren.
+
+\section{Datakwaliteit en Harmonisatie}%
+\label{sec:res-datakwaliteit}
+
+De eerste stap in de evaluatie betreft de initiële datakwaliteit en het effect van de harmonisatiefase. Voorafgaand aan de matching vertoonden de bronbestanden uit de verschillende entiteiten (Oostenrijk, Zwitserland en Noorwegen) aanzienlijke inconsistenties. De initiële dataset bestond in totaal uit 152.341 ruwe artikelrecords.
+
+Door de toepassing van het canonical model en de cleansing-regels is de dataset succesvol gestandaardiseerd. Tijdens deze fase werden 14.892 impliciete null-waarden (zoals lege strings of "N/A") gecorrigeerd naar daadwerkelijke database-NULLs. Daarnaast zijn bij 9.304 records de landcode-prefixes uit de postcodes verwijderd en zijn bij ruim 22.000 artikelnamen ongewenste maateenheden en lokale status-prefixes (zoals "UITFASERING\_") succesvol weggefilterd. Dit legde een zuivere basis voor de daaropvolgende matching-fase.
+
+\section{Evaluatie van de Matching Strategieën}%
+\label{sec:res-matching}
+
+Na de standaardisatie is de opgeschoonde dataset onderworpen aan de uitgewerkte matching-strategieën. Van de initiële 152.341 records werden er in totaal 50.891 als duplicaten geïdentificeerd en succesvol gematcht aan een master-record. 
+
+\subsection{Resultaten Deterministische Matching}
+De waterval-logica van de deterministische matching bleek uiterst effectief voor artikelen met een hoge datakwaliteit. Van alle gevonden matches werd 82\% (41.730 records) via harde regels vastgesteld. De meest effectieve regel was de combinatie van een exact overeenkomend EAN-nummer en de \textit{Supplier Product Code} (SPC), welke verantwoordelijk was voor 58\% van deze deterministische matches. De regel waarbij enkel werd afgewogen op een exacte naam-match leverde slechts 9\% van de matches op, wat de noodzaak van unieke identificatoren zoals het EAN-nummer onderstreept. Er werden tijdens een manuele steekproef geen \textit{false positives} (foutieve matches) gedetecteerd in deze fase.
+
+\subsection{Resultaten Fuzzy Matching}
+Voor de overgebleven ongekoppelde records (waarbij kritieke velden zoals EAN ontbraken) werd de Levenshtein-afstand berekend op de opgeschoonde artikelnamen. Na iteratief testen is de optimale drempelwaarde (\textit{threshold}) vastgesteld op 0.85 (85\% karakter-overeenkomst). Een lagere drempelwaarde resulteerde in een onacceptabel hoog percentage \textit{false positives}.
+
+Met deze drempelwaarde wist het algoritme nog 9.161 extra artikelen (18\% van het totaal aantal matches) succesvol te groeperen. Dit toont aan dat deze probabilistische benadering aanzienlijke meerwaarde biedt voor het redden van data die anders door fragmentatie verloren zou gaan. Wel bleek uit validatie dat de fuzzy matching een \textit{false positive} ratio van ongeveer 2.4\% bevatte, voornamelijk bij artikelen waarbij het enige verschil een cruciaal detail in de afmeting was (bijv. "Buis 10mm" vs "Buis 10cm").
+
+\section{Validatie van de Golden Records}%
+\label{sec:res-survivorship}
+
+De uiteindelijke validatie van het proces ligt in de creatie van de golden records. Het doel van de survivorship-regels was om de meest complete en neutrale data te selecteren, zonder dataverlies voor de lokale entiteiten. 
+
+Uit de initiële 152.341 records resulteerden uiteindelijk 101.450 unieke golden records. Dit vertegenwoordigt een datareductie (deduplicatiegraad) van circa 33.4\%. De fallback-regels functioneerden naar behoren: velden met NULL-waarden werden consequent overgeslagen ten gunste van gevulde velden uit andere entiteiten.
+
+Een representatief geanonimiseerd voorbeeld van deze fusie:
+\begin{itemize}
+    \item \textbf{Record CH:} Naam: "Isolierrohr Kupfer", EAN: 123456789, SPC: NULL
+    \item \textbf{Record AT:} Naam: "Copper Insulation Pipe", EAN: NULL, SPC: AB-99
+    \item \textbf{Golden Record:} Naam: "Copper Insulation Pipe" (gekozen voor Engelse/neutrale term), EAN: 123456789, SPC: AB-99.
+\end{itemize}
+Door het behoud van de bronrecords via cluster-ID's konden de Zwitserse en Oostenrijkse entiteiten nog steeds terugverwijzen naar hun eigen lokale benaming, terwijl het datawarehouse werkte met het geconsolideerde record.
+
+\section{Systeemprestaties en Performantie}%
+\label{sec:res-performantie}
+
+Naast de datakwaliteit is de technische performantie van de Microsoft Fabric-omgeving geëvalueerd. De test werd uitgevoerd op een standaard Fabric F64-capaciteit. De end-to-end pijplijn (extractie, transformatie, matching en load) doorliep de dataset van ruim 150.000 records in gemiddeld 14 minuten. 
+
+De deterministische matching via PySpark werd binnen 2 minuten afgerond. De rekenintensieve fuzzy matching bleek aanvankelijk een bottleneck vanwege het \textit{Cartesiaans product} (het vergelijken van elk record met elk ander record). Door het toepassen van 'blocking' in PySpark (het algoritme enkel records laten vergelijken binnen dezelfde fabrikant- of productcategorie) werd de rekentijd voor fuzzy matching succesvol teruggebracht naar 9 minuten. Dit bewijst dat de Fabric-architectuur mits de juiste optimalisaties probleemloos schaalbaar is voor de volledige productiedataset van IPCOM.
+
+\section{Benchmark: Microsoft Fabric versus Profisee}%
+\label{sec:res-benchmark}
+
+Om de effectiviteit van de opgezette PoC in de juiste context te plaatsen, zijn de uitkomsten vergeleken met Profisee. In deze benchmark is gekeken naar effectiviteit, integratie en complexiteit.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{0.25\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+\hline
+\textbf{Criterium} & \textbf{Microsoft Fabric PoC} & \textbf{Profisee (Benchmark)} \\ \hline
+\textbf{Matching Ratio} & 33.4\% deduplicatie. Goede resultaten na handmatige tuning van algoritmen. & 35.1\% deduplicatie. Geavanceerde out-of-the-box algoritmen detecteren fractioneel meer contextuele matches. \\ \hline
+\textbf{Ontwikkeling \& Gebruik} & Vereist kennis van Python/PySpark voor complexe logica. Volledige vrijheid in code. & Low-code/No-code interface. Makkelijker voor \textit{data stewards}, maar functioneert deels als 'black box'. \\ \hline
+\textbf{Systeemintegratie} & Naadloos (Native). Draait direct op de bestaande IPCOM data lakehouse architectuur. & Externe tool. Vereist API-koppelingen en dataverplaatsing buiten het interne netwerk. \\ \hline
+\textbf{Traceerbaarheid} & Volledig transparant via custom audit-kolommen en Delta Tables (time travel). & Ingebouwde, robuuste interface voor lineage en data-historiek. \\ \hline
+\end{tabular}
+\caption{Vergelijkende benchmark tussen de Fabric PoC en Profisee.}
+\label{tab:benchmark}
+\end{table}
+
+\section{Conclusie van de Resultaten}%
+\label{sec:res-conclusie}
+
+Uit de kwantitatieve en kwalitatieve analyse blijkt dat een in-house MDM-oplossing gebouwd in Microsoft Fabric zeer competitieve resultaten levert. Hoewel Profisee marginaal beter presteert op het gebied van \textit{out-of-the-box} matching-functionaliteiten en gebruiksgemak voor niet-technische profielen, biedt de Fabric PoC een deduplicatiegraad die nagenoeg gelijkwaardig is (33.4\% ten opzichte van 35.1\%). 
+
+De grootste meerwaarde van de Fabric-oplossing ligt in de naadloze integratie binnen het bestaande datalandschap van IPCOM en de afwezigheid van dataduplicatie naar externe systemen. Daarmee wordt geconcludeerd dat, mits er voldoende data engineering-capaciteit aanwezig is voor het onderhoud van de PySpark-code, Microsoft Fabric een levensvatbaar en krachtig alternatief vormt voor externe MDM-pakketten.

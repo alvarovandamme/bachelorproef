@@ -4,9 +4,10 @@
 
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
-Deze bachelorproef onderzoekt Master Data Management (MDM), multi-ERP-omgevingen en het concept van "golden records''. Specifiek richt het onderzoek zich op de casus van IPCOM, een bedrijf in de isolatiesector dat met meerdere ERP-systemen werkt. IPCOM heeft op dit moment het probleem dat verschillende entiteiten binnen de groep (zoals in Oostenrijk, Zwitserland en Noorwegen) dezelfde artikelen van dezelfde leveranciers kopen, maar dat deze door de verschillende bronsystemen niet eenvoudig te identificeren zijn als hetzelfde product. Hierdoor ontstaan inconsistenties in artikel- en leveranciersdata, wat een directe impact heeft op rapportering en besluitvorming.
+Deze bachelorproef onderzoekt Master Data Management (MDM), multi-ERP-omgevingen en het concept van "golden records''. Specifiek richt het onderzoek zich op de casus van IPCOM, een bedrijf in de isolatiesector dat met meerdere ERP-systemen werkt. IPCOM heeft op dit moment het probleem dat verschillende entiteiten binnen de groep (zoals de entiteiten in Oostenrijk, Zwitserland en Noorwegen) dezelfde artikelen van dezelfde leveranciers kopen, maar dat deze door de verschillende bronsystemen niet eenvoudig te identificeren zijn als hetzelfde product. Hierdoor ontstaan inconsistenties in artikel- en leveranciersdata, wat een directe impact heeft op rapportering en besluitvorming.
 
-Om dit probleem aan te pakken is IPCOM momenteel een pilot gestart met de commerciële MDM-tool Profisee. Dit roept een interessante nieuwe vraag op voor deze bachelorproef. In plaats van een theoretische oplossing te bedenken, wordt er een proof-of-concept (PoC) gebouwd in Microsoft Fabric die als objectieve benchmark dient. Hoe presteert een eigen, in-house gebouwde oplossing op basis van deterministische regels en machine learning in vergelijking met de Profisee-setup, wanneer exact dezelfde inputdata en mappings worden gebruikt? Hoe past zo'n MDM-tool in een datawarehouse-architectuur en hoe kan de datakwaliteit over de verschillende systemen heen worden gemeten?
+Om dit probleem aan te pakken is IPCOM momenteel een pilot gestart met de commerciële MDM-tool Profisee.
+Deze bachelorproef zal een proof-of-concept zijn voor een in-house gebouwde oplossing voor het probleem wat IPCOM heeft. Het fundament van de oplossing zal steunen op deterministische matching regels en machine learning. of fuzzy-matching ondersteuning waar nodig. De gelijktijdige opstart van beide oplossingen roepen een interessante vraag op. Hoe presteert een in vergelijking kleinschalige maar in-house gebouwde oplossing tegenover een veel grotere maar externe out-of-the-box oplossing, wanneer exact dezelfde inputdata en mappings worden gebruikt?s
 
 De belangrijkste doelgroep wordt gevormd door data-engineers en business-gebruikers binnen de organisatie die werken met deze data in het datawarehouse en het rapportageplatform (bijvoorbeeld Power BI). Zij ondervinden dagelijks hinder van gefragmenteerde data en hebben nood aan een gecentraliseerde, betrouwbare bron van waarheid, namelijk een "golden record" per artikel en leverancier, die de datakwaliteit structureel verbetert.
 
@@ -39,8 +40,8 @@ De doelstelling van deze bachelorproef is eenduidig: een PoC bouwen voor een MDM
 
 De rest van deze bachelorproef is als volgt opgebouwd:
 
-In Hoofdstuk \ref{ch:stand-van-zaken} wordt een overzicht gegeven van de theoretische kaders rond Master Data Management, golden records en datakwaliteit binnen een multi-ERP-context.
+In het volgende hoofdstuk \ref{ch:stand-van-zaken}, de literatuurstudie wordt een overzicht gegeven van de theoretische kaders rond Master Data Management, golden records en datakwaliteit binnen een multi-ERP-context.
 
-In Hoofdstuk \ref{ch:methodologie} wordt de methodologie toegelicht voor het ontwikkelen van een proof-of-concept in Microsoft Fabric, waarbij artikel- en leveranciersdata uit drie ERP-systemen worden geharmoniseerd
+Daarna wordt de methodologie  \ref{ch:methodologie}  toegelicht voor het ontwikkelen van een proof-of-concept in Microsoft Fabric, waarbij artikel- en leveranciersdata uit drie ERP-systemen worden geharmoniseerd
 
-In Hoofdstuk \ref{ch:conclusie} worden de resultaten van de proof-of-concept geëvalueerd en afgezet tegen een commerciële benchmark om een onderbouwd "build vs. buy"-advies te formuleren. 
+En als laatst \ref{ch:conclusie} worden de resultaten van de proof-of-concept geëvalueerd en afgezet tegen een commerciële benchmark om een onderbouwd "build vs. buy"-advies te formuleren. 

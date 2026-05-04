@@ -332,23 +332,30 @@
     \let\subtitlefont\@undefined
     \let\tocfont\@undefined
 
-    \ClassInfo{\@classname}{Option 'nativefonts' set: using native fonts}
+    \ClassInfo{\@classname}{Option 'nativefonts' set or
+        not running XeLaTeX/LuaLaTeX: using native fonts}
+
+    \RequirePackage[defaultfam,tabular,lining]{montserrat}
+    \RequirePackage{firamath}
+    \RequirePackage{sfmath} % Fallback sans serif math font
 
     \RequirePackage[T1]{fontenc}
     \renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 
-    \def\titlefont{\fontseries{k}\selectfont} 
+    \def\titlefont{\fontseries{k}\selectfont} %% Set the black family for titles
     \def\subtitlefont{\fontseries{eb}\selectfont}
     \def\tocfont{\fontseries{m}\selectfont}
     \def\titlestyle{\titlefont\bfseries}
 \else
-    %% Using fontspec for font rendering
+    %% Using fontspec for font rendering, first check system paths
+    %% for font availability, if not fall back to local .otf files
     \IfFontExistsTF{Montserrat}{%
-        \newfontfamily\montserratblack{Montserrat}[Weight=Black]
-        \newfontfamily\montserratextrabold{Montserrat}[Weight=ExtraBold]
+        \newfontfamily\montserratblack{Montserrat}[BoldFont={Montserrat Black}]
+        \newfontfamily\montserratextrabold{Montserrat}%
+            [BoldFont={Montserrat ExtraBold}]
 
-        \def\titlefont{\montserratblack}
-        \def\subtitlefont{\montserratextrabold}
+        \def\titlefont{\montserratblack\bfseries}
+        \def\subtitlefont{\montserratextrabold\bfseries}
         \def\tocfont{\montserratblack}
 
         \setmainfont{Montserrat}
@@ -357,7 +364,7 @@
         \newfontfamily\titlefont{Montserrat}[
             Path = ../fonts/Montserrat/,
             Extension = .otf,
-            UprightFont = *-Black,
+            UprightFont = *-Black, %% Force black
             BoldFont=*-Black,
             ItalicFont=*-BlackItalic,
             BoldItalicFont= *-BlackItalic]
@@ -365,7 +372,7 @@
         \newfontfamily\subtitlefont{Montserrat}[
             Path = ../fonts/Montserrat/,
             Extension = .otf,
-            UprightFont = *-ExtraBold,
+            UprightFont = *-ExtraBold, %% Force extra bold
             BoldFont=*-ExtraBold,
             ItalicFont=*-ExtraBoldItalic,
             BoldItalicFont= *-ExtraBoldItalic]
@@ -387,7 +394,7 @@
             BoldItalicFont= *-BoldItalic]
 
         \setsansfont{Montserrat}[
-            Path = ../fonts/Montserrat/,
+            Path = fonts/Montserrat/,
             Extension = .otf,
             UprightFont = *-Regular,
             BoldFont=*-Bold,
@@ -396,31 +403,35 @@
     }
 
     \IfFontExistsTF{Fira Code}{%
-        \setmonofont{Fira Code}[StylisticSet={1,3}]
+            \setmonofont{Fira Code}[StylisticSet={1,3}]
+            %% Shapely l, upright quotes, striked zeroes
+
     }{%
-        \setmonofont{Fira Code}[
-            Path = ../fonts/FiraCode/,
-            Extension = .otf,
-            UprightFont = *-Regular,
-            BoldFont=*-Bold,
-            ItalicFeatures = FakeSlant,
-            BoldItalicFeatures = FakeSlant]
+            \setmonofont{Fira Code}[
+                Path = fonts/FiraCode/,
+                Extension = .otf,
+                UprightFont = *-Regular,
+                BoldFont=*-Bold,
+                ItalicFeatures = FakeSlant,
+                BoldItalicFeatures = FakeSlant]
     }
 
+    % Use a unicode-compliant sans serif math font
     \IfFontExistsTF{Fira Math Regular}{%
         \setmathfont{Fira Math Regular}[BoldFont=Fira Math Bold]
         \setmathfont{Fira Math Regular}[FakeSlant, range={bfit->it}]
     }{%
         \setmathfont{FiraMath-Regular.otf}[
-            Path = ../fonts/FiraMath/,
+            Path = fonts/FiraMath/,
             BoldFont=FiraMath-Bold.otf]
         \setmathfont{FiraMath-Regular.otf}[
-            Path = ../fonts/FiraMath/,
+            Path = fonts/FiraMath/,
             FakeSlant,
             range={bfit->it}]
     }
 
     \def\titlestyle{\titlefont\bfseries}
+
 \fi
 
 %% Use the length of the 'HO' part of the logo to set the padding of the logo

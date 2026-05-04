@@ -1,0 +1,12 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{df\PYGZus{}scored\PYGZus{}articles} \PYG{o}{=} \PYG{n}{df\PYGZus{}potential\PYGZus{}matches}\PYG{o}{.}\PYG{n}{withColumn}\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Match\PYGZus{}Confidence}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{n}{F}\PYG{o}{.}\PYG{n}{when}\PYG{p}{(}\PYG{n}{match\PYGZus{}ean} \PYG{o}{\PYGZam{}} \PYG{n}{match\PYGZus{}spc}\PYG{p}{,} \PYG{n}{F}\PYG{o}{.}\PYG{n}{lit}\PYG{p}{(}\PYG{l+m+mf}{1.00}\PYG{p}{)}\PYG{p}{)}               \PYG{c+c1}{\PYGZsh{} Rule 3: EAN \PYGZam{} SPC = 100\PYGZpc{}}
+     \PYG{o}{.}\PYG{n}{when}\PYG{p}{(}\PYG{n}{match\PYGZus{}ean} \PYG{o}{\PYGZam{}} \PYG{n}{match\PYGZus{}mfg}\PYG{p}{,} \PYG{n}{F}\PYG{o}{.}\PYG{n}{lit}\PYG{p}{(}\PYG{l+m+mf}{1.00}\PYG{p}{)}\PYG{p}{)}               \PYG{c+c1}{\PYGZsh{} Rule 4: EAN \PYGZam{} Mfg = 100\PYGZpc{}}
+     \PYG{o}{.}\PYG{n}{when}\PYG{p}{(}\PYG{n}{match\PYGZus{}spc} \PYG{o}{\PYGZam{}} \PYG{n}{match\PYGZus{}mfg}\PYG{p}{,} \PYG{n}{F}\PYG{o}{.}\PYG{n}{lit}\PYG{p}{(}\PYG{l+m+mf}{1.00}\PYG{p}{)}\PYG{p}{)}               \PYG{c+c1}{\PYGZsh{} Rule 5: SPC \PYGZam{} Mfg = 100\PYGZpc{}}
+     \PYG{o}{.}\PYG{n}{when}\PYG{p}{(}\PYG{n}{match\PYGZus{}name}\PYG{p}{,} \PYG{n}{F}\PYG{o}{.}\PYG{n}{lit}\PYG{p}{(}\PYG{l+m+mf}{1.00}\PYG{p}{)}\PYG{p}{)}                          \PYG{c+c1}{\PYGZsh{} Rule 6: Exact Name match = 100\PYGZpc{}}
+     \PYG{o}{.}\PYG{n}{when}\PYG{p}{(}\PYG{n}{match\PYGZus{}ean}\PYG{p}{,} \PYG{n}{F}\PYG{o}{.}\PYG{n}{lit}\PYG{p}{(}\PYG{l+m+mf}{0.90}\PYG{p}{)}\PYG{p}{)}                           \PYG{c+c1}{\PYGZsh{} Rule 1: EAN only = 90\PYGZpc{}}
+     \PYG{o}{.}\PYG{n}{when}\PYG{p}{(}\PYG{n}{match\PYGZus{}spc}\PYG{p}{,} \PYG{n}{F}\PYG{o}{.}\PYG{n}{lit}\PYG{p}{(}\PYG{l+m+mf}{0.90}\PYG{p}{)}\PYG{p}{)}                           \PYG{c+c1}{\PYGZsh{} Rule 2: SPC only = 90\PYGZpc{}}
+     \PYG{o}{.}\PYG{n}{otherwise}\PYG{p}{(}\PYG{n}{F}\PYG{o}{.}\PYG{n}{lit}\PYG{p}{(}\PYG{l+m+mf}{0.00}\PYG{p}{)}\PYG{p}{)}
+\PYG{p}{)}
+\end{MintedVerbatim}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.4)  9 MAR 2026 21:48
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.4)  4 MAY 2026 21:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1324,69 +1324,72 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 
 Package fontspec Info: 
 (fontspec)             Font family 'Montserrat(0)' created for font
-(fontspec)             'Montserrat' with options [Ligatures=TeX,Weight=Black].
+(fontspec)             'Montserrat' with options
+(fontspec)             [Ligatures=TeX,BoldFont={Montserrat Black}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"Montserrat/OT:script=latn;language=dflt;weight=Black
-;mapping=tex-text;"
+(fontspec)             <->"Montserrat/OT:script=latn;language=dflt;mapping=tex-
+text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"Montserrat/OT:script=latn;language=dflt;weight=Black
-;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"Montserrat/B/OT:script=latn;language=dflt;weight=Bla
-ck;mapping=tex-text;"
+(fontspec)             <->"Montserrat/OT:script=latn;language=dflt;+smcp;mappin
+g=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Montserrat
+(fontspec)             Black/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"Montserrat/B/OT:script=latn;language=dflt;weight=Bla
-ck;+smcp;mapping=tex-text;"
+(fontspec)             <->"Montserrat
+(fontspec)             Black/OT:script=latn;language=dflt;+smcp;mapping=tex-tex
+t;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"Montserrat/I/OT:script=latn;language=dflt;weight=Bla
-ck;mapping=tex-text;"
+(fontspec)             <->"Montserrat/I/OT:script=latn;language=dflt;mapping=te
+x-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"Montserrat/I/OT:script=latn;language=dflt;weight=Bla
-ck;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"Montserrat/BI/OT:script=latn;language=dflt;weight=Bl
-ack;mapping=tex-text;"
+(fontspec)             <->"Montserrat/I/OT:script=latn;language=dflt;+smcp;mapp
+ing=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Montserrat
+(fontspec)             Black/I/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"Montserrat/BI/OT:script=latn;language=dflt;weight=Bl
-ack;+smcp;mapping=tex-text;"
+(fontspec)             <->"Montserrat
+(fontspec)             Black/I/OT:script=latn;language=dflt;+smcp;mapping=tex-t
+ext;"
 
 
 Package fontspec Info: 
 (fontspec)             Font family 'Montserrat(1)' created for font
 (fontspec)             'Montserrat' with options
-(fontspec)             [Ligatures=TeX,Weight=ExtraBold].
+(fontspec)             [Ligatures=TeX,BoldFont={Montserrat ExtraBold}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"Montserrat/OT:script=latn;language=dflt;weight=Extra
-Bold;mapping=tex-text;"
+(fontspec)             <->"Montserrat/OT:script=latn;language=dflt;mapping=tex-
+text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"Montserrat/OT:script=latn;language=dflt;weight=Extra
-Bold;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"Montserrat/B/OT:script=latn;language=dflt;weight=Ext
-raBold;mapping=tex-text;"
+(fontspec)             <->"Montserrat/OT:script=latn;language=dflt;+smcp;mappin
+g=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Montserrat
+(fontspec)             ExtraBold/OT:script=latn;language=dflt;mapping=tex-text;
+"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"Montserrat/B/OT:script=latn;language=dflt;weight=Ext
-raBold;+smcp;mapping=tex-text;"
+(fontspec)             <->"Montserrat
+(fontspec)             ExtraBold/OT:script=latn;language=dflt;+smcp;mapping=tex
+-text;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"Montserrat/I/OT:script=latn;language=dflt;weight=Ext
-raBold;mapping=tex-text;"
+(fontspec)             <->"Montserrat/I/OT:script=latn;language=dflt;mapping=te
+x-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"Montserrat/I/OT:script=latn;language=dflt;weight=Ext
-raBold;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"Montserrat/BI/OT:script=latn;language=dflt;weight=Ex
-traBold;mapping=tex-text;"
+(fontspec)             <->"Montserrat/I/OT:script=latn;language=dflt;+smcp;mapp
+ing=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Montserrat
+(fontspec)             ExtraBold/I/OT:script=latn;language=dflt;mapping=tex-tex
+t;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"Montserrat/BI/OT:script=latn;language=dflt;weight=Ex
-traBold;+smcp;mapping=tex-text;"
+(fontspec)             <->"Montserrat
+(fontspec)             ExtraBold/I/OT:script=latn;language=dflt;+smcp;mapping=t
+ex-text;"
 
 
 Package fontspec Info: 
@@ -1456,20 +1459,20 @@ ex-text;"
 ping=tex-text;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Montserrat(3)/m/n on input line 396.
+(Font)                  OT1/cmr/m/n --> TU/Montserrat(3)/m/n on input line 403.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Montserrat(3)/m/it on input line 39
-6.
+(Font)                  OT1/cmr/m/it --> TU/Montserrat(3)/m/it on input line 40
+3.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Montserrat(3)/b/n on input line 396
+(Font)                  OT1/cmr/bx/n --> TU/Montserrat(3)/b/n on input line 403
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/Montserrat(3)/m/n on input line 397
+(Font)                  OT1/cmss/m/n --> TU/Montserrat(3)/m/n on input line 404
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/Montserrat(3)/b/n on input line 39
-7.
+(Font)                  OT1/cmss/bx/n --> TU/Montserrat(3)/b/n on input line 40
+4.
 
 Package fontspec Info: 
 (fontspec)             Could not resolve font "Fira Code/I" (it probably
@@ -1519,9 +1522,9 @@ tex-text;"
 =tex-text;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/FiraCode(1)/m/n on input line 408.
+(Font)                  OT1/cmtt/m/n --> TU/FiraCode(1)/m/n on input line 417.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/FiraCode(1)/b/n on input line 408.
+(Font)                  OT1/cmtt/m/n --> TU/FiraCode(1)/b/n on input line 417.
 
 Package fontspec Info: 
 (fontspec)             Font family 'FiraMathRegular(0)' created for font 'Fira
@@ -1564,16 +1567,16 @@ Font={},Script=Math,SizeFeatures={{Size=9.417-},{Size=7.1175-9.417,Font=Fira
 (fontspec)             Bold/OT:script=math;language=dflt;mapping=tex-text;"
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 421.
+(Font)              `operators' in the math version `normal' on input line 431.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/FiraMathRegular(1)/m/n on input line
- 421.
+ 431.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 421.
+(Font)              `operators' in the math version `bold' on input line 431.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/FiraMathRegular(1)/b/n on input lin
-e 421.
+e 431.
 
 Package fontspec Info: 
 (fontspec)             Fira Math Regular scale = 1.0001.
@@ -1631,15 +1634,15 @@ Font={},Script=Math,SizeFeatures={{Size=9.417-},{Size=7.1175-9.417,Font=Fira
 (fontspec)             Bold/OT:script=math;language=dflt;mapping=tex-text;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 421.
+(Font)              `symbols' in the math version `normal' on input line 431.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/FiraMathRegular(2)/m/n on input lin
-e 421.
+e 431.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 421.
+(Font)              `symbols' in the math version `bold' on input line 431.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/FiraMathRegular(2)/b/n on input lin
-e 421.
+e 431.
 
 Package fontspec Info: 
 (fontspec)             Fira Math Regular scale = 0.9999.
@@ -1692,16 +1695,16 @@ Font={},Script=Math,SizeFeatures={{Size=9.417-},{Size=7.1175-9.417,Font=Fira
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 4
-21.
+31.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/FiraMathRegular(3)/m/n on input lin
-e 421.
+e 431.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 421
+(Font)              `largesymbols' in the math version `bold' on input line 431
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/FiraMathRegular(3)/b/n on input lin
-e 421.
+e 431.
 
 Package fontspec Info: 
 (fontspec)             Font family 'FiraMathRegular(4)' created for font 'Fira
@@ -1730,14 +1733,14 @@ apping=tex-text;"
 \sym__um_fam1=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `normal'
 (Font)                  TU/FiraMathRegular(4)/m/n --> TU/FiraMathRegular(4)/m/n
- on input line 421.
+ on input line 431.
 LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `bold'
 (Font)                  TU/FiraMathRegular(4)/m/n --> TU/FiraMathRegular(4)/b/n
- on input line 421.
+ on input line 431.
 \logopart=\box91
 File: logopart.eps Graphic file (type eps)
 <logopart.eps>
-Package hyperref Info: Option `colorlinks' set `true' on input line 653.
+Package hyperref Info: Option `colorlinks' set `true' on input line 664.
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
@@ -1862,26 +1865,26 @@ LaTeX Warning: Label `tab:planning' multiply defined.
 )
 \openout1 = `VanDammeAlvaroBP.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
 Package biblatex Info: Trying to load language 'dutch' -> 'dutch-apa'...
 Package biblatex Info: ... file 'dutch-apa.lbx' found.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex-apa/dutch-apa.lbx
@@ -1908,8 +1911,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'VanDammeAlvaroBP.bbl' found.
 
 (./VanDammeAlvaroBP.bbl)
-Package biblatex Info: Reference section=0 on input line 76.
-Package biblatex Info: Reference segment=0 on input line 76.
+Package biblatex Info: Reference section=0 on input line 77.
+Package biblatex Info: Reference segment=0 on input line 77.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1950,7 +1953,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 76.
+Package hyperref Info: Link coloring ON on input line 77.
 (./VanDammeAlvaroBP.out) (./VanDammeAlvaroBP.out)
 \@outlinefile=\write6
 \openout6 = `VanDammeAlvaroBP.out'.
@@ -1972,13 +1975,13 @@ Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 Package microtype Info: Patching varwidth to enable character protrusion.
 \MT@vwid@leftmargin=\dimen350
 \MT@vwid@rightmargin=\dimen351
-LaTeX Info: Redefining \microtypecontext on input line 76.
-Package microtype Info: Applying patch `item' on input line 76.
-Package microtype Info: Applying patch `toc' on input line 76.
-Package microtype Info: Applying patch `eqnum' on input line 76.
-Package microtype Info: Applying patch `footnote' on input line 76.
-Package microtype Info: Applying patch `verbatim' on input line 76.
-LaTeX Info: Redefining \microtypesetup on input line 76.
+LaTeX Info: Redefining \microtypecontext on input line 77.
+Package microtype Info: Applying patch `item' on input line 77.
+Package microtype Info: Applying patch `toc' on input line 77.
+Package microtype Info: Applying patch `eqnum' on input line 77.
+Package microtype Info: Applying patch `footnote' on input line 77.
+Package microtype Info: Applying patch `verbatim' on input line 77.
+LaTeX Info: Redefining \microtypesetup on input line 77.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1988,7 +1991,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Montserrat' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: Option `pageanchor' set `false' on input line 82.
+Package hyperref Info: Option `pageanchor' set `false' on input line 83.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
 * paper: a4paper
@@ -2021,46 +2024,35 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 82.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Unknown feature `weight=Black' in font `Montserrat Thin Regular'.
-Unknown feature `weight=Black' in font `Montserrat Thin Regular'.
 
-Overfull \hbox (3.91974pt too wide) in paragraph at lines 93--93
-[]\TU/Montserrat(0)/m/n/24.88 Design en implementatie van een in-house
+Overfull \hbox (3.48853pt too wide) in paragraph at lines 94--94
+\TU/Montserrat(0)/b/n/24.88 bric als benchmark tegenover Profisee
  []
 
 
-Overfull \hbox (21.23622pt too wide) in paragraph at lines 93--93
-\TU/Montserrat(0)/m/n/24.88 chmark tegenover Profisee in een multi-ERP-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--93
-
- []
-
-Unknown feature `weight=ExtraBold' in font `Montserrat Thin Regular'.
-Unknown feature `weight=ExtraBold' in font `Montserrat Thin Regular'.
-Unknown feature `weight=ExtraBold' in font `Montserrat Thin Black'.
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--93
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--93
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
 
  []
 
-Unknown feature `weight=ExtraBold' in font `Montserrat Thin Black'.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 93 replaced by U+FFFD.
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
+
+ []
+
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 94 replaced by U+FFFD.
 File: hogent_logo.eps Graphic file (type eps)
 <hogent_logo.eps>
 
@@ -2073,25 +2065,40 @@ File: hogent_logo.eps Graphic file (type eps)
 ]
 
 [2]
-Package hyperref Info: Option `pageanchor' set `true' on input line 94.
- (./voorwoord.tex
-Unknown feature `weight=Black' in font `Montserrat Thin Black'.
-Unknown feature `weight=Black' in font `Montserrat Thin Black'.
-) (./samenvatting.tex
+Package hyperref Info: Option `pageanchor' set `true' on input line 95.
+ (./voorwoord.tex) (./samenvatting.tex
 
 [3
 
 
 
-])
+]
+Overfull \hbox (2.74547pt too wide) in paragraph at lines 8--9
+\TU/Montserrat(2)/m/it/10.95 oplossing, gebouwd binnen de Microsoft Fabric-omge
+ving, een accuraat en schaal-
+ []
+
+)
 
 [4
 
 ] (./VanDammeAlvaroBP.toc
+Overfull \hbox (0.11455pt too wide) in paragraph at lines 10--10
+ []|| [][][]\TU/Montserrat(1)/m/n/10.95 Multi-ERP-omgevingen en de rol van Mast
+er Data Management[][]| 
+ []
+
+
 
 [5
 
-])
+]
+Overfull \hbox (0.11455pt too wide) in paragraph at lines 49--49
+ []|| [][][]\TU/Montserrat(1)/m/n/10.95 Multi-ERP-omgevingen en de rol van Mast
+er Data Management[][]| 
+ []
+
+)
 \tf@toc=\write7
 \openout7 = `VanDammeAlvaroBP.toc'.
 
@@ -2124,23 +2131,16 @@ LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
 
 ] (./inleiding.tex
 Hoofdstuk 1.
-Unknown feature `weight=Black' in font `Montserrat Thin Black'.
 
-Overfull \hbox (30.6104pt too wide) in paragraph at lines 7--8
-\TU/Montserrat(2)/m/n/10.95 Deze bachelorproef onderzoekt Master Data Managemen
+Overfull \hbox (41.80118pt too wide) in paragraph at lines 7--8
+\TU/Montserrat(1)/m/n/10.95 Deze bachelorproef onderzoekt Master Data Managemen
 t (MDM), multi-ERP-omgevingen
  []
 
 
-Overfull \hbox (13.39336pt too wide) in paragraph at lines 11--12
-[]\TU/Montserrat(2)/m/n/10.95 De belangrijkste doelgroep wordt gevormd door dat
+Overfull \hbox (27.00406pt too wide) in paragraph at lines 12--13
+[]\TU/Montserrat(1)/m/n/10.95 De belangrijkste doelgroep wordt gevormd door dat
 a-engineers en business-gebruikers
- []
-
-
-Overfull \hbox (37.85204pt too wide) in paragraph at lines 13--15
-[]\TU/Montserrat(2)/m/n/10.95 De centrale onderzoeksvraag luidt als volgt: Hoe 
-kan een in-house Master Data Management-
  []
 
 
@@ -2149,24 +2149,37 @@ kan een in-house Master Data Management-
 
 
 ]
-Unknown feature `weight=Black' in font `Montserrat Thin Regular'.
-Unknown feature `weight=Black' in font `Montserrat Thin Black'.
-
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 16.
+(hyperref)                than one, level fixed on input line 17.
 
-Unknown feature `weight=Black' in font `Montserrat Thin Regular'.
-Unknown feature `weight=Black' in font `Montserrat Thin Black'.
 
-Overfull \hbox (11.7837pt too wide) in paragraph at lines 44--45
-\TU/Montserrat(2)/m/n/10.95 of-concept in Microsoft Fabric, waarbij artikel- en
- leveranciersdata uit drie ERP-systemen
+Overfull \hbox (12.55739pt too wide) in paragraph at lines 20--21
+[]\TU/Montserrat(1)/m/n/10.95 Welke datakwaliteitsproblemen treden het meest op
+ bij de geselecteerde artikel-
  []
 
-) (./standvanzaken.tex
 
-[2]
+Overfull \hbox (6.59692pt too wide) in paragraph at lines 20--21
+\TU/Montserrat(1)/m/n/10.95 en leveranciersdata (bijvoorbeeld het hoge percenta
+ge ontbrekende waarden)? 
+ []
+
+
+Overfull \hbox (8.58522pt too wide) in paragraph at lines 27--28
+[]\TU/Montserrat(1)/m/n/10.95 Hoe presteert de in-house Fabric PoC ten opzichte
+ van de commerciële Profisee-
+ []
+
+
+Overfull \hbox (12.31793pt too wide) in paragraph at lines 45--46
+\TU/Montserrat(1)/m/n/10.95 concept in Microsoft Fabric, waarbij artikel- en le
+veranciersdata uit drie ERP-systemen
+ []
+
+
+
+[2]) (./standvanzaken.tex
 
 [3]
 Hoofdstuk 2.
@@ -2179,51 +2192,39 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 [4
 
 ]
-Overfull \hbox (1.25224pt too wide) in paragraph at lines 14--15
-[]\TU/Montserrat(2)/m/n/10.95 Governance uit zich concreet in rollen en verantw
-oordelijkheden. In een MDM-context
- []
-
-
 
 [5]
-Overfull \hbox (30.68217pt too wide) in paragraph at lines 38--39
-\TU/Montserrat(2)/m/n/10.95 het aantal en de diversiteit van ERP-systemen toene
-emt. Hierdoor ontstaat een masterdata-
- []
-
-
-Overfull \hbox (0.8811pt too wide) in paragraph at lines 47--48
-[]\TU/Montserrat(2)/m/it/10.95 Heterogeneous system landscapes: \TU/Montserrat(
-2)/m/n/10.95 Een mesh-topologie zonder duidelijke ’mas-
- []
-
-
-Overfull \hbox (3.89972pt too wide) in paragraph at lines 55--56
-\TU/Montserrat(2)/m/n/10.95 Datakwaliteit is zowel een drijfveer als een evalua
-tiecriterium voor MDM. Kwaliteit wordt
- []
-
-
 
 [6]
-Overfull \hbox (5.75633pt too wide) in paragraph at lines 82--83
-\TU/Montserrat(2)/m/n/10.95 omdat bronsystemen operationeel moeten blijven ([]M
-aedche, [][]2010[][]). Rengasamy (2025)
+Overfull \hbox (5.2333pt too wide) in paragraph at lines 59--60
+[]\TU/Montserrat(1)/m/n/10.95 Zonder heldere governance (rollen, eigenaarschap)
+ wordt kwaliteitsborging bemoei-
+ []
+
+
+Overfull \hbox (0.28755pt too wide) in paragraph at lines 66--67
+\TU/Montserrat(1)/m/n/10.95 MDM-oplossingen variëren in architectuur, synchroni
+satiepatronen en governance-
  []
 
 
 
 [7]
-Overfull \hbox (1.36295pt too wide) in paragraph at lines 87--89
-\TU/Montserrat(2)/m/n/10.95 MDM-initiatieven kennen zowel technische als organi
+Overfull \hbox (15.20363pt too wide) in paragraph at lines 87--89
+\TU/Montserrat(1)/m/n/10.95 MDM-initiatieven kennen zowel technische als organi
 satorische uitdagingen ([]Pansara,
  []
 
+
+Overfull \hbox (22.02184pt too wide) in paragraph at lines 90--91
+\TU/Montserrat(1)/m/n/10.95 Ook bij het samenvoegen van records (survivorship) 
+kan context verloren gaan ([]Pansara,
+ []
+
 ) (./methodologie.tex
-Overfull \hbox (30.09818pt too wide) in paragraph at lines 94--4
-[]\TU/Montserrat(2)/m/n/10.95 Deze bachelorproef positioneert zich als toegepas
-t onderzoek. MDM-concepten, matching-
+Overfull \hbox (3.4725pt too wide) in paragraph at lines 94--4
+\TU/Montserrat(1)/m/n/10.95 lossing in te zetten als een objectieve benchmark t
+egenover een commerciële MDM-
  []
 
 
@@ -2231,58 +2232,111 @@ t onderzoek. MDM-concepten, matching-
 [8]
 Hoofdstuk 3.
 
+Overfull \hbox (32.23087pt too wide) in paragraph at lines 42--43
+[]\TU/Montserrat(2)/b/n/10.95 Expert-consultatie en documentanalyse\TU/Montserr
+at(1)/m/n/10.95 : directe afstemming met de co-promotor
+ []
+
+
 
 [9
 
 ]
+Overfull \hbox (13.28009pt too wide) in paragraph at lines 45--46
+\TU/Montserrat(1)/m/n/10.95 bric PoC-output met zowel de originele baseline als
+ de resultaten van de Profisee-
+ []
+
+
 
 [10]
-Overfull \hbox (6.2941pt too wide) in paragraph at lines 77--78
-\TU/Montserrat(2)/m/n/10.95 De architectuur leunt op het Microsoft-ecosysteem, 
-met \TU/Montserrat(2)/b/n/10.95 Microsoft Fabric \TU/Montserrat(2)/m/n/10.95 (L
-akehouse,
+Overfull \hbox (1.41754pt too wide) in paragraph at lines 70--71
+\TU/Montserrat(1)/m/n/10.95 beter of slechter dan de commerciële opzet wanneer 
+dezelfde inputdata wordt
  []
 
+) (./poc.tex
 
-
-[11]) (./conclusie.tex
+[11]
 
 [12]
-
-[13]
 Hoofdstuk 4.
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 18.
 
-
-
-[14
+[13
 
 ]
-Overfull \hbox (19.39029pt too wide) in paragraph at lines 38--39
-\TU/Montserrat(2)/m/n/10.95 aanzienlijke, meetbare verbetering oplevert in data
-kwaliteit binnen de multi-ERP-context.
+Overfull \hbox (3.41074pt too wide) in paragraph at lines 50--51
+\TU/Montserrat(1)/m/n/10.95 eenvoudigt, wat het ook voor minder technische prof
+ielen toegankelijk maakt. Deze
  []
 
 
 
-[15])
+[14]
+Overfull \hbox (2.97249pt too wide) in paragraph at lines 87--88
+\TU/Montserrat(1)/m/n/10.95 De deterministische matching maakt gebruik van hard
+e regels in een watervalstruc-
+ []
 
-[16]
+
+Overfull \hbox (1.2767pt too wide) in paragraph at lines 87--88
+\TU/Montserrat(1)/m/n/10.95 regel geëvalueerd, telkens met een afnemende zekerh
+eidsgraad (\TU/Montserrat(2)/m/it/10.95 confidence score\TU/Montserrat(1)/m/n/1
+0.95 ). 
+ []
+
+\pydata@fh@_5613908F696219217484D274C1FC9493.data.minted=\write9
+\openout9 = `_5613908F696219217484D274C1FC9493.data.minted'.
+
+runsystem(latexminted config  --timestamp 20260504213340 5613908F696219217484D2
+74C1FC9493)...executed safely (allowed).
+
+(./_5613908F696219217484D274C1FC9493.config.minted)
+runsystem(latexminted cleanconfig  --timestamp 20260504213340 5613908F696219217
+484D274C1FC9493)...executed safely (allowed).
+
+
+(./_minted/solarized-light.style.minted)
+(./_minted/549AB740191E3BC141C96452ED2FBB0D.highlight.minted
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `FiraCode' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+LaTeX Font Warning: Font shape `TU/FiraCode(0)/m/it' undefined
+(Font)              using `TU/FiraCode(0)/m/n' instead on input line 4.
+
+LaTeX Font Info:    Font shape `TU/FiraMathRegular(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 4.
+LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 4.
+)
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
+t line 104.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[15]
+
+[16]) (./resultaten.tex
+Overfull \hbox (4.86464pt too wide) in paragraph at lines 144--4
+\TU/Montserrat(1)/m/n/10.95 datawarehouse, specifiek opgeslagen als Delta Table
+s binnen een Fabric Warehouse.
+ []
+
+
 
 [17]
-B\ij lage A.
-(../voorstel/voorstel-inhoud.tex
-Overfull \hbox (30.6104pt too wide) in paragraph at lines 5--6
-\TU/Montserrat(2)/m/n/10.95 Deze bachelorproef onderzoekt Master Data Managemen
-t (MDM), multi-ERP-omgevingen
- []
+Hoofdstuk 5.
 
-
-Overfull \hbox (13.39336pt too wide) in paragraph at lines 9--10
-[]\TU/Montserrat(2)/m/n/10.95 De belangrijkste doelgroep wordt gevormd door dat
-a-engineers en business-gebruikers
+Overfull \hbox (5.81947pt too wide) in paragraph at lines 21--22
+\TU/Montserrat(1)/m/n/10.95 Na de standaardisatie is de opgeschoonde dataset on
+derworpen aan de uitgewerkte
  []
 
 
@@ -2290,129 +2344,295 @@ a-engineers en business-gebruikers
 [18
 
 ]
-Overfull \hbox (37.85204pt too wide) in paragraph at lines 11--12
-[]\TU/Montserrat(2)/m/n/10.95 De centrale onderzoeksvraag luidt als volgt: Hoe 
-kan een in-house Master Data Management-
- []
-
-
 
 [19]
-Overfull \hbox (1.25224pt too wide) in paragraph at lines 48--49
-[]\TU/Montserrat(2)/m/n/10.95 Governance uit zich concreet in rollen en verantw
-oordelijkheden. In een MDM-context
+Overfull \hbox (10.528pt too wide) in paragraph at lines 42--43
+[]\TU/Montserrat(2)/b/n/10.95 Golden Record: \TU/Montserrat(1)/m/n/10.95 Naam: 
+”Copper Insulation Pipe”(gekozen voor Engelse/neutrale
  []
 
 
+Overfull \hbox (21.56561pt too wide) in paragraph at lines 49--50
+\TU/Montserrat(1)/m/n/10.95 Naast de datakwaliteit is de technische performanti
+e van de Microsoft Fabric-omgeving
+ []
+
+
+Overfull \hbox (10.98303pt too wide) in paragraph at lines 51--52
+\TU/Montserrat(1)/m/n/10.95 ching succesvol teruggebracht naar 9 minuten. Dit b
+ewijst dat de Fabric-architectuur
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 64--64
+[]|\TU/Montserrat(1)/m/n/10.95 33.4% deduplicatie. Goede
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+\TU/Montserrat(1)/m/n/10.95 resultaten na handmatige
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+[]|\TU/Montserrat(1)/m/n/10.95 35.1% deduplicatie. Gea-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+\TU/Montserrat(1)/m/n/10.95 vanceerde out-of-the-box
+ []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 64--64
+\TU/Montserrat(1)/m/n/10.95 algoritmen detecteren frac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+\TU/Montserrat(1)/m/n/10.95 tioneel meer contextuele
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+[]|\TU/Montserrat(1)/m/n/10.95 Vereist kennis van Py-
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 65--65
+\TU/Montserrat(1)/m/n/10.95 Makkelijker voor \TU/Montserrat(2)/m/it/10.95 data 
+ste-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+\TU/Montserrat(2)/m/it/10.95 wards\TU/Montserrat(1)/m/n/10.95 , maar functionee
+rt
+ []
+
+
+Underfull \hbox (badness 3557) in paragraph at lines 66--66
+[]|\TU/Montserrat(1)/m/n/10.95 Externe tool. Vereist API-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
+\TU/Montserrat(1)/m/n/10.95 koppelingen en dataver-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\TU/Montserrat(1)/m/n/10.95 Volledig transparant via
+ []
+
+
+Underfull \hbox (badness 2951) in paragraph at lines 67--67
+\TU/Montserrat(1)/m/n/10.95 face voor lineage en data-
+ []
+
+
+Overfull \hbox (15.19887pt too wide) in paragraph at lines 61--69
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (22.42697pt too wide) in paragraph at lines 76--77
+\TU/Montserrat(1)/m/n/10.95 marginaal beter presteert op het gebied van \TU/Mon
+tserrat(2)/m/it/10.95 out-of-the-box \TU/Montserrat(1)/m/n/10.95 matching-funct
+ionaliteiten
+ []
+
+) (./conclusie.tex
 
 [20]
-Overfull \hbox (30.68217pt too wide) in paragraph at lines 72--73
-\TU/Montserrat(2)/m/n/10.95 het aantal en de diversiteit van ERP-systemen toene
-emt. Hierdoor ontstaat een masterdata-
- []
-
-
 
 [21]
-Overfull \hbox (0.8811pt too wide) in paragraph at lines 81--82
-[]\TU/Montserrat(2)/m/it/10.95 Heterogeneous system landscapes: \TU/Montserrat(
-2)/m/n/10.95 Een mesh-topologie zonder duidelijke ’mas-
+Hoofdstuk 6.
+
+Overfull \hbox (17.24641pt too wide) in paragraph at lines 19--20
+\TU/Montserrat(1)/m/n/10.95 van 33,4%. Hiermee benadert de Fabric-oplossing het
+ niveau van het Profisee-platform
  []
 
 
-Overfull \hbox (3.89972pt too wide) in paragraph at lines 89--90
-\TU/Montserrat(2)/m/n/10.95 Datakwaliteit is zowel een drijfveer als een evalua
-tiecriterium voor MDM. Kwaliteit wordt
+Overfull \hbox (0.41022pt too wide) in paragraph at lines 25--26
+\TU/Montserrat(1)/m/n/10.95 ste beperking van de opgezette Fabric-architectuur 
+is de toegankelijkheid voor niet-
  []
 
 
 
-[22]
-Overfull \hbox (5.75633pt too wide) in paragraph at lines 116--117
-\TU/Montserrat(2)/m/n/10.95 omdat bronsystemen operationeel moeten blijven ([]M
-aedche, [][]2010[][]). Rengasamy (2025)
+[22
+
+])
+
+[23]
+B\ij lage A.
+(../voorstel/voorstel-inhoud.tex
+Overfull \hbox (41.80118pt too wide) in paragraph at lines 5--6
+\TU/Montserrat(1)/m/n/10.95 Deze bachelorproef onderzoekt Master Data Managemen
+t (MDM), multi-ERP-omgevingen
  []
 
 
-Overfull \hbox (1.36295pt too wide) in paragraph at lines 121--123
-\TU/Montserrat(2)/m/n/10.95 MDM-initiatieven kennen zowel technische als organi
+Overfull \hbox (27.00406pt too wide) in paragraph at lines 9--10
+[]\TU/Montserrat(1)/m/n/10.95 De belangrijkste doelgroep wordt gevormd door dat
+a-engineers en business-gebruikers
+ []
+
+
+
+[24
+
+]
+Overfull \hbox (0.8533pt too wide) in paragraph at lines 13--14
+\TU/Montserrat(1)/m/n/10.95 serland en Noorwegen. Op basis van de vergelijking 
+tussen deze PoC en de Profisee-
+ []
+
+
+Overfull \hbox (12.55739pt too wide) in paragraph at lines 18--19
+[]\TU/Montserrat(1)/m/n/10.95 Welke datakwaliteitsproblemen treden het meest op
+ bij de geselecteerde artikel-
+ []
+
+
+Overfull \hbox (6.59692pt too wide) in paragraph at lines 18--19
+\TU/Montserrat(1)/m/n/10.95 en leveranciersdata (bijvoorbeeld het hoge percenta
+ge ontbrekende waarden)? 
+ []
+
+
+Overfull \hbox (8.58522pt too wide) in paragraph at lines 25--26
+[]\TU/Montserrat(1)/m/n/10.95 Hoe presteert de in-house Fabric PoC ten opzichte
+ van de commerciële Profisee-
+ []
+
+
+
+[25]
+
+[26]
+
+[27]
+Overfull \hbox (5.2333pt too wide) in paragraph at lines 93--94
+[]\TU/Montserrat(1)/m/n/10.95 Zonder heldere governance (rollen, eigenaarschap)
+ wordt kwaliteitsborging bemoei-
+ []
+
+
+
+[28]
+Overfull \hbox (0.28755pt too wide) in paragraph at lines 100--101
+\TU/Montserrat(1)/m/n/10.95 MDM-oplossingen variëren in architectuur, synchroni
+satiepatronen en governance-
+ []
+
+
+Overfull \hbox (15.20363pt too wide) in paragraph at lines 121--123
+\TU/Montserrat(1)/m/n/10.95 MDM-initiatieven kennen zowel technische als organi
 satorische uitdagingen ([]Pansara,
  []
 
 
-
-[23]
-Overfull \hbox (30.09818pt too wide) in paragraph at lines 128--129
-[]\TU/Montserrat(2)/m/n/10.95 Deze bachelorproef positioneert zich als toegepas
-t onderzoek. MDM-concepten, matching-
+Overfull \hbox (22.02184pt too wide) in paragraph at lines 124--125
+\TU/Montserrat(1)/m/n/10.95 Ook bij het samenvoegen van records (survivorship) 
+kan context verloren gaan ([]Pansara,
  []
 
 
 
-[24]
+[29]
+Overfull \hbox (3.4725pt too wide) in paragraph at lines 128--129
+\TU/Montserrat(1)/m/n/10.95 lossing in te zetten als een objectieve benchmark t
+egenover een commerciële MDM-
+ []
 
-[25]
-Overfull \hbox (6.2941pt too wide) in paragraph at lines 177--178
-\TU/Montserrat(2)/m/n/10.95 De architectuur leunt op het Microsoft-ecosysteem, 
-met \TU/Montserrat(2)/b/n/10.95 Microsoft Fabric \TU/Montserrat(2)/m/n/10.95 (L
-akehouse,
+
+Overfull \hbox (32.23087pt too wide) in paragraph at lines 142--143
+[]\TU/Montserrat(2)/b/n/10.95 Expert-consultatie en documentanalyse\TU/Montserr
+at(1)/m/n/10.95 : directe afstemming met de co-promotor
+ []
+
+
+Overfull \hbox (13.28009pt too wide) in paragraph at lines 145--146
+\TU/Montserrat(1)/m/n/10.95 bric PoC-output met zowel de originele baseline als
+ de resultaten van de Profisee-
  []
 
 
 
-[26])
-Overfull \hbox (19.39029pt too wide) in paragraph at lines 254--161
-\TU/Montserrat(2)/m/n/10.95 aanzienlijke, meetbare verbetering oplevert in data
-kwaliteit binnen de multi-ERP-context.
+[30]
+Overfull \hbox (1.41754pt too wide) in paragraph at lines 170--171
+\TU/Montserrat(1)/m/n/10.95 beter of slechter dan de commerciële opzet wanneer 
+dezelfde inputdata wordt
  []
 
 
 
-[27]
+[31]
 
-[28]
-Overfull \hbox (2.83934pt too wide) in paragraph at lines 172--172
-\TU/Montserrat(2)/m/it/10.95 Proceedings of the Americas Conference on Informat
-ion Systems (AMCIS)\TU/Montserrat(2)/m/n/10.95 . [][]$[][][][] []
+[32]
+Overfull \hbox (1.01245pt too wide) in paragraph at lines 245--246
+[]\TU/Montserrat(2)/b/n/10.95 Duplicatiegraad per systeem (voor/na)\TU/Montserr
+at(1)/m/n/10.95 : Staafdiagram met op de x-as de bron-
+ []
+
+)
+
+[33]
+
+[34]
+
+[35]
+Overfull \hbox (9.35345pt too wide) in paragraph at lines 161--161
+[][]\TU/Montserrat(1)/m/n/10.95 Rengasamy, A. (2025). AI Accelerator: Federated
+ Master Data Management and Gover-
  []
 
 
-Overfull \hbox (3.11214pt too wide) in paragraph at lines 172--172
-[][]\TU/Montserrat(2)/m/n/10.95 Pansara, R. (2021). Master Data Management Chal
-lenges. \TU/Montserrat(2)/m/it/10.95 International Journal of Com-
+Overfull \hbox (2.9636pt too wide) in paragraph at lines 161--161
+\TU/Montserrat(1)/m/n/10.95 nance. \TU/Montserrat(2)/m/it/10.95 International R
+esearch Journal of Modernization in Engineering Tech-
  []
 
 
 
-[29
+[36
 
 
-]
-runsystem(latexminted cleantemp  --timestamp 20260309214815 5613908F69621921748
-4D274C1FC9493)...executed safely (allowed).
-
- (./VanDammeAlvaroBP.aux)
+] (./VanDammeAlvaroBP.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `VanDammeAlvaroBP.out' has not changed.
-(rerunfilecheck)             Checksum: D3A743DCBD39C69D7701150C125A28FB;10561.
+(rerunfilecheck)             Checksum: 05FA0E5AEBF2E5003B1AD77681F5BB2E;14048.
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'VanDammeAlvaroBP.run.xml'.
 \openout1 = `VanDammeAlvaroBP.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49953 strings out of 473832
- 1030924 string characters out of 5729481
- 2272417 words of memory out of 5000000
- 72243 multiletter control sequences out of 15000+600000
- 562605 words of font info for 111 fonts, out of 8000000 for 9000
+ 50261 strings out of 473832
+ 1036529 string characters out of 5729481
+ 2272608 words of memory out of 5000000
+ 72525 multiletter control sequences out of 15000+600000
+ 563228 words of font info for 117 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  110i,12n,131p,1193b,5687s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on VanDammeAlvaroBP.pdf (36 pages).
+Output written on VanDammeAlvaroBP.pdf (43 pages).
